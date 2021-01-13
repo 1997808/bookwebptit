@@ -1,5 +1,9 @@
 import React from "react"
 
 export default function Index() {
-  return <h2>Index</h2>;
+  return (
+    <div className="bg-blue-400">
+      <h2>Index</h2>
+    </div>
+  )
 }
