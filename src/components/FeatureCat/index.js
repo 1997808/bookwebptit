@@ -1,5 +1,4 @@
 import {
-  BrowserRouter as Router,
   Link,
 } from "react-router-dom";
 import vanhoc from '../../images/image7.png';

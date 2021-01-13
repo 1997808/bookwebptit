@@ -1,6 +1,5 @@
 import React from "react"
 import {
-  BrowserRouter as Router,
   Link,
 } from "react-router-dom";
 import book from '../../images/bannerBook.png';
