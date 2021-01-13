@@ -10,6 +10,13 @@ module.exports = {
         'banner': "url('../images/banner.png')",
       })
     },
+    truncate: {
+      lines: {
+        2: '2',
+        3: '3',
+        4: '4',
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -857,5 +864,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-truncate-multiline')(),
+  ],
 }
