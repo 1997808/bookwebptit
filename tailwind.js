@@ -5,6 +5,11 @@ module.exports = {
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      backgroundImage: theme => ({
+        'banner': "url('../images/banner.png')",
+      })
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -163,6 +168,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        "Inter",
         'ui-sans-serif',
         'system-ui',
         '-apple-system',

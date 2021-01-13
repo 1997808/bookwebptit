@@ -3,9 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
 } from "react-router-dom";
 import BookDetail from "./pages/bookDetail"
 import Cart from "./pages/cart"
@@ -19,46 +16,32 @@ import Receipt from "./pages/receipt"
 export default function App() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Index</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
-
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/logout">
-            <Logout />
-          </Route>
-          <Route path="/receipt">
-            <Receipt />
-          </Route>
-          <Route path="/payment">
-            <Payment />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/bookDetail">
-            <BookDetail />
-          </Route>
-          <Route path="/categories">
-            <Categories />
-          </Route>
-          <Route path="/">
-            <Index />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/logout">
+          <Logout />
+        </Route>
+        <Route path="/receipt">
+          <Receipt />
+        </Route>
+        <Route path="/payment">
+          <Payment />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/bookDetail">
+          <BookDetail />
+        </Route>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+        <Route path="/">
+          <Index />
+        </Route>
+      </Switch>
     </Router>
   );
 }
