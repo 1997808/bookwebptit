@@ -2,25 +2,33 @@ import {
   BrowserRouter as Router,
   Link,
 } from "react-router-dom";
-import book from '../../images/bannerBook.png';
+import vanhoc from '../../images/image7.png';
+import kynang from '../../images/image8.png';
+import khoahoc from '../../images/image10.png';
+import tieuthuyet from '../../images/image11.png';
+
+const Category = ({ color, cat_icon, cat_name }) => {
+  return (
+    <div className={`${color} p-10`}>
+      <img src={cat_icon} alt="icon" />
+      <p className="text-lg pt-2 font-medium">{cat_name}</p>
+      <p className="text-sm">Chi tiết</p>
+    </div>
+  )
+}
 
 export default function FeatureCat() {
   return (
-    <div className="w-full bg-banner">
-      <div className="container mx-auto w-full py-40 flex justify-between items-center">
-        <div className="left-side">
-          <p className="text-sm text-gray-400 pb-2">BIÊN TẬP VIÊN BẦU CHỌN</p>
-          <p className="text-5xl pb-2">Sách nổi bật của</p>
-          <p className="text-5xl font-bold pb-4">Năm 2020</p>
-          <div className="w-40 h-12 flex justify-center items-center bg-black">
-            <p className="text-white">Xem thêm</p>
-          </div>
-        </div>
-        <div className="right-side flex items-center">
-          <div className="h-60 p-2 flex items-center">
-            <img src={book} alt="logo" className="h-full" />
-          </div>
-        </div>
+    <div className="container mx-auto w-full pt-20">
+      <div className="flex justify-between items-center">
+        <p className="text-3xl">Danh mục nổi bật</p>
+        <p>Xem thêm</p>
+      </div>
+      <div className="grid grid-cols-4 gap-8 pt-8">
+        <Category color="bg-purple-100" cat_icon={vanhoc} cat_name="Văn học Việt Nam" />
+        <Category color="bg-yellow-100" cat_icon={kynang} cat_name="Kỹ năng sống" />
+        <Category color="bg-red-100" cat_icon={khoahoc} cat_name="Khoa học" />
+        <Category color="bg-blue-100" cat_icon={tieuthuyet} cat_name="Tiểu thuyết" />
       </div>
     </div>
   )
