@@ -14,19 +14,19 @@ export default function Header() {
   return (
     <div className="container mx-auto w-full py-6 flex justify-between">
       <div className="left-side flex items-center">
-        <img src={Logo} alt="logo" />
-        <p className="pl-8">Trang chủ</p>
-        <p className="pl-8">Danh mục</p>
-        <p className="pl-8">Liên hệ</p>
-        <p className="pl-8">Hỗ trợ</p>
+        <Link to="/"><img src={Logo} alt="logo" /></Link>
+        <Link to="/"><p className="pl-10">Trang chủ</p></Link>
+        <Link to="/categories"><p className="pl-10">Danh mục</p></Link>
+        <Link to="/"><p className="pl-10">Liên hệ</p></Link>
+        <Link to="/"><p className="pl-10">Hỗ trợ</p></Link>
       </div>
       <div className="right-side flex items-center">
         <div className="w-64 bg-gray-200 p-2 flex items-center">
           <img src={search} alt="logo" />
         </div>
         {/* input here not div */}
-        <img src={user} alt="logo" className="h-5 pl-8" />
-        <img src={cart} alt="logo" className="h-6 pl-8" />
+        <img src={user} alt="logo" className="h-5 pl-10" />
+        <img src={cart} alt="logo" className="h-6 pl-10" />
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Page404 from "./pages/404"
 import BookDetail from "./pages/bookDetail"
 import Cart from "./pages/cart"
 import Categories from "./pages/categories"
@@ -38,8 +39,11 @@ export default function App() {
         <Route path="/categories">
           <Categories />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Index />
+        </Route>
+        <Route path="*">
+          <Page404 />
         </Route>
       </Switch>
     </Router>
