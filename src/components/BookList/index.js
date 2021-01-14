@@ -2,7 +2,7 @@ import {
   Link,
 } from "react-router-dom";
 import Book from "../book"
-import bookdemo from '../../images/bookdemo.png';
+// import bookdemo from '../../images/bookdemo.png';
 
 export default function BookList() {
   return (
@@ -11,7 +11,7 @@ export default function BookList() {
         <p className="text-lg">Hiển thị 1-12 trong 126 kết quả</p>
         <p>Danh mục &gt; Kỹ năng sống</p>
       </div>
-      <div className="grid grid-cols-3 pt-8">
+      {/* <div className="grid grid-cols-3 pt-8">
         <Book photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
         <Book photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
         <Book photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
@@ -21,7 +21,7 @@ export default function BookList() {
         <Book photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
         <Book photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
         <Book photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
-      </div>
+      </div> */}
 
       <div class="bg-white px-4 py-3 flex items-center justify-center sm:px-6 pt-10">
         <div class="flex items-center justify-center">

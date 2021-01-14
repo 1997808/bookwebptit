@@ -1,7 +1,7 @@
 export const bookData = [
   {
     id: "015808907369962",
-    image: "./bookImage/thoxam.jpg",
+    image: "/assets/bookImage/thoxam.jpg",
     name: "Thợ Xăm ở Auschwitz",
     author: "Heather Morris",
     translator: "Lan Huế",
@@ -15,7 +15,7 @@ export const bookData = [
 
   {
     id: "025808907369962",
-    image: "./bookImage/haisophan.jpg",
+    image: "/assets/bookImage/haisophan.jpg",
     name: " Hai Số Phận (Tái Bản)",
     author: " Jeffrey Archer",
     translator: "Nguyễn Việt Hải",
@@ -29,7 +29,7 @@ export const bookData = [
 
   {
     id: "035808907369962",
-    image: "./bookImage/laudaibay.jpg",
+    image: "/assets/bookImage/laudaibay.jpg",
     name: "Lâu Đài Bay Của Pháp Sư Howl (Tái Bản 2020)",
     author: "Diana Wynne Jones",
     translator: "Đặng Kim Trâm",
@@ -43,7 +43,7 @@ export const bookData = [
 
   {
     id: "045808907369962",
-    image: "./bookImage/5centimet.jpg",
+    image: "/assets/bookImage/5centimet.jpg",
     name: "5 Centimet Trên Giây",
     author: "Shinkai Makoto",
     translator: "",
@@ -57,7 +57,7 @@ export const bookData = [
 
   {
     id: "055808907369962",
-    image: "./bookImage/minhbuon.jpg",
+    image: "/assets/bookImage/minhbuon.jpg",
     name: "MÌNH BUỒN ĐỦ RỒI. MÌNH HẠNH PHÚC THÔI ",
     author: "Phạm Cao Trí ",
     translator: "",
@@ -71,7 +71,7 @@ export const bookData = [
 
   {
     id: "065808907369962",
-    image: "./bookImage/kaitorei.jpg",
+    image: "/assets/bookImage/kairotei.jpg",
     name: "Vụ Án Mạng Ở Lữ Quán Kairotei ",
     author: "Higashino Keigo",
     translator: "Dã Tràng",
@@ -85,7 +85,7 @@ export const bookData = [
 
   {
     id: "075808907369962",
-    image: "./bookImage/nghicanx.jpg",
+    image: "/assets/bookImage/nghicanx.jpg",
     name: "Phía sau nghi can X (Tái bản 2019)",
     author: "Higashino Keigo",
     translator: "",
@@ -99,7 +99,7 @@ export const bookData = [
 
   {
     id: "085808907369962",
-    image: "./bookImage/muoimotchu.jpg",
+    image: "/assets/bookImage/muoimotchu.jpg",
     name: "Án mạng mười một chữ",
     author: "Higashino Keigo",
     translator: "Phương Phương",

@@ -3,9 +3,10 @@ import {
 } from "react-router-dom";
 import BookSmall from "../bookSmall"
 import newBookBanner from '../../images/newBook.webp';
-import bookdemo from '../../images/bookdemo.png';
+// import bookdemo from '../../images/bookdemo.png';
 
 export default function NewRelease() {
+  const bookdemo = "/images/bookdemo.png"
   return (
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
