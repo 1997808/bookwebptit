@@ -10,7 +10,7 @@ import Cart from "./pages/cart"
 import Categories from "./pages/categories"
 import Index from "./pages/index"
 import Login from "./pages/login"
-import Logout from "./pages/logout"
+import Signup from "./pages/signup"
 import Payment from "./pages/payment"
 import Receipt from "./pages/receipt"
 
@@ -21,8 +21,8 @@ export default function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/logout">
-          <Logout />
+        <Route path="/signup">
+          <Signup />
         </Route>
         <Route path="/receipt">
           <Receipt />

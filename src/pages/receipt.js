@@ -12,7 +12,7 @@ export default function Receipt() {
           <p className="text-2xl font-medium pt-16 pb-8">
             Đơn hàng của bạn
           </p>
-          <div className="w-2/3">
+          <div className="w-3/4">
             <BookReceipt />
           </div>
         </div>
