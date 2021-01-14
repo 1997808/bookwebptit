@@ -5,7 +5,7 @@ import {
 
 {/* <Link to="/topics">Topics</Link> */ }
 
-export default function CartTotal() {
+export default function OrderTotal() {
   return (
     <React.Fragment>
       <div className="w-full bg-white">
