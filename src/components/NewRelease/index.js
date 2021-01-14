@@ -3,10 +3,9 @@ import {
 } from "react-router-dom";
 import BookSmall from "../bookSmall"
 import newBookBanner from '../../images/newBook.webp';
-// import bookdemo from '../../images/bookdemo.png';
+import { bookData } from "../../assets/book"
 
 export default function NewRelease() {
-  const bookdemo = "/images/bookdemo.png"
   return (
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
@@ -18,12 +17,11 @@ export default function NewRelease() {
       <div className="w-full flex pt-8 items-stretch">
         <img src={newBookBanner} alt="banner" className="w-2/5 flex-grow object-cover" />
         <div className="w-3/5 grid grid-cols-3">
-          <BookSmall photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
-          <BookSmall photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
-          <BookSmall photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
-          <BookSmall photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
-          <BookSmall photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
-          <BookSmall photo={bookdemo} name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" />
+          {bookData && bookData.slice(2, 8).map(items => {
+            return (
+              <BookSmall photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
+            )
+          })}
         </div>
       </div>
     </div>
