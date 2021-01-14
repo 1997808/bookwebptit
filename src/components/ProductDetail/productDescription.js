@@ -1,8 +1,8 @@
-import {
-  Link,
-} from "react-router-dom";
+import { bookData } from "../../assets/book"
 
-export default function ProductDescription() {
+export default function ProductDescription({ id }) {
+  const data = bookData.filter(items => items.id === id)
+  console.log(data)
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center mt-6">

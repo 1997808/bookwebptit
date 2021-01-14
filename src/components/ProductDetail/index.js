@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 import bookdemo from '../../images/bookdemo.png';
 
-export default function ProductDetail() {
+export default function ProductDetail({ id }) {
   return (
     <div className="container mx-auto w-full mt-10 flex flex-grow border-t border-b border-solid border-gray-200">
       <div className="w-4/12 p-10 border-r border-solid border-gray-200 flex justify-center items-center">
@@ -22,5 +22,3 @@ export default function ProductDetail() {
     </div>
   )
 }
-
-// name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ"
