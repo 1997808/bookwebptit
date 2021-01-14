@@ -17,7 +17,7 @@ export default function NewRelease() {
       <div className="w-full flex pt-8 items-stretch">
         <img src={newBookBanner} alt="banner" className="w-2/5 flex-grow object-cover" />
         <div className="w-3/5 grid grid-cols-3">
-          {bookData && bookData.slice(2, 8).map(items => {
+          {bookData && bookData.slice(10, 16).map(items => {
             return (
               <BookSmall key={items.id} id={items.id} photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
             )
