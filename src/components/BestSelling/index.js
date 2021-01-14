@@ -14,9 +14,9 @@ export default function BestSelling() {
         </Link>
       </div>
       <div className="grid grid-cols-4 pt-8">
-        {bookData && bookData.map(items => {
+        {bookData && bookData.map((items) => {
           return (
-            <Book id={items.id} photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
+            <Book key={items.id} id={items.id} photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
           )
         })}
       </div>
