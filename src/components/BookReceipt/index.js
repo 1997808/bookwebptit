@@ -1,9 +1,4 @@
 import React from "react"
-import {
-  Link,
-} from "react-router-dom";
-
-{/* <Link to="/topics">Topics</Link> */ }
 
 export default function BookReceipt() {
   return (

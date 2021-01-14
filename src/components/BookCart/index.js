@@ -1,6 +1,3 @@
-import {
-  Link,
-} from "react-router-dom";
 import CartItem from "./CartItem"
 
 export default function BookCart() {

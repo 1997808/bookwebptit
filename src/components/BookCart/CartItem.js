@@ -1,6 +1,3 @@
-import {
-  Link,
-} from "react-router-dom";
 import bookdemo from '../../images/bookdemo.png';
 
 export default function CartItem() {
