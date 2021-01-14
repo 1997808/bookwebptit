@@ -9,7 +9,7 @@ export default function ProductDetail({ id }) {
   return (
     <div className="container mx-auto w-full mt-10 flex flex-grow border-t border-b border-solid border-gray-200">
       <div className="w-4/12 p-10 border-r border-solid border-gray-200 flex justify-center items-center">
-        <img src={data.image} className="w-full h-80 object-scale-down" />
+        <img src={`${process.env.PUBLIC_URL}${data.image}`} className="w-full h-80 object-scale-down" />
       </div>
       <div className="w-8/12 p-10">
         <p className="text-2xl font-medium">{data.name}</p>
