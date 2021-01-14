@@ -32,9 +32,11 @@ export default function Login() {
           <p className="text-white">Đăng nhập</p>
         </button>
 
-        <button type="button" className="h-12 w-full flex justify-center items-center border border-black mt-6">
-          <p>Đăng kí</p>
-        </button>
+        <Link to="/signup">
+          <button type="button" className="h-12 w-full flex justify-center items-center border border-black mt-6">
+            <p>Đăng kí</p>
+          </button>
+        </Link>
       </form>
     </div>
   )

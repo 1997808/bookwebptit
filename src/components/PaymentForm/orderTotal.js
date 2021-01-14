@@ -61,9 +61,11 @@ export default function OrderTotal() {
         </div>
       </div >
 
-      <button type="submit" value="Submit" className="h-12 w-full flex justify-center items-center bg-black mt-6">
-        <p className="text-white">Đặt hàng</p>
-      </button>
+      <Link to="/receipt">
+        <button type="submit" value="Submit" className="h-12 w-full flex justify-center items-center bg-black mt-6">
+          <p className="text-white">Đặt hàng</p>
+        </button>
+      </Link>
     </React.Fragment>
   )
 }

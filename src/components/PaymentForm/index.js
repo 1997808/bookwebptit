@@ -39,12 +39,3 @@ export default function Payment() {
     </div>
   )
 }
-
-// name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" họ tên, điện thoại, địa chỉ, thành phố, quận huyện, loại địa chỉ nhà / công ty, ghi chú
-
-
-{/* <div className="col-span-2">
-          <p className="font-semibold">Chi tiết thanh toán</p>
-        </div>
-        <p className="col-span-1 font-semibold">Giá tiền</p>
-        <p className="col-span-1 font-semibold">Số lượng</p> */}

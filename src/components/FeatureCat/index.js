@@ -8,11 +8,13 @@ import tieuthuyet from '../../images/image11.png';
 
 const Category = ({ color, cat_icon, cat_name }) => {
   return (
-    <div className={`${color} p-10`}>
-      <img src={cat_icon} alt="icon" />
-      <p className="text-lg pt-2 font-medium">{cat_name}</p>
-      <p className="text-sm">Chi tiết</p>
-    </div>
+    <Link to="/categories">
+      <div className={`${color} p-10`}>
+        <img src={cat_icon} alt="icon" />
+        <p className="text-lg pt-2 font-medium">{cat_name}</p>
+        <p className="text-sm">Chi tiết</p>
+      </div>
+    </Link>
   )
 }
 
@@ -21,7 +23,9 @@ export default function FeatureCat() {
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
         <p className="text-3xl">Danh mục nổi bật</p>
-        <p>Xem thêm</p>
+        <Link to="/categories">
+          <p>Xem thêm</p>
+        </Link>
       </div>
       <div className="grid grid-cols-4 gap-8 pt-8">
         <Category color="bg-purple-100" cat_icon={vanhoc} cat_name="Văn học Việt Nam" />

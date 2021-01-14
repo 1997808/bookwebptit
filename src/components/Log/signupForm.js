@@ -29,9 +29,11 @@ export default function Signup() {
           <p className="text-white">Đăng ký</p>
         </button>
 
-        <button type="button" className="h-12 w-full flex justify-center items-center border border-black mt-6">
-          <p>Đăng nhập</p>
-        </button>
+        <Link to="/login">
+          <button type="button" className="h-12 w-full flex justify-center items-center border border-black mt-6">
+            <p>Đăng nhập</p>
+          </button>
+        </Link>
       </form>
     </div>
   )

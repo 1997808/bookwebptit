@@ -10,7 +10,9 @@ export default function NewRelease() {
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
         <p className="text-3xl">Sách mới phát hành</p>
-        <p>Xem thêm</p>
+        <Link to="/categories">
+          <p>Xem thêm</p>
+        </Link>
       </div>
       <div className="w-full flex pt-8 items-stretch">
         <img src={newBookBanner} alt="banner" className="w-2/5 flex-grow object-cover" />
