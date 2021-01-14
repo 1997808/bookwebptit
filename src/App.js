@@ -33,7 +33,7 @@ export default function App() {
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/bookDetail">
+        <Route path="/book-detail">
           <BookDetail />
         </Route>
         <Route path="/categories">
