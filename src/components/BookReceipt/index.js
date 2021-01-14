@@ -5,7 +5,7 @@ import {
 
 {/* <Link to="/topics">Topics</Link> */ }
 
-export default function OrderTotal() {
+export default function BookReceipt() {
   return (
     <React.Fragment>
       <div className="w-full bg-white">
@@ -60,10 +60,6 @@ export default function OrderTotal() {
           <p className="text-sm pt-5">Thanh toán khi nhận hàng</p>
         </div>
       </div >
-
-      <button type="submit" value="Submit" className="h-12 w-full flex justify-center items-center bg-black mt-6">
-        <p className="text-white">Đặt hàng</p>
-      </button>
     </React.Fragment>
   )
 }

@@ -1,26 +1,50 @@
+import React, { useState } from "react"
 import {
   Link,
 } from "react-router-dom";
 
 export default function Payment() {
+  const [name, setName] = useState("")
+
   return (
     <div className="w-full bg-white">
-      <div className="grid grid-cols-4 gap-4 p-8 border-b border-solid border-gray-200">
-        <div className="col-span-2">
-          <p className="font-semibold">Tên sản phẩm</p>
+      <form className="p-8 border-b border-solid border-gray-200" onSubmit={() => { }}>
+        <p className="text-lg font-semibold">Địa chỉ giao hàng</p>
+        <div className="pt-5">
+          <p className="font-medium mb-2">Họ tên</p>
+          <input type="text" value={name} onChange={event => setName(event.target.value)} className="h-12 w-full focus:outline-none border border-gray-200 px-4" />
         </div>
-        <p className="col-span-1 font-semibold">Giá tiền</p>
-        <p className="col-span-1 font-semibold">Số lượng</p>
-      </div>
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+
+        <div className="pt-5">
+          <p className="font-medium mb-2">Điện thoại</p>
+          <input type="text" value={name} onChange={event => setName(event.target.value)} className="h-12 w-full focus:outline-none border border-gray-200 px-4" />
+        </div>
+
+        <div className="pt-5">
+          <p className="font-medium mb-2">Thành phố</p>
+          <input type="text" value={name} onChange={event => setName(event.target.value)} className="h-12 w-full focus:outline-none border border-gray-200 px-4" />
+        </div>
+
+        <div className="pt-5">
+          <p className="font-medium mb-2">Địa chỉ</p>
+          <input type="text" value={name} onChange={event => setName(event.target.value)} className="h-12 w-full focus:outline-none border border-gray-200 px-4" />
+        </div>
+
+        <p className="text-lg font-semibold pt-10">Thông tin bổ sung</p>
+        <div className="pt-5">
+          <p className="font-medium mb-2">Ghi chú</p>
+          <textarea type="text" rows={6} value={name} onChange={event => setName(event.target.value)} className="w-full focus:outline-none border border-gray-200 p-4" />
+        </div>
       </form>
     </div>
   )
 }
 
-// name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" họ tên, điện thoại, địa chỉ, thành phố, quận huyện, phường xá, loại địa chỉ nhà / công ty, ghi chú
+// name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ" họ tên, điện thoại, địa chỉ, thành phố, quận huyện, loại địa chỉ nhà / công ty, ghi chú
+
+
+{/* <div className="col-span-2">
+          <p className="font-semibold">Chi tiết thanh toán</p>
+        </div>
+        <p className="col-span-1 font-semibold">Giá tiền</p>
+        <p className="col-span-1 font-semibold">Số lượng</p> */}

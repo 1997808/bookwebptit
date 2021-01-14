@@ -9,11 +9,11 @@ export default function Payment() {
     <div>
       <Header />
       <div className="bg-red-50">
-        <div className="container mx-auto grid grid-cols-4 gap-8 pb-8">
-          <p className="col-span-4 text-2xl font-medium text-center pt-16">
-            Giỏ hàng: 3 Sản phẩm
+        <div className="container mx-auto grid grid-cols-3 gap-8 pb-8">
+          <p className="col-span-3 text-2xl font-medium text-center pt-16">
+            Thanh toán
           </p>
-          <div className="col-span-3">
+          <div className="col-span-2">
             <PaymentForm />
           </div>
           <div className="col-span-1">
