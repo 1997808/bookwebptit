@@ -1,28 +1,27 @@
 {
   "files": {
     "main.css": "/bookwebptit/static/css/main.88f9623f.chunk.css",
-    "main.js": "/bookwebptit/static/js/main.aeffbd53.chunk.js",
-    "main.js.map": "/bookwebptit/static/js/main.aeffbd53.chunk.js.map",
-    "runtime-main.js": "/bookwebptit/static/js/runtime-main.458d631d.js",
-    "runtime-main.js.map": "/bookwebptit/static/js/runtime-main.458d631d.js.map",
-    "static/js/2.e363f455.chunk.js": "/bookwebptit/static/js/2.e363f455.chunk.js",
-    "static/js/2.e363f455.chunk.js.map": "/bookwebptit/static/js/2.e363f455.chunk.js.map",
-    "static/js/3.45373722.chunk.js": "/bookwebptit/static/js/3.45373722.chunk.js",
-    "static/js/3.45373722.chunk.js.map": "/bookwebptit/static/js/3.45373722.chunk.js.map",
+    "main.js": "/bookwebptit/static/js/main.af616da2.chunk.js",
+    "main.js.map": "/bookwebptit/static/js/main.af616da2.chunk.js.map",
+    "runtime-main.js": "/bookwebptit/static/js/runtime-main.1f446667.js",
+    "runtime-main.js.map": "/bookwebptit/static/js/runtime-main.1f446667.js.map",
+    "static/js/2.c5b4c6a1.chunk.js": "/bookwebptit/static/js/2.c5b4c6a1.chunk.js",
+    "static/js/2.c5b4c6a1.chunk.js.map": "/bookwebptit/static/js/2.c5b4c6a1.chunk.js.map",
+    "static/js/3.7c38fd29.chunk.js": "/bookwebptit/static/js/3.7c38fd29.chunk.js",
+    "static/js/3.7c38fd29.chunk.js.map": "/bookwebptit/static/js/3.7c38fd29.chunk.js.map",
     "index.html": "/bookwebptit/index.html",
     "static/css/main.88f9623f.chunk.css.map": "/bookwebptit/static/css/main.88f9623f.chunk.css.map",
-    "static/js/2.e363f455.chunk.js.LICENSE.txt": "/bookwebptit/static/js/2.e363f455.chunk.js.LICENSE.txt",
+    "static/js/2.c5b4c6a1.chunk.js.LICENSE.txt": "/bookwebptit/static/js/2.c5b4c6a1.chunk.js.LICENSE.txt",
     "static/media/main.css": "/bookwebptit/static/media/banner.eae67884.png",
     "static/media/bannerBook.3bb7c842.png": "/bookwebptit/static/media/bannerBook.3bb7c842.png",
-    "static/media/bookdemo.ef7c31bc.png": "/bookwebptit/static/media/bookdemo.ef7c31bc.png",
     "static/media/logo.508cd94a.svg": "/bookwebptit/static/media/logo.508cd94a.svg",
     "static/media/newBook.24449247.webp": "/bookwebptit/static/media/newBook.24449247.webp",
     "static/media/noresults.92e40ee7.webp": "/bookwebptit/static/media/noresults.92e40ee7.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.458d631d.js",
-    "static/js/2.e363f455.chunk.js",
+    "static/js/runtime-main.1f446667.js",
+    "static/js/2.c5b4c6a1.chunk.js",
     "static/css/main.88f9623f.chunk.css",
-    "static/js/main.aeffbd53.chunk.js"
+    "static/js/main.af616da2.chunk.js"
   ]
 }
