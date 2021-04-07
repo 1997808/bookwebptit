@@ -13,10 +13,12 @@ import Login from "./pages/login"
 import Signup from "./pages/signup"
 import Payment from "./pages/payment"
 import Receipt from "./pages/receipt"
+import ScrollToTop from "./util/scrollTop"
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route path="/login">
           <Login />
