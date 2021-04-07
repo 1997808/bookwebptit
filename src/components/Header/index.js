@@ -7,8 +7,6 @@ import user from '../../images/image2.png';
 import cart from '../../images/image3.png';
 import search from '../../images/image4.png';
 
-{/* <Link to="/topics">Topics</Link> */ }
-
 export default function Header() {
   return (
     <div className="container mx-auto w-full py-6 flex justify-between">

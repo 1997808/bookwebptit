@@ -1,6 +1,3 @@
-import {
-  Link,
-} from "react-router-dom";
 import Book from "../book"
 import { bookData } from "../../assets/book"
 

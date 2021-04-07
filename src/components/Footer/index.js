@@ -1,8 +1,6 @@
 import React from "react"
 import Logo from './logo.svg';
 
-{/* <Link to="/topics">Topics</Link> */ }
-
 export default function Footer() {
   return (
     <div className="container mx-auto w-full pt-20 pb-16">

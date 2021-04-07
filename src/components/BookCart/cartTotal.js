@@ -3,8 +3,6 @@ import {
   Link,
 } from "react-router-dom";
 
-{/* <Link to="/topics">Topics</Link> */ }
-
 export default function CartTotal() {
   return (
     <React.Fragment>
