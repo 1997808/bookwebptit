@@ -16,6 +16,7 @@ import Receipt from "./pages/receipt"
 import ScrollToTop from "./util/scrollTop"
 
 import Admin from "./pages/admin"
+import ClientLayout from "./pages/layout/client"
 
 export default function App() {
   return (
@@ -25,32 +26,38 @@ export default function App() {
         <Route path="/admin">
           <Admin />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/receipt">
-          <Receipt />
-        </Route>
-        <Route path="/payment">
-          <Payment />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="/book-detail/:id">
-          <BookDetail />
-        </Route>
-        <Route path="/categories">
-          <Categories />
-        </Route>
-        <Route exact path="/">
-          <Index />
-        </Route>
-        <Route path="*">
-          <Page404 />
+        <Route>
+          <ClientLayout >
+            <Switch>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/signup">
+                <Signup />
+              </Route>
+              <Route path="/receipt">
+                <Receipt />
+              </Route>
+              <Route path="/payment">
+                <Payment />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+              <Route path="/book-detail/:id">
+                <BookDetail />
+              </Route>
+              <Route path="/categories">
+                <Categories />
+              </Route>
+              <Route exact path="/">
+                <Index />
+              </Route>
+              <Route path="*">
+                <Page404 />
+              </Route>
+            </Switch>
+          </ClientLayout>
         </Route>
       </Switch>
     </Router>

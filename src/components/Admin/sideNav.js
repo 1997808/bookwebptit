@@ -1,33 +1,9 @@
-import {
-  Link,
-} from "react-router-dom";
-
-import vanhoc from '../../images/image7.png';
-import kynang from '../../images/image8.png';
-import khoahoc from '../../images/image10.png';
-
-const Category = ({ color, cat_icon, cat_name }) => {
-  return (
-    <Link to="/categories">
-      <div className={`${color} col-span-1 p-10`}>
-        <img src={cat_icon} alt="icon" />
-        <p className="text-lg pt-2 font-medium">{cat_name}</p>
-        <p className="text-sm">Chi tiết</p>
-      </div>
-    </Link>
-  )
-}
-
-const DashBtn = ({ name }) => {
-  return (
-    <Link to="/categories">
-      <div className="col-span-1 py-4">
-        <p className="font-medium">{name}</p>
-      </div>
-    </Link>
-  )
-}
-
+import web from '../../images/web.png';
+import user from '../../images/user.png';
+import receipt from '../../images/receipt.png';
+import sales from '../../images/sales.png';
+import Overview from "./overview"
+import DashBtn from "./dashBtn"
 
 export default function SideNav() {
   return (
@@ -35,21 +11,23 @@ export default function SideNav() {
       <div className="fixed w-64 h-screen z-10 py-4 px-6">
         <h1 className="text-lg font-bold py-4">Dashboard</h1>
         <hr class="my-4 md:min-w-full"></hr>
-        <DashBtn name="Tổng quan" />
-        <DashBtn name="Kho hàng" />
-        <DashBtn name="Tin nhắn" />
-        <DashBtn name="Đơn hàng" />
-        <DashBtn name="Khách hàng" />
-        <DashBtn name="Cài đặt" />
+        <DashBtn name="Tổng quan" link="admin" />
+        <DashBtn name="Kho hàng" link="admin/listings" />
+        <DashBtn name="Tin nhắn" link="admin/messages" />
+        <DashBtn name="Đơn hàng" link="admin/orders" />
+        <DashBtn name="Khách hàng" link="admin/customers" />
+        <hr class="my-4 md:min-w-full"></hr>
+        <DashBtn name="Cài đặt" link="admin/setting" />
+        <DashBtn name="Đăng xuất" link="" />
       </div>
       <div className="md:ml-64 bg-gray-50 min-h-screen">
         <div className="w-full z-10 bg-transparent md:flex-col md:flex-nowrap md:justify-start flex px-8">
           <h2 className="text-3xl font-medium py-12">Good afternoon, Zaini</h2>
           <div className="grid grid-cols-4 gap-8">
-            <Category color="bg-purple-100" cat_icon={vanhoc} cat_name="Văn học Việt Nam" />
-            <Category color="bg-yellow-100" cat_icon={kynang} cat_name="Kỹ năng sống" />
-            <Category color="bg-red-100" cat_icon={khoahoc} cat_name="Khoa học" />
-            <Category color="bg-purple-100" cat_icon={vanhoc} cat_name="Văn học Việt Nam" />
+            <Overview color="bg-purple-200" cat_icon={web} cat_name="Lượng người xem" />
+            <Overview color="bg-yellow-200" cat_icon={user} cat_name="Người dùng mới" />
+            <Overview color="bg-blue-200" cat_icon={receipt} cat_name="Đơn hàng" />
+            <Overview color="bg-pink-200" cat_icon={sales} cat_name="Doanh thu" />
           </div>
         </div>
       </div>
