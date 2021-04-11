@@ -19,7 +19,7 @@ export default function Banner() {
           </Link>
         </div>
         <div className="right-side flex items-center">
-          <div className="h-60 p-2 flex items-center">
+          <div className="h-80 p-2 flex items-center">
             <img src={book} alt="logo" className="h-full" />
           </div>
         </div>

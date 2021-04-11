@@ -15,11 +15,16 @@ import Payment from "./pages/payment"
 import Receipt from "./pages/receipt"
 import ScrollToTop from "./util/scrollTop"
 
+import Admin from "./pages/admin"
+
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
       <Switch>
+        <Route path="/admin">
+          <Admin />
+        </Route>
         <Route path="/login">
           <Login />
         </Route>
