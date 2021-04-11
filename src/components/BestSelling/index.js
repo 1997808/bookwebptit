@@ -13,8 +13,8 @@ export default function BestSelling() {
           <p>Xem thêm</p>
         </Link>
       </div>
-      <div className="grid grid-cols-4 pt-8">
-        {bookData && bookData.slice(0, 8).map((items) => {
+      <div className="grid grid-cols-5 pt-8">
+        {bookData && bookData.slice(0, 10).map((items) => {
           return (
             <Book key={items.id} id={items.id} photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
           )

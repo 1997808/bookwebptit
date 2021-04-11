@@ -15,9 +15,9 @@ export default function Index() {
       <Header />
       <Banner />
       <FeatureCat />
+      <NewRelease />
       <BestSelling />
       <Recommend />
-      <NewRelease />
       <Footer />
     </div>
   )

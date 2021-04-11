@@ -1,7 +1,7 @@
 import {
   Link,
 } from "react-router-dom";
-import BookSmall from "../bookSmall"
+import Book from "../book"
 import newBookBanner from '../../images/newBook.webp';
 import { bookData } from "../../assets/book"
 
@@ -19,7 +19,7 @@ export default function NewRelease() {
         <div className="w-3/5 grid grid-cols-3">
           {bookData && bookData.slice(10, 16).map(items => {
             return (
-              <BookSmall key={items.id} id={items.id} photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
+              <Book key={items.id} id={items.id} photo={items.image} name={items.name} author={items.author} price={items.price} sale={items.sale} />
             )
           })}
         </div>
