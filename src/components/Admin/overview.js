@@ -2,7 +2,7 @@ import web from '../../images/web.png';
 import user from '../../images/user.png';
 import receipt from '../../images/receipt.png';
 import sales from '../../images/sales.png';
-import DataOverview from "./dataOverview"
+import DataOverview from "./template/dataOverview"
 
 export default function Overview() {
   return (

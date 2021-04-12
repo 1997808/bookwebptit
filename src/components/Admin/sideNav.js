@@ -1,4 +1,4 @@
-import DashBtn from "./dashBtn"
+import DashBtn from "./template/dashBtn"
 
 export default function SideNav() {
   return (
