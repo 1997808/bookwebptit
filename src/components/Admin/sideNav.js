@@ -8,10 +8,10 @@ export default function SideNav() {
         <hr class="my-4 md:min-w-full"></hr>
         <DashBtn name="Tổng quan" link="admin" />
         <DashBtn name="Kho hàng" link="admin/listings" />
-        <DashBtn name="Tin nhắn" link="admin/messages" />
         <DashBtn name="Đơn hàng" link="admin/orders" />
         <DashBtn name="Khách hàng" link="admin/customers" />
         <hr class="my-4 md:min-w-full"></hr>
+        <DashBtn name="CRUD" link="admin/crud" />
         <DashBtn name="Cài đặt" link="admin/setting" />
         <DashBtn name="Đăng xuất" link="" />
       </div>

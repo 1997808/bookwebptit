@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "./home"
 import Listings from "./listings"
-import Messages from "./messages"
+import CRUD from "./crud"
 import Orders from "./orders"
 import Customers from "./customers"
 import Setting from "./setting"
@@ -23,8 +23,8 @@ export default function Admin() {
           <Route path="/admin/listings">
             <Listings />
           </Route>
-          <Route path="/admin/messages">
-            <Messages />
+          <Route path="/admin/crud">
+            <CRUD />
           </Route>
           <Route path="/admin/orders">
             <Orders />
