@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../actions/index";
 
 export default function Book({ id, photo, name, author, price, sale }) {
   const [isShown, setIsShown] = useState(false);
+  const dispatch = useDispatch();
+
   return (
     <div
       className="p-8 border border-solid border-gray-200 relative"
@@ -38,6 +42,7 @@ export default function Book({ id, photo, name, author, price, sale }) {
           className={`transition duration-300 ease-in-out transform cursor-pointer ${
             isShown ? "opacity-100" : "opacity-20"
           }`}
+          onClick={() => dispatch(addItem(id))}
         >
           Thêm vào giỏ
         </p>

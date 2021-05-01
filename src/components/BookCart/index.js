@@ -1,6 +1,6 @@
-import CartItem from "./CartItem"
+import CartItem from "./CartItem";
 
-export default function BookCart() {
+export default function BookCart({ data }) {
   return (
     <div className="w-full bg-white">
       <div className="grid grid-cols-7 gap-4 p-8 border-b border-solid border-gray-200">
@@ -12,11 +12,10 @@ export default function BookCart() {
         <p className="col-span-1 font-semibold">Tổng cộng</p>
         <p className="col-span-1 font-semibold"></p>
       </div>
-      <CartItem />
-      <CartItem />
-      <CartItem />
+      {data &&
+        data.map((items) => {
+          <CartItem />;
+        })}
     </div>
-  )
+  );
 }
-
-// name="Lối sống tối giản của người Nhật" author="Sasaki Fumio" price="56.000 VNĐ"
