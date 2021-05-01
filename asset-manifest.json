@@ -1,27 +1,30 @@
 {
   "files": {
     "main.css": "/bookwebptit/static/css/main.88f9623f.chunk.css",
-    "main.js": "/bookwebptit/static/js/main.da0db738.chunk.js",
-    "main.js.map": "/bookwebptit/static/js/main.da0db738.chunk.js.map",
-    "runtime-main.js": "/bookwebptit/static/js/runtime-main.1f446667.js",
-    "runtime-main.js.map": "/bookwebptit/static/js/runtime-main.1f446667.js.map",
-    "static/js/2.44ac8d95.chunk.js": "/bookwebptit/static/js/2.44ac8d95.chunk.js",
-    "static/js/2.44ac8d95.chunk.js.map": "/bookwebptit/static/js/2.44ac8d95.chunk.js.map",
-    "static/js/3.7c38fd29.chunk.js": "/bookwebptit/static/js/3.7c38fd29.chunk.js",
-    "static/js/3.7c38fd29.chunk.js.map": "/bookwebptit/static/js/3.7c38fd29.chunk.js.map",
+    "main.js": "/bookwebptit/static/js/main.bf14f909.chunk.js",
+    "main.js.map": "/bookwebptit/static/js/main.bf14f909.chunk.js.map",
+    "runtime-main.js": "/bookwebptit/static/js/runtime-main.8b8a7ec0.js",
+    "runtime-main.js.map": "/bookwebptit/static/js/runtime-main.8b8a7ec0.js.map",
+    "static/js/2.53c932d7.chunk.js": "/bookwebptit/static/js/2.53c932d7.chunk.js",
+    "static/js/2.53c932d7.chunk.js.map": "/bookwebptit/static/js/2.53c932d7.chunk.js.map",
+    "static/js/3.2dcfc5ea.chunk.js": "/bookwebptit/static/js/3.2dcfc5ea.chunk.js",
+    "static/js/3.2dcfc5ea.chunk.js.map": "/bookwebptit/static/js/3.2dcfc5ea.chunk.js.map",
     "index.html": "/bookwebptit/index.html",
     "static/css/main.88f9623f.chunk.css.map": "/bookwebptit/static/css/main.88f9623f.chunk.css.map",
-    "static/js/2.44ac8d95.chunk.js.LICENSE.txt": "/bookwebptit/static/js/2.44ac8d95.chunk.js.LICENSE.txt",
+    "static/js/2.53c932d7.chunk.js.LICENSE.txt": "/bookwebptit/static/js/2.53c932d7.chunk.js.LICENSE.txt",
     "static/media/main.css": "/bookwebptit/static/media/banner.eae67884.png",
     "static/media/bannerBook.3bb7c842.png": "/bookwebptit/static/media/bannerBook.3bb7c842.png",
-    "static/media/logo.508cd94a.svg": "/bookwebptit/static/media/logo.508cd94a.svg",
+    "static/media/bookdemo.ef7c31bc.png": "/bookwebptit/static/media/bookdemo.ef7c31bc.png",
+    "static/media/logo.0834669d.svg": "/bookwebptit/static/media/logo.0834669d.svg",
     "static/media/newBook.24449247.webp": "/bookwebptit/static/media/newBook.24449247.webp",
-    "static/media/noresults.92e40ee7.webp": "/bookwebptit/static/media/noresults.92e40ee7.webp"
+    "static/media/receipt.87d86e3b.png": "/bookwebptit/static/media/receipt.87d86e3b.png",
+    "static/media/sales.e391fdbc.png": "/bookwebptit/static/media/sales.e391fdbc.png",
+    "static/media/web.5b3b3836.png": "/bookwebptit/static/media/web.5b3b3836.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1f446667.js",
-    "static/js/2.44ac8d95.chunk.js",
+    "static/js/runtime-main.8b8a7ec0.js",
+    "static/js/2.53c932d7.chunk.js",
     "static/css/main.88f9623f.chunk.css",
-    "static/js/main.da0db738.chunk.js"
+    "static/js/main.bf14f909.chunk.js"
   ]
 }
