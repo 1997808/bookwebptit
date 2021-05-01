@@ -1,14 +1,15 @@
-import React from "react"
+import React from "react";
+import Td from "./Td";
 
 export default function User({ id, username, password, name, phone, address }) {
   return (
     <tr key={id} className="border-b hover:bg-white">
-      <td className="text-sm p-4 truncate">{id}</td>
-      <td className="text-sm p-4 truncate">{username}</td>
-      <td className="text-sm p-4 truncate">{password}</td>
-      <td className="text-sm p-4 truncate">{name}</td>
-      <td className="text-sm p-4 truncate">{phone}</td>
-      <td className="text-sm p-4 truncate">{address}</td>
+      <Td>{id}</Td>
+      <Td>{username}</Td>
+      <Td>{password}</Td>
+      <Td>{name}</Td>
+      <Td>{phone}</Td>
+      <Td>{address}</Td>
     </tr>
-  )
+  );
 }
