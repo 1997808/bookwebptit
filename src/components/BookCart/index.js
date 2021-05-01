@@ -14,7 +14,17 @@ export default function BookCart({ data }) {
       </div>
       {data &&
         data.map((items) => {
-          <CartItem />;
+          return (
+            <CartItem
+              key={items.id}
+              id={items.id}
+              photo={items.image}
+              name={items.name}
+              author={items.author}
+              price={items.price}
+              qty={items.qty}
+            />
+          );
         })}
     </div>
   );
