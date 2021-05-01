@@ -1,6 +1,6 @@
-import React from "react"
-import Order from "./template/order"
-import { orderData } from "../../assets/order"
+import React from "react";
+import Order from "./template/order";
+import { orderData } from "../../assets/order";
 
 export default function OrderTable() {
   return (
@@ -15,10 +15,18 @@ export default function OrderTable() {
         </tr>
       </thead>
       <tbody>
-        {orderData && orderData.map(items =>
-          <Order id={items.id} name={items.name} phone={items.phone} total={items.total} date={items.date} />
-        )}
+        {orderData &&
+          orderData.map((items) => (
+            <Order
+              key={items.id}
+              id={items.id}
+              name={items.name}
+              phone={items.phone}
+              total={items.total}
+              date={items.date}
+            />
+          ))}
       </tbody>
     </table>
-  )
+  );
 }

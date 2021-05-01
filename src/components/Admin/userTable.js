@@ -1,6 +1,6 @@
-import React from "react"
-import User from "./template/user"
-import { userData } from "../../assets/user"
+import React from "react";
+import User from "./template/user";
+import { userData } from "../../assets/user";
 
 export default function UserTable() {
   return (
@@ -16,10 +16,19 @@ export default function UserTable() {
         </tr>
       </thead>
       <tbody>
-        {userData && userData.map(items =>
-          <User id={items.id} username={items.username} password={items.password} name={items.name} phone={items.phone} address={items.address} />
-        )}
+        {userData &&
+          userData.map((items) => (
+            <User
+              key={items.id}
+              id={items.id}
+              username={items.username}
+              password={items.password}
+              name={items.name}
+              phone={items.phone}
+              address={items.address}
+            />
+          ))}
       </tbody>
     </table>
-  )
+  );
 }

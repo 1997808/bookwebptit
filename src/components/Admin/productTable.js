@@ -1,6 +1,6 @@
-import React from "react"
-import Product from "./template/product"
-import { bookData } from "../../assets/book"
+import React from "react";
+import Product from "./template/product";
+import { bookData } from "../../assets/book";
 
 export default function ProductTable() {
   return (
@@ -15,10 +15,18 @@ export default function ProductTable() {
         </tr>
       </thead>
       <tbody>
-        {bookData && bookData.map(items =>
-          <Product id={items.id} name={items.name} price={items.price} sale={items.sale} stock={200} />
-        )}
+        {bookData &&
+          bookData.map((items) => (
+            <Product
+              key={items.id}
+              id={items.id}
+              name={items.name}
+              price={items.price}
+              sale={items.sale}
+              stock={200}
+            />
+          ))}
       </tbody>
     </table>
-  )
+  );
 }
