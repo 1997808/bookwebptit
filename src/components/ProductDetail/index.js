@@ -1,7 +1,8 @@
-import { bookData } from "../../assets/book";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../actions/index";
 
-export default function ProductDetail({ id }) {
-  const data = bookData.filter((items) => items.id === id)[0];
+export default function ProductDetail({ data }) {
+  const dispatch = useDispatch();
 
   return (
     <div className="container mx-auto w-full mt-10 flex flex-grow border-t border-b border-solid border-gray-200">
@@ -19,7 +20,10 @@ export default function ProductDetail({ id }) {
         </p>
         <p className="text-2xl font-medium pt-6">{data.price}</p>
         <p className="pt-6 truncate-4-lines">{data.description}</p>
-        <div className="h-12 w-48 flex justify-center items-center bg-black mt-6 cursor-pointer">
+        <div
+          className="h-12 w-48 flex justify-center items-center bg-black mt-6 cursor-pointer"
+          onClick={() => dispatch(addItem(data.id))}
+        >
           <p className="text-white">Thêm vào giỏ hàng</p>
         </div>
       </div>

@@ -1,12 +1,10 @@
-import { bookData } from "../../assets/book"
-
-export default function ProductDescription({ id }) {
-  const data = bookData.filter(items => items.id === id)[0]
-
+export default function ProductDescription({ data }) {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center mt-6">
-        <p className="font-semibold border-b border-solid border-black pb-6 mx-20">Mô tả</p>
+        <p className="font-semibold border-b border-solid border-black pb-6 mx-20">
+          Mô tả
+        </p>
         <p className="font-normal pb-6 mx-20">Chi tiết sản phẩm</p>
       </div>
 
@@ -16,7 +14,9 @@ export default function ProductDescription({ id }) {
 
       <div className="flex justify-center items-center mt-6">
         <p className="font-normal pb-6 mx-20">Mô tả</p>
-        <p className="font-semibold border-b border-solid border-black pb-6 mx-20">Chi tiết sản phẩm</p>
+        <p className="font-semibold border-b border-solid border-black pb-6 mx-20">
+          Chi tiết sản phẩm
+        </p>
       </div>
 
       <div className="w-full py-8 flex justify-center border-t border-b border-solid border-gray-200">
@@ -32,7 +32,9 @@ export default function ProductDescription({ id }) {
           <div className="col-span-1">
             <p className="text-sm">{data.pages} trang</p>
             <p className="text-sm pt-5">{data.size} cm</p>
-            <p className="text-sm pt-5">{data.translator ? data.translator : "N/A"}</p>
+            <p className="text-sm pt-5">
+              {data.translator ? data.translator : "N/A"}
+            </p>
             <p className="text-sm pt-5">{data.publisher}</p>
             <p className="text-sm pt-5">{data.id}</p>
             <p className="text-sm pt-5">{data.category}</p>
@@ -40,5 +42,5 @@ export default function ProductDescription({ id }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import React from "react"
-import Logo from './logo.svg';
+import React from "react";
+import Logo from "./logo.svg";
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
           <p className="text-sm pt-5">Báo lỗi bảo mật: security@bookworm.vn</p>
         </div>
 
-        <div className="col-span-9 grid grid-cols-4 gap-4">
+        <div className="col-span-9 grid grid-cols-3 xl:grid-cols-4 gap-4">
           <div className="col-span-1">
             <p className="text-lg font-medium pb-0.5">Về chúng tôi</p>
             <p className="text-sm pt-5">Giới thiệu</p>
@@ -37,7 +37,7 @@ export default function Footer() {
             <p className="text-sm pt-5">Chính sách thanh toán</p>
           </div>
 
-          <div className="col-span-1">
+          <div className="col-span-1 hidden xl:block">
             <p className="text-lg font-medium pb-0.5">Danh mục</p>
             <p className="text-sm pt-5">Văn học</p>
             <p className="text-sm pt-5">Kỹ năng sống</p>
@@ -47,6 +47,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div >
-  )
+    </div>
+  );
 }
