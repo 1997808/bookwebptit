@@ -1,22 +1,29 @@
-import React from "react"
-import {
-  Link,
-} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { mycss } from "../../util/css";
 
 export default function OrderTotal() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+  const { INPUT_FIELD } = mycss;
   return (
     <React.Fragment>
       <div className="w-full bg-white">
         <div className="border border-solid p-8">
           <p className="font-medium">Sản phẩm</p>
           <div className="text-sm pt-5 flex justify-between">
-            <p className="w-6/12 truncate-3-lines">Thắc mắc nhỏ, ngỏ cùng em – Cảm xúc</p>
+            <p className="w-6/12 truncate-3-lines">
+              Thắc mắc nhỏ, ngỏ cùng em – Cảm xúc
+            </p>
             <p className="w-2/12 text-center">x 1</p>
             <p className="w-4/12 text-right">185.500 VNĐ</p>
           </div>
 
           <div className="text-sm pt-5 flex justify-between">
-            <p className="w-6/12 truncate-3-lines">Lối sống tối giản của người Nhật</p>
+            <p className="w-6/12 truncate-3-lines">
+              Lối sống tối giản của người Nhật
+            </p>
             <p className="w-2/12 text-center">x 1</p>
             <p className="w-4/12 text-right">56.000 VNĐ</p>
           </div>
@@ -33,16 +40,48 @@ export default function OrderTotal() {
             <p>Miễn phí</p>
           </div>
         </div>
-        <div className="border border-solid p-8">
+
+        <div
+          className="border border-solid p-8 flex flex-col"
+          onChange={(e) => console.log(e.target.value)}
+        >
           <p className="font-medium">Vận chuyển</p>
-          <p className="text-sm pt-5">Giao hàng nhanh</p>
-          <p className="text-sm pt-5">Giao hàng tiết kiệm</p>
-          <p className="text-sm pt-5">Viettel Post</p>
-          <p className="text-sm pt-5">Chọn địa chỉ</p>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="shipping"
+              className="mr-4"
+              value="Giao hàng nhanh"
+            />
+            Giao hàng nhanh
+          </label>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="shipping"
+              className="mr-4"
+              value="Giao hàng tiết kiệm"
+            />
+            Giao hàng tiết kiệm
+          </label>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="shipping"
+              className="mr-4"
+              value="Viettel Post"
+            />
+            Viettel Post
+          </label>
         </div>
+
         <div className="border border-solid p-8">
           <p className="font-medium">Mã giảm giá</p>
-          <p className="text-sm pt-5">Input</p>
+          <input
+            type="text"
+            {...register("saleCode", { required: true })}
+            className={`${INPUT_FIELD} mt-5`}
+          />
           <p className="text-sm pt-5">Check mã</p>
         </div>
         <div className="border border-solid p-8">
@@ -50,20 +89,59 @@ export default function OrderTotal() {
           <p className="text-lg pt-5">185.500 VNĐ</p>
         </div>
 
-        <div className="border border-solid p-8">
+        <div
+          className="border border-solid p-8 flex flex-col"
+          onChange={(e) => console.log(e.target.value)}
+        >
           <p className="font-medium">Hình thức thanh toán</p>
-          <p className="text-sm pt-5">Chuyển khoản ngân hàng</p>
-          <p className="text-sm pt-5">Thẻ ATM đăng kí internet banking</p>
-          <p className="text-sm pt-5">Thanh toán bằng thẻ quốc tế</p>
-          <p className="text-sm pt-5">Thanh toán khi nhận hàng</p>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="paymentMethod"
+              className="mr-4"
+              value="Chuyển khoản ngân hàng"
+            />
+            Chuyển khoản ngân hàng
+          </label>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="paymentMethod"
+              className="mr-4"
+              value="Thẻ ATM đăng kí internet banking"
+            />
+            Thẻ ATM đăng kí internet banking
+          </label>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="paymentMethod"
+              className="mr-4"
+              value="Thanh toán bằng thẻ quốc tế"
+            />
+            Thanh toán bằng thẻ quốc tế
+          </label>
+          <label className="text-sm pt-5 flex items-center">
+            <input
+              type="radio"
+              name="paymentMethod"
+              className="mr-4"
+              value="Thanh toán khi nhận hàng"
+            />
+            Thanh toán khi nhận hàng
+          </label>
         </div>
-      </div >
+      </div>
 
       <Link to="/receipt">
-        <button type="submit" value="Submit" className="h-12 w-full flex justify-center items-center bg-black mt-6">
+        <button
+          type="submit"
+          value="Submit"
+          className="h-12 w-full flex justify-center items-center bg-black mt-6"
+        >
           <p className="text-white">Đặt hàng</p>
         </button>
       </Link>
     </React.Fragment>
-  )
+  );
 }

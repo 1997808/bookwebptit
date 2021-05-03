@@ -4,6 +4,14 @@ export const addItem = (id) => {
     id,
   };
 };
+
+export const reduceItem = (id) => {
+  return {
+    type: "REDUCE_ITEM",
+    id,
+  };
+};
+
 export const removeItem = (id) => {
   return {
     type: "REMOVE_ITEM",
