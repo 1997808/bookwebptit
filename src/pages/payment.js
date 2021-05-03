@@ -1,6 +1,7 @@
 import React from "react";
+// import AddressForm from "../components/PaymentForm/addressForm";
+// import OrderTotal from "../components/PaymentForm/orderTotal";
 import PaymentForm from "../components/PaymentForm";
-import OrderTotal from "../components/PaymentForm/orderTotal";
 
 export default function Payment() {
   return (
@@ -9,12 +10,13 @@ export default function Payment() {
         <p className="col-span-2 xl:col-span-3 text-2xl font-medium text-center pt-16">
           Thanh toán
         </p>
-        <div className="col-span-1 xl:col-span-2">
-          <PaymentForm />
+        {/* <div className="col-span-1 xl:col-span-2">
+          <AddressForm />
         </div>
         <div className="col-span-1">
           <OrderTotal />
-        </div>
+        </div> */}
+        <PaymentForm />
       </div>
     </div>
   );
