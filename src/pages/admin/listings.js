@@ -1,6 +1,6 @@
-import React from "react"
-import ProductTable from "../../components/Admin/productTable"
-import SearchBar from "../../components/Admin/searchBar"
+import React from "react";
+import ProductTable from "../../components/Admin/productTable";
+import SearchBar from "../../components/Admin/searchBar";
 
 export default function Listings() {
   return (
@@ -9,5 +9,5 @@ export default function Listings() {
       <SearchBar />
       <ProductTable />
     </>
-  )
+  );
 }

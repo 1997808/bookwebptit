@@ -3,11 +3,21 @@ import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { Link } from "react-router-dom";
 
-export default function PaymentForm() {
+const BookItem = ({ name, qty, price }) => {
+  return (
+    <div className="text-sm pt-5 flex justify-between">
+      <p className="w-6/12 truncate-3-lines">{name}</p>
+      <p className="w-2/12 text-center">x {qty}</p>
+      <p className="w-4/12 text-right">{price}</p>
+    </div>
+  );
+};
+
+export default function PaymentForm({ data }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD } = mycss;
-  let name, phone, city, address, note;
+  console.log(data);
 
   return (
     <>
@@ -20,7 +30,6 @@ export default function PaymentForm() {
               <input
                 type="text"
                 placeholder={"name"}
-                defaultValue={name ? name : ""}
                 {...register("name", { required: true })}
                 className={`${INPUT_FIELD}`}
               />
@@ -31,7 +40,6 @@ export default function PaymentForm() {
               <input
                 type="number"
                 placeholder={"phone"}
-                defaultValue={phone ? phone : ""}
                 {...register("phone", { required: true })}
                 className={`${INPUT_FIELD}`}
               />
@@ -42,7 +50,6 @@ export default function PaymentForm() {
               <input
                 type="text"
                 placeholder={"city"}
-                defaultValue={city ? city : ""}
                 {...register("city", { required: true })}
                 className={`${INPUT_FIELD}`}
               />
@@ -53,7 +60,6 @@ export default function PaymentForm() {
               <input
                 type="text"
                 placeholder={"address"}
-                defaultValue={address ? address : ""}
                 {...register("address", { required: true })}
                 className={`${INPUT_FIELD}`}
               />
@@ -66,7 +72,6 @@ export default function PaymentForm() {
                 type="text"
                 rows={6}
                 placeholder={"note"}
-                defaultValue={note ? note : ""}
                 {...register("note", { required: true })}
                 className="w-full focus:outline-none border border-gray-200 p-4"
               />
@@ -80,21 +85,15 @@ export default function PaymentForm() {
           <div className="w-full bg-white">
             <div className="border border-solid p-8">
               <p className="font-medium">Sản phẩm</p>
-              <div className="text-sm pt-5 flex justify-between">
-                <p className="w-6/12 truncate-3-lines">
-                  Thắc mắc nhỏ, ngỏ cùng em – Cảm xúc
-                </p>
-                <p className="w-2/12 text-center">x 1</p>
-                <p className="w-4/12 text-right">185.500 VNĐ</p>
-              </div>
-
-              <div className="text-sm pt-5 flex justify-between">
-                <p className="w-6/12 truncate-3-lines">
-                  Lối sống tối giản của người Nhật
-                </p>
-                <p className="w-2/12 text-center">x 1</p>
-                <p className="w-4/12 text-right">56.000 VNĐ</p>
-              </div>
+              {data.map((items) => {
+                return (
+                  <BookItem
+                    name={items.name}
+                    qty={items.qty}
+                    price={items.price}
+                  />
+                );
+              })}
             </div>
             <div className="border border-solid p-8">
               <p className="font-medium">Đơn hàng</p>
