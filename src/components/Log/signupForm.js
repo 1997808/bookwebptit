@@ -1,14 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
+import Axios from "axios";
 
 export default function Signup() {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  let history = useHistory();
+
+  const onSubmit = async (data) => {
     if (data.password === data.passwordAgain) {
-      console.log(data);
-    } else alert("username or password error");
+      const signupHandler = await Axios.post("http://localhost:3001/signup", {
+        username: data.username,
+        password: data.password,
+      }).then((response) => {
+        if (response.data.message) {
+          if (response.data.message.affectedRows === 1) {
+            alert("Success");
+            setTimeout(() => history.push("/"), 1000);
+          } else alert(response.data.message);
+        }
+      });
+
+      return signupHandler;
+    } else alert("Password error");
   };
   const { INPUT_FIELD, BUTTON_BLACK, BUTTON_WHITE } = mycss;
 

@@ -1,11 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
+import Axios from "axios";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  let history = useHistory();
+
+  const onSubmit = async (data) => {
+    const loginHandler = await Axios.post("http://localhost:3001/login", {
+      username: data.username,
+      password: data.password,
+    }).then((response) => {
+      if (response.data.message) {
+        alert(response.data.message);
+      } else {
+        if (response.data === "user") {
+          setTimeout(() => history.push("/"), 1000);
+        } else if (response.data === "admin") {
+          setTimeout(() => history.push("/admin"), 1000);
+        }
+      }
+    });
+
+    return loginHandler;
+  };
   const { INPUT_FIELD, BUTTON_BLACK, BUTTON_WHITE } = mycss;
 
   return (
