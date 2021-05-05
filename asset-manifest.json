@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/bookwebptit/static/css/main.88f9623f.chunk.css",
-    "main.js": "/bookwebptit/static/js/main.4dd7527f.chunk.js",
-    "main.js.map": "/bookwebptit/static/js/main.4dd7527f.chunk.js.map",
-    "runtime-main.js": "/bookwebptit/static/js/runtime-main.eb40f5e1.js",
-    "runtime-main.js.map": "/bookwebptit/static/js/runtime-main.eb40f5e1.js.map",
-    "static/js/2.560039f5.chunk.js": "/bookwebptit/static/js/2.560039f5.chunk.js",
-    "static/js/2.560039f5.chunk.js.map": "/bookwebptit/static/js/2.560039f5.chunk.js.map",
-    "static/js/3.ffc17d23.chunk.js": "/bookwebptit/static/js/3.ffc17d23.chunk.js",
-    "static/js/3.ffc17d23.chunk.js.map": "/bookwebptit/static/js/3.ffc17d23.chunk.js.map",
+    "main.js": "/bookwebptit/static/js/main.a013de79.chunk.js",
+    "main.js.map": "/bookwebptit/static/js/main.a013de79.chunk.js.map",
+    "runtime-main.js": "/bookwebptit/static/js/runtime-main.9bd398e1.js",
+    "runtime-main.js.map": "/bookwebptit/static/js/runtime-main.9bd398e1.js.map",
+    "static/js/2.45a1da21.chunk.js": "/bookwebptit/static/js/2.45a1da21.chunk.js",
+    "static/js/2.45a1da21.chunk.js.map": "/bookwebptit/static/js/2.45a1da21.chunk.js.map",
+    "static/js/3.82058a21.chunk.js": "/bookwebptit/static/js/3.82058a21.chunk.js",
+    "static/js/3.82058a21.chunk.js.map": "/bookwebptit/static/js/3.82058a21.chunk.js.map",
     "index.html": "/bookwebptit/index.html",
     "static/css/main.88f9623f.chunk.css.map": "/bookwebptit/static/css/main.88f9623f.chunk.css.map",
-    "static/js/2.560039f5.chunk.js.LICENSE.txt": "/bookwebptit/static/js/2.560039f5.chunk.js.LICENSE.txt",
+    "static/js/2.45a1da21.chunk.js.LICENSE.txt": "/bookwebptit/static/js/2.45a1da21.chunk.js.LICENSE.txt",
     "static/media/main.css": "/bookwebptit/static/media/banner.eae67884.png",
     "static/media/bannerBook.3bb7c842.png": "/bookwebptit/static/media/bannerBook.3bb7c842.png",
     "static/media/logo.0834669d.svg": "/bookwebptit/static/media/logo.0834669d.svg",
@@ -21,9 +21,9 @@
     "static/media/web.5b3b3836.png": "/bookwebptit/static/media/web.5b3b3836.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.eb40f5e1.js",
-    "static/js/2.560039f5.chunk.js",
+    "static/js/runtime-main.9bd398e1.js",
+    "static/js/2.45a1da21.chunk.js",
     "static/css/main.88f9623f.chunk.css",
-    "static/js/main.4dd7527f.chunk.js"
+    "static/js/main.a013de79.chunk.js"
   ]
 }
