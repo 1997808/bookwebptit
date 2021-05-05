@@ -1,24 +1,39 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Page404 from "./pages/404"
-import BookDetail from "./pages/bookDetail"
-import Cart from "./pages/cart"
-import Categories from "./pages/categories"
-import Index from "./pages/index"
-import Login from "./pages/login"
-import Signup from "./pages/signup"
-import Payment from "./pages/payment"
-import Receipt from "./pages/receipt"
-import ScrollToTop from "./util/scrollTop"
+import React, { useEffect } from "react";
+import { MyAxios } from "./util/api";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Page404 from "./pages/404";
+import BookDetail from "./pages/bookDetail";
+import Cart from "./pages/cart";
+import Categories from "./pages/categories";
+import Index from "./pages/index";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
+import Payment from "./pages/payment";
+import Receipt from "./pages/receipt";
+import ScrollToTop from "./util/scrollTop";
 
-import Admin from "./pages/admin"
-import ClientLayout from "./pages/layout/client"
+import Admin from "./pages/admin";
+import ClientLayout from "./pages/layout/client";
+
+import { adminAuth, userAuth, logout } from "./actions";
+import { useDispatch } from "react-redux";
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const checkLoggedIn = async () => {
+      await MyAxios.get("login").then((response) => {
+        console.log(response.data);
+        if (response.data.loggedIn === true) {
+          if (response.data.user[0].accountType === "admin") {
+            dispatch(adminAuth());
+          } else dispatch(userAuth());
+        } else dispatch(logout());
+      });
+    };
+    checkLoggedIn();
+  }, [dispatch]);
   return (
     <Router>
       <ScrollToTop />
@@ -27,7 +42,7 @@ export default function App() {
           <Admin />
         </Route>
         <Route>
-          <ClientLayout >
+          <ClientLayout>
             <Switch>
               <Route path="/login">
                 <Login />

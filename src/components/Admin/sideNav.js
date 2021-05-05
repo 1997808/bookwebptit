@@ -1,6 +1,13 @@
 import DashBtn from "./template/dashBtn";
+import { useDispatch } from "react-redux";
+import { logout } from "../../actions";
 
 export default function SideNav() {
+  const dispatch = useDispatch();
+  const LogoutBtn = () => {
+    dispatch(logout());
+  };
+
   return (
     <>
       <div className="fixed w-64 h-screen z-10 py-4 px-6">
@@ -13,7 +20,9 @@ export default function SideNav() {
         <hr className="my-4 md:min-w-full"></hr>
         <DashBtn name="CRUD" link="admin/crud" />
         <DashBtn name="Cài đặt" link="admin/setting" />
-        <DashBtn name="Đăng xuất" link="" />
+        <div onClick={() => LogoutBtn()}>
+          <DashBtn name="Đăng xuất" link="" />
+        </div>
       </div>
     </>
   );

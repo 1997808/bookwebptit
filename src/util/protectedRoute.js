@@ -11,10 +11,8 @@ export default function ProtectedRoute({
       {...rest}
       render={(props) => {
         if (isAuth.admin) {
-          console.log("is admin");
           return <Component />;
         } else {
-          console.log("not admin");
           return (
             <Redirect to={{ pathname: "/", state: { from: props.location } }} />
           );

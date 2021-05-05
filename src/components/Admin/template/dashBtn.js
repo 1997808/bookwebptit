@@ -1,6 +1,4 @@
-import {
-  Link,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function DashBtn({ name, link }) {
   return (
@@ -9,5 +7,5 @@ export default function DashBtn({ name, link }) {
         <p className="">{name}</p>
       </div>
     </Link>
-  )
+  );
 }
