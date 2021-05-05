@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
-import Axios from "axios";
+import { MyAxios } from "../../util/api";
 import { adminAuth, userAuth } from "../../actions";
 import { useDispatch } from "react-redux";
 
@@ -12,7 +12,7 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
-    const loginHandler = await Axios.post("http://localhost:3001/login", {
+    const loginHandler = await MyAxios.post("/login", {
       username: data.username,
       password: data.password,
     }).then((response) => {

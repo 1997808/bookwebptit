@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
-import Axios from "axios";
+import { MyAxios } from "../../util/api";
 
 export default function Signup() {
   const { register, handleSubmit } = useForm();
@@ -10,7 +10,7 @@ export default function Signup() {
 
   const onSubmit = async (data) => {
     if (data.password === data.passwordAgain) {
-      const signupHandler = await Axios.post("http://localhost:3001/signup", {
+      const signupHandler = await MyAxios.post("/signup", {
         username: data.username,
         password: data.password,
       }).then((response) => {
