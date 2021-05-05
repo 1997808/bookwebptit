@@ -3,10 +3,13 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import Axios from "axios";
+import { adminAuth, userAuth } from "../../actions";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
   let history = useHistory();
+  const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
     const loginHandler = await Axios.post("http://localhost:3001/login", {
@@ -17,8 +20,10 @@ export default function Login() {
         alert(response.data.message);
       } else {
         if (response.data === "user") {
+          dispatch(userAuth());
           setTimeout(() => history.push("/"), 1000);
         } else if (response.data === "admin") {
+          dispatch(adminAuth());
           setTimeout(() => history.push("/admin"), 1000);
         }
       }

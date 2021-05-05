@@ -18,3 +18,21 @@ export const removeItem = (id) => {
     id,
   };
 };
+
+export const userAuth = () => {
+  return {
+    type: "USER_LOGIN",
+  };
+};
+
+export const adminAuth = () => {
+  return {
+    type: "ADMIN_LOGIN",
+  };
+};
+
+export const logout = () => {
+  return {
+    type: "LOG_OUT",
+  };
+};

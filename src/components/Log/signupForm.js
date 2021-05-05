@@ -17,7 +17,7 @@ export default function Signup() {
         if (response.data.message) {
           if (response.data.message.affectedRows === 1) {
             alert("Success");
-            setTimeout(() => history.push("/"), 1000);
+            setTimeout(() => history.push("/login"), 1000);
           } else alert(response.data.message);
         }
       });
