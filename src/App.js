@@ -6,6 +6,7 @@ import BookDetail from "./pages/bookDetail";
 import Cart from "./pages/cart";
 import Categories from "./pages/categories";
 import Index from "./pages/index";
+import UserData from "./pages/userData";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Payment from "./pages/payment";
@@ -14,26 +15,33 @@ import ScrollToTop from "./util/scrollTop";
 
 import Admin from "./pages/admin";
 import ClientLayout from "./pages/layout/client";
+import UserRoute from "./util/userRoute";
+// import NonRoute from "./util/nonRoute";
 
-import { adminAuth, userAuth, logout } from "./actions";
-import { useDispatch } from "react-redux";
+import { adminAuth, userAuth, logout, setUserID } from "./actions";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function App() {
   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.auth);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
       await MyAxios.get("login").then((response) => {
         console.log(response.data);
         if (response.data.loggedIn === true) {
-          if (response.data.user[0].accountType === "admin") {
+          if (response.data.role === "admin") {
             dispatch(adminAuth());
-          } else dispatch(userAuth());
+          } else {
+            dispatch(setUserID(response.data.accountID));
+            dispatch(userAuth());
+          }
         } else dispatch(logout());
       });
     };
     checkLoggedIn();
   }, [dispatch]);
+
   return (
     <Router>
       <ScrollToTop />
@@ -44,12 +52,18 @@ export default function App() {
         <Route>
           <ClientLayout>
             <Switch>
+              {/* <NonRoute /> */}
               <Route path="/login">
                 <Login />
               </Route>
               <Route path="/signup">
                 <Signup />
               </Route>
+              <UserRoute
+                path="/user/:userID"
+                isAuth={isAuth}
+                component={UserData}
+              />
               <Route path="/receipt">
                 <Receipt />
               </Route>

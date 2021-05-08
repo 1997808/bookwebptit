@@ -17,7 +17,6 @@ export default function PaymentForm({ data }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD } = mycss;
-  console.log(data);
 
   return (
     <>

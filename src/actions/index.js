@@ -25,6 +25,13 @@ export const userAuth = () => {
   };
 };
 
+export const setUserID = (userID) => {
+  return {
+    type: "SET_USER_ID",
+    userID,
+  };
+};
+
 export const adminAuth = () => {
   return {
     type: "ADMIN_LOGIN",

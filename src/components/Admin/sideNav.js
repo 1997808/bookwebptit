@@ -4,9 +4,6 @@ import { logout } from "../../actions";
 
 export default function SideNav() {
   const dispatch = useDispatch();
-  const LogoutBtn = () => {
-    dispatch(logout());
-  };
 
   return (
     <>
@@ -20,7 +17,7 @@ export default function SideNav() {
         <hr className="my-4 md:min-w-full"></hr>
         <DashBtn name="CRUD" link="admin/crud" />
         <DashBtn name="Cài đặt" link="admin/setting" />
-        <div onClick={() => LogoutBtn()}>
+        <div onClick={() => dispatch(logout())}>
           <DashBtn name="Đăng xuất" link="" />
         </div>
       </div>

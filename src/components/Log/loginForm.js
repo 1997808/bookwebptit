@@ -19,10 +19,10 @@ export default function Login() {
       if (response.data.message) {
         alert(response.data.message);
       } else {
-        if (response.data === "user") {
+        if (response.data.role === "user") {
           dispatch(userAuth());
           setTimeout(() => history.push("/"), 1000);
-        } else if (response.data === "admin") {
+        } else if (response.data.role === "admin") {
           dispatch(adminAuth());
           setTimeout(() => history.push("/admin"), 1000);
         }
