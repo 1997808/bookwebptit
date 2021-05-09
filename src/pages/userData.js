@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { MyAxios } from "../util/api";
 import { mycss } from "../util/css";
@@ -11,6 +11,7 @@ export default function UserData() {
   const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD, BUTTON_WHITE, BUTTON_BLACK } = mycss;
   const [change, setChange] = useState(true);
+  const [data, setData] = useState({});
   let { userID } = useParams();
   const dispatch = useDispatch();
 
@@ -21,9 +22,10 @@ export default function UserData() {
           "x-access-token": localStorage.getItem("token"),
         },
       }).then((response) => {
-        console.log(response.data);
         if (response.data.message) {
           alert(response.data.message);
+        } else {
+          setData(response.data);
         }
       });
     getUserData(userID);
@@ -112,7 +114,12 @@ export default function UserData() {
                 className={BUTTON_BLACK}
                 onClick={() => logoutHandler()}
               >
-                <p className="text-white">Đăng xuất</p>
+                <Link
+                  to={"/"}
+                  className="w-full h-full flex items-center justify-center"
+                >
+                  <p className="text-white">Đăng xuất</p>
+                </Link>
               </button>
             </form>
           </div>
