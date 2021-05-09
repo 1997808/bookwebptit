@@ -1,9 +1,19 @@
 import DashBtn from "./template/dashBtn";
 import { useDispatch } from "react-redux";
+import { MyAxios } from "../../util/api";
 import { logout } from "../../actions";
 
 export default function SideNav() {
   const dispatch = useDispatch();
+
+  const logoutHandler = async () =>
+    await MyAxios.get("/logout").then((response) => {
+      if (response.data.message) {
+        alert(response.data.message);
+      } else {
+        dispatch(logout());
+      }
+    });
 
   return (
     <>
@@ -17,8 +27,8 @@ export default function SideNav() {
         <hr className="my-4 md:min-w-full"></hr>
         <DashBtn name="CRUD" link="admin/crud" />
         <DashBtn name="Cài đặt" link="admin/setting" />
-        <div onClick={() => dispatch(logout())}>
-          <DashBtn name="Đăng xuất" link="" />
+        <div onClick={() => logoutHandler()}>
+          <DashBtn name="Đăng xuất" link="login" />
         </div>
       </div>
     </>

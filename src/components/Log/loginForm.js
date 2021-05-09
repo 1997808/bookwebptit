@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
-import { adminAuth, userAuth } from "../../actions";
+import { adminAuth, userAuth, setUserID } from "../../actions";
 import { useDispatch } from "react-redux";
 
 export default function Login() {
@@ -20,6 +20,7 @@ export default function Login() {
         alert(response.data.message);
       } else {
         if (response.data.role === "user") {
+          dispatch(setUserID(response.data.accountID));
           dispatch(userAuth());
           setTimeout(() => history.push("/"), 1000);
         } else if (response.data.role === "admin") {

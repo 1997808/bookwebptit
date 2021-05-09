@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { MyAxios } from "../util/api";
 import { mycss } from "../util/css";
 import { logout } from "../actions";
 import { useDispatch } from "react-redux";
@@ -11,8 +12,16 @@ export default function UserData() {
   const { INPUT_FIELD, BUTTON_WHITE, BUTTON_BLACK } = mycss;
   const [change, setChange] = useState(true);
   let { userID } = useParams();
-
   const dispatch = useDispatch();
+
+  const logoutHandler = async () =>
+    await MyAxios.get("/logout").then((response) => {
+      if (response.data.message) {
+        alert(response.data.message);
+      } else {
+        dispatch(logout());
+      }
+    });
 
   return (
     <div className="container mx-auto flex justify-center items-center py-8">
@@ -86,7 +95,7 @@ export default function UserData() {
               <button
                 type="button"
                 className={BUTTON_BLACK}
-                onClick={() => dispatch(logout())}
+                onClick={() => logoutHandler()}
               >
                 <p className="text-white">Đăng xuất</p>
               </button>

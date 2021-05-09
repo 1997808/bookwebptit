@@ -32,15 +32,14 @@ export default function Header() {
         <Link to="/contact">
           <p className="pl-10">Liên hệ</p>
         </Link>
-        <Link to="/help">
+        {/* <Link to="/help">
           <p className="pl-10">Hỗ trợ</p>
-        </Link>
+        </Link> */}
       </div>
       <div className="right-side flex items-center">
-        <Link to="/hotro"></Link>
-        <div className="w-64 bg-gray-200 p-2 flex items-center">
+        {/* <div className="w-64 bg-gray-200 p-2 flex items-center">
           <img src={search} alt="logo" />
-        </div>
+        </div> */}
         {/* input here not div */}
         <Link to={loginBtn}>
           <img src={user} alt="logo" className="h-5 pl-10" />
