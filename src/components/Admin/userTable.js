@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import User from "./template/user";
-// import { userData } from "../../assets/user";
 import { MyAxios } from "../../util/api";
 
 export default function UserTable() {
-  var userData = [];
-  MyAxios.get("/admin/user").then((response) => {
-    console.log(response.data);
-    if (response.data.err) {
-      alert(response.data.err);
-    } else {
-      userData = response.data;
-    }
-  });
+  const [userData, setUserData] = useState([]);
+  useEffect(() => {
+    const getAllUser = async () => {
+      await MyAxios.get("/admin/user", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        console.log(response.data);
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          setUserData(response.data.result);
+        }
+      });
+    };
+    getAllUser();
+  }, []);
+
   return (
     <table className="table-fixed w-full">
       <thead>
@@ -29,8 +38,8 @@ export default function UserTable() {
         {userData &&
           userData.map((items) => (
             <User
-              key={items.id}
-              id={items.id}
+              key={items.accountID}
+              id={items.accountID}
               username={items.username}
               password={items.password}
               name={items.name}
