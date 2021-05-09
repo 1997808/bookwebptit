@@ -6,7 +6,6 @@ export default function UserRoute({ isAuth, component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        console.log("isAuth user " + isAuth.user);
         if (isAuth.user) {
           return <Component />;
         } else {

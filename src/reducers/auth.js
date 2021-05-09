@@ -16,6 +16,7 @@ export default function auth(state = initialState, action) {
       return { ...state, user: false, admin: true };
 
     case "LOG_OUT":
+      localStorage.removeItem("token");
       return { ...state, user: false, admin: false, userID: null };
 
     default:

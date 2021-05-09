@@ -16,7 +16,7 @@ import ScrollToTop from "./util/scrollTop";
 import Admin from "./pages/admin";
 import ClientLayout from "./pages/layout/client";
 import UserRoute from "./util/userRoute";
-// import NonRoute from "./util/nonRoute";
+import NonRoute from "./util/nonRoute";
 
 import { adminAuth, userAuth, logout, setUserID } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -28,7 +28,6 @@ export default function App() {
   useEffect(() => {
     const checkLoggedIn = async () => {
       await MyAxios.get("login").then((response) => {
-        console.log(response.data);
         if (response.data.loggedIn === true) {
           if (response.data.role === "admin") {
             dispatch(adminAuth());
@@ -52,13 +51,8 @@ export default function App() {
         <Route>
           <ClientLayout>
             <Switch>
-              {/* <NonRoute /> */}
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/signup">
-                <Signup />
-              </Route>
+              <NonRoute path="/login" isAuth={isAuth} component={Login} />
+              <NonRoute path="/signup" isAuth={isAuth} component={Signup} />
               <UserRoute
                 path="/user/:userID"
                 isAuth={isAuth}

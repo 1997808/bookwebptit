@@ -13,9 +13,15 @@ export default function NonRoute({
       render={(props) => {
         if (!isAuth.user && !isAuth.admin) {
           return <Component />;
-        } else {
+        } else if (isAuth.user) {
           return (
             <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+          );
+        } else if (isAuth.admin) {
+          return (
+            <Redirect
+              to={{ pathname: "/admin", state: { from: props.location } }}
+            />
           );
         }
       }}

@@ -1,7 +1,6 @@
-import React from "react"
-import UserTable from "../../components/Admin/userTable"
-import SearchBar from "../../components/Admin/searchBar"
-
+import React from "react";
+import UserTable from "../../components/Admin/userTable";
+import SearchBar from "../../components/Admin/searchBar";
 
 export default function Customer() {
   return (
@@ -10,5 +9,5 @@ export default function Customer() {
       <SearchBar />
       <UserTable />
     </>
-  )
+  );
 }

@@ -20,10 +20,12 @@ export default function Login() {
         alert(response.data.message);
       } else {
         if (response.data.role === "user") {
+          localStorage.setItem("token", response.data.token);
           dispatch(setUserID(response.data.accountID));
           dispatch(userAuth());
           setTimeout(() => history.push("/"), 1000);
         } else if (response.data.role === "admin") {
+          localStorage.setItem("token", response.data.token);
           dispatch(adminAuth());
           setTimeout(() => history.push("/admin"), 1000);
         }

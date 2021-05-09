@@ -1,8 +1,18 @@
 import React from "react";
 import User from "./template/user";
-import { userData } from "../../assets/user";
+// import { userData } from "../../assets/user";
+import { MyAxios } from "../../util/api";
 
 export default function UserTable() {
+  var userData = [];
+  MyAxios.get("/admin/user").then((response) => {
+    console.log(response.data);
+    if (response.data.err) {
+      alert(response.data.err);
+    } else {
+      userData = response.data;
+    }
+  });
   return (
     <table className="table-fixed w-full">
       <thead>

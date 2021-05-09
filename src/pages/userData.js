@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { MyAxios } from "../util/api";
@@ -13,6 +13,21 @@ export default function UserData() {
   const [change, setChange] = useState(true);
   let { userID } = useParams();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getUserData = async (userID) =>
+      await MyAxios.get(`/getuserdata/${userID}`, {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        console.log(response.data);
+        if (response.data.message) {
+          alert(response.data.message);
+        }
+      });
+    getUserData(userID);
+  }, [userID]);
 
   const logoutHandler = async () =>
     await MyAxios.get("/logout").then((response) => {
