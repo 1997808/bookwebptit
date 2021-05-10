@@ -1,7 +1,7 @@
-import React from "react"
-import Overview from "../../components/Admin/overview"
-import ChartOverview from "../../components/Admin/chartOverview"
-import MostOrder from "../../components/Admin/mostOrder"
+import React from "react";
+import Overview from "../../components/Admin/overview";
+import ChartOverview from "../../components/Admin/chartOverview";
+import MostOrder from "../../components/Admin/mostOrder";
 
 export default function Home() {
   return (
@@ -16,5 +16,5 @@ export default function Home() {
         </div>
       </div>
     </>
-  )
+  );
 }

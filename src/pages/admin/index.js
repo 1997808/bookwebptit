@@ -2,11 +2,12 @@ import React from "react";
 import { Switch } from "react-router-dom";
 import Home from "./home";
 import Listings from "./listings";
-import CRUD from "./crud";
 import Orders from "./orders";
 import Users from "./users";
 import Setting from "./setting";
 import BookAdminDetail from "./bookAdminDetail";
+import BookAdd from "./bookAdd";
+import CategoryAdd from "./categoryAdd";
 
 import AdminLayout from "../../pages/layout/admin";
 import ProtectedRoute from "../../util/protectedRoute";
@@ -36,8 +37,15 @@ export default function Admin() {
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute
-            path="/admin/crud"
-            component={CRUD}
+            exact
+            path="/admin/addbook"
+            component={BookAdd}
+            isAuth={isAuth}
+          ></ProtectedRoute>
+          <ProtectedRoute
+            exact
+            path="/admin/category"
+            component={CategoryAdd}
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute

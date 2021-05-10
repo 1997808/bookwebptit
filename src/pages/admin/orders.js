@@ -1,6 +1,6 @@
-import React from "react"
-import OrderTable from "../../components/Admin/orderTable"
-import SearchBar from "../../components/Admin/searchBar"
+import React from "react";
+import OrderTable from "../../components/Admin/orderTable";
+import SearchBar from "../../components/Admin/searchBar";
 
 export default function Orders() {
   return (
@@ -9,5 +9,5 @@ export default function Orders() {
       <SearchBar />
       <OrderTable />
     </>
-  )
+  );
 }

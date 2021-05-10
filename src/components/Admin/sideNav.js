@@ -33,7 +33,8 @@ export default function SideNav() {
         <DashBtn name="Đơn hàng" link="admin/orders" pathNow={pathNow} />
         <DashBtn name="Khách hàng" link="admin/users" pathNow={pathNow} />
         <hr className="my-4 md:min-w-full"></hr>
-        <DashBtn name="CRUD" link="admin/crud" pathNow={pathNow} />
+        <DashBtn name="Thêm sản phẩm" link="admin/addbook" pathNow={pathNow} />
+        <DashBtn name="Thêm danh mục" link="admin/category" pathNow={pathNow} />
         <DashBtn name="Cài đặt" link="admin/setting" pathNow={pathNow} />
         <div onClick={() => logoutHandler()}>
           <DashBtn name="Đăng xuất" link="login" pathNow={pathNow} />

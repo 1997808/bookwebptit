@@ -1,8 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 
-export default function SearchBarBook() {
+export default function SearchBar() {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -22,12 +21,6 @@ export default function SearchBarBook() {
       >
         Tìm kiếm
       </button>
-      <div className="col-span-1"></div>
-      <Link to="add">
-        <div className="col-span-1 w-40 h-12 flex justify-center items-center bg-black text-white">
-          Thêm mới
-        </div>
-      </Link>
     </form>
   );
 }

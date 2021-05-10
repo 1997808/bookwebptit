@@ -4,7 +4,7 @@ import Chart from "chart.js/auto";
 export default function ChartOverview() {
   useEffect(() => {
     const ctx = document.getElementById("myChart").getContext("2d");
-    let myChart = new Chart(ctx, {
+    new Chart(ctx, {
       type: "line",
       data: {
         labels: [
