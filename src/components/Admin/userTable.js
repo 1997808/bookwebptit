@@ -26,12 +26,11 @@ export default function UserTable() {
     <table className="table-fixed w-full">
       <thead>
         <tr className="text-left border-b">
-          <th className="w-1/6 py-3 px-4">ID</th>
-          <th className="w-1/6 py-3 px-4">Username</th>
-          <th className="w-1/6 py-3 px-4">Password</th>
-          <th className="w-1/6 py-3 px-4">Tên</th>
-          <th className="w-1/6 py-3 px-4">Điện thoại</th>
-          <th className="w-1/6 py-3 px-4">Địa chỉ</th>
+          <th className="w-1/5 py-3 px-4">ID</th>
+          <th className="w-1/5 py-3 px-4">Username</th>
+          <th className="w-1/5 py-3 px-4">Tên</th>
+          <th className="w-1/5 py-3 px-4">Điện thoại</th>
+          <th className="w-1/5 py-3 px-4">Thành phố</th>
         </tr>
       </thead>
       <tbody>
@@ -41,10 +40,9 @@ export default function UserTable() {
               key={items.accountID}
               id={items.accountID}
               username={items.username}
-              password={items.password}
               name={items.name}
               phone={items.phone}
-              address={items.address}
+              city={items.city}
             />
           ))}
       </tbody>

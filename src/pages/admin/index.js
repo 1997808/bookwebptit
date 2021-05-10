@@ -4,7 +4,7 @@ import Home from "./home";
 import Listings from "./listings";
 import CRUD from "./crud";
 import Orders from "./orders";
-import Customers from "./customers";
+import Users from "./users";
 import Setting from "./setting";
 import BookAdminDetail from "./bookAdminDetail";
 
@@ -46,8 +46,8 @@ export default function Admin() {
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute
-            path="/admin/customers"
-            component={Customers}
+            path="/admin/users"
+            component={Users}
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute
