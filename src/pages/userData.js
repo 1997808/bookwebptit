@@ -7,29 +7,62 @@ import { logout } from "../actions";
 import { useDispatch } from "react-redux";
 
 export default function UserData() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD, BUTTON_WHITE, BUTTON_BLACK } = mycss;
   const [change, setChange] = useState(true);
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
   let { userID } = useParams();
   const dispatch = useDispatch();
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      city: "",
+      address: "",
+    },
+  });
+  const onSubmit = (data) => {
+    console.log(data);
+    changeUserData(userID, data);
+  };
 
   useEffect(() => {
     const getUserData = async (userID) =>
-      await MyAxios.get(`/getuserdata/${userID}`, {
+      await MyAxios.get(`/user/${userID}`, {
         headers: {
           "x-access-token": localStorage.getItem("token"),
         },
       }).then((response) => {
+        console.log(response.data);
         if (response.data.message) {
           alert(response.data.message);
         } else {
-          setData(response.data);
+          const { name, email, phone, city, address } = response.data;
+          reset({
+            name: name,
+            email: email,
+            phone: phone,
+            city: city,
+            address: address,
+          });
         }
       });
     getUserData(userID);
-  }, [userID]);
+  }, [userID, reset]);
+
+  const changeUserData = async (userID, data) =>
+    await MyAxios.put(`/user/${userID}`, data, {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    }).then((response) => {
+      if (response.data.message) {
+        alert(response.data.message);
+      }
+      //  else {
+      //   setData(response.data);
+      // }
+    });
 
   const logoutHandler = async () =>
     await MyAxios.get("/logout").then((response) => {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "./logo.svg";
 import user from "../../images/image2.png";
 import cart from "../../images/image3.png";
-import search from "../../images/image4.png";
+// import search from "../../images/image4.png";
 import { useSelector } from "react-redux";
 
 export default function Header() {
@@ -41,11 +41,11 @@ export default function Header() {
           <img src={search} alt="logo" />
         </div> */}
         {/* input here not div */}
-        <Link to={loginBtn}>
-          <img src={user} alt="logo" className="h-5 pl-10" />
+        <Link to={loginBtn} className="ml-10">
+          <img src={user} alt="logo" className="h-5" />
         </Link>
-        <Link to="/cart">
-          <img src={cart} alt="logo" className="h-6 pl-10" />
+        <Link to="/cart" className="ml-10">
+          <img src={cart} alt="logo" className="h-6" />
         </Link>
       </div>
     </div>
