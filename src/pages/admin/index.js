@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch } from "react-router-dom";
 import Home from "./home";
-import Listings from "./listings";
+import Books from "./books";
 import Orders from "./orders";
 import Users from "./users";
 import Setting from "./setting";
@@ -28,7 +28,7 @@ export default function Admin() {
           <ProtectedRoute
             exact
             path="/admin/listings"
-            component={Listings}
+            component={Books}
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute

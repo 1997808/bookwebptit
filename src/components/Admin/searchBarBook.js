@@ -23,7 +23,7 @@ export default function SearchBarBook() {
         Tìm kiếm
       </button>
       <div className="col-span-1"></div>
-      <Link to="add">
+      <Link to="addbook">
         <div className="col-span-1 w-40 h-12 flex justify-center items-center bg-black text-white">
           Thêm mới
         </div>
