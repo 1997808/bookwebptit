@@ -1,27 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import User from "./template/user";
-import { MyAxios } from "../../util/api";
 
-export default function UserTable() {
-  const [userData, setUserData] = useState([]);
-  useEffect(() => {
-    const getAllUser = async () => {
-      await MyAxios.get("/admin/user", {
-        headers: {
-          "x-access-token": localStorage.getItem("token"),
-        },
-      }).then((response) => {
-        console.log(response.data);
-        if (response.data.err) {
-          alert(response.data.err);
-        } else {
-          setUserData(response.data.result);
-        }
-      });
-    };
-    getAllUser();
-  }, []);
-
+export default function UserTable({ userData }) {
   return (
     <table className="table-fixed w-full">
       <thead>

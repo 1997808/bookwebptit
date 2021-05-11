@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
+import { MyAxios } from "../../util/api";
 
 export default function BookAdd() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
   const { INPUT_FIELD, BUTTON_BLACK } = mycss;
+
+  const [categoryData, setCategoryData] = useState([]);
+  useEffect(() => {
+    const getAllCategory = async () => {
+      await MyAxios.get("/admin/category", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        console.log(response.data);
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          setCategoryData(response.data.result);
+        }
+      });
+    };
+    getAllCategory();
+  }, []);
 
   return (
     <>
@@ -28,12 +43,21 @@ export default function BookAdd() {
           {...register("image", { required: true })}
           className={`${INPUT_FIELD} mt-5`}
         />
-        <input
-          type="text"
-          placeholder={"category"}
+        <select
           {...register("category", { required: true })}
           className={`${INPUT_FIELD} mt-5`}
-        />
+          defaultValue=""
+        >
+          <option defaultValue="" disabled hidden>
+            {"category"}
+          </option>
+
+          {categoryData.map((items) => (
+            <option key={items.categoryID} defaultValue={items.categoryID}>
+              {items.name}
+            </option>
+          ))}
+        </select>
         <input
           type="text"
           placeholder={"author"}

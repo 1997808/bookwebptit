@@ -130,16 +130,22 @@ export default function UserData() {
                 />
               </div>
 
-              <button type="submit" className={BUTTON_BLACK} disabled={change}>
-                <p className="text-white">Lưu</p>
+              <button
+                type={change ? "submit" : "button"}
+                className={`${BUTTON_WHITE} ${change ? "mb-16" : ""}`}
+                onClick={() => setChange(!change)}
+              >
+                <p>{change ? "Thay đổi" : "Khóa thay đổi"}</p>
               </button>
 
               <button
-                type="button"
-                className={`${BUTTON_WHITE} mb-16`}
-                onClick={() => setChange(!change)}
+                type="submit"
+                className={`${BUTTON_BLACK} mb-16 ${
+                  change ? "hidden" : "block"
+                }`}
+                disabled={change}
               >
-                <p>{change ? "Thay đổi" : "Khóa dữ liệu"}</p>
+                <p className="text-white">Lưu dữ liệu</p>
               </button>
 
               <button
