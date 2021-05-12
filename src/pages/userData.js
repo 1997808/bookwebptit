@@ -9,7 +9,6 @@ import { useDispatch } from "react-redux";
 export default function UserData() {
   const { INPUT_FIELD, BUTTON_WHITE, BUTTON_BLACK } = mycss;
   const [change, setChange] = useState(true);
-  // const [data, setData] = useState({});
   let { userID } = useParams();
   const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm({
@@ -59,9 +58,6 @@ export default function UserData() {
       if (response.data.message) {
         alert(response.data.message);
       }
-      //  else {
-      //   setData(response.data);
-      // }
     });
 
   const logoutHandler = async () =>

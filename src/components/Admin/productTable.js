@@ -1,8 +1,7 @@
 import React from "react";
 import Product from "./template/product";
-import { bookData } from "../../assets/book";
 
-export default function ProductTable() {
+export default function ProductTable({ book }) {
   return (
     <table className="table-fixed w-full">
       <thead>
@@ -15,15 +14,15 @@ export default function ProductTable() {
         </tr>
       </thead>
       <tbody>
-        {bookData &&
-          bookData.map((items) => (
+        {book &&
+          book.map((items) => (
             <Product
               key={items.id}
               id={items.id}
               name={items.name}
               price={items.price}
-              sale={items.sale}
-              stock={200}
+              discount={items.discount}
+              stock={items.stock}
             />
           ))}
       </tbody>

@@ -5,7 +5,6 @@ import { MyAxios } from "../../util/api";
 
 export default function BookAdd() {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD, BUTTON_BLACK } = mycss;
 
   const [categoryData, setCategoryData] = useState([]);
@@ -27,6 +26,38 @@ export default function BookAdd() {
     getAllCategory();
   }, []);
 
+  const onSubmit = async (data) => {
+    console.log(data);
+    const addBook = await MyAxios.post(
+      "/admin/book",
+      {
+        categoryID: data.categoryID,
+        name: data.name,
+        image: data.image,
+        author: data.author,
+        translator: data.translator,
+        publisher: data.publisher,
+        pages: data.pages,
+        size: data.size,
+        price: data.price,
+        discount: data.discount,
+        stock: data.stock,
+        description: data.description,
+      },
+      {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }
+    ).then((response) => {
+      console.log(response);
+      if (response.data.message) {
+        alert(response.data.message);
+      }
+    });
+    return addBook;
+  };
+
   return (
     <>
       <h3 className="text-3xl font-medium pt-12 pb-5">Thêm mới sản phẩm</h3>
@@ -44,7 +75,7 @@ export default function BookAdd() {
           className={`${INPUT_FIELD} mt-5`}
         />
         <select
-          {...register("category", { required: true })}
+          {...register("categoryID", { required: true })}
           className={`${INPUT_FIELD} mt-5`}
           defaultValue=""
         >
@@ -53,7 +84,7 @@ export default function BookAdd() {
           </option>
 
           {categoryData.map((items) => (
-            <option key={items.categoryID} defaultValue={items.categoryID}>
+            <option key={items.categoryID} value={items.categoryID}>
               {items.name}
             </option>
           ))}
