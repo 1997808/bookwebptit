@@ -27,29 +27,11 @@ export default function BookAdd() {
   }, []);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    const addBook = await MyAxios.post(
-      "/admin/book",
-      {
-        categoryID: data.categoryID,
-        name: data.name,
-        image: data.image,
-        author: data.author,
-        translator: data.translator,
-        publisher: data.publisher,
-        pages: data.pages,
-        size: data.size,
-        price: data.price,
-        discount: data.discount,
-        stock: data.stock,
-        description: data.description,
+    const addBook = await MyAxios.post("/admin/book", data, {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
       },
-      {
-        headers: {
-          "x-access-token": localStorage.getItem("token"),
-        },
-      }
-    ).then((response) => {
+    }).then((response) => {
       console.log(response);
       if (response.data.message) {
         alert(response.data.message);

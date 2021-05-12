@@ -30,7 +30,10 @@ export default function BookAdminDetail() {
       description: "",
     },
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    changeBookData(id, data);
+  };
   console.log(errors);
 
   useEffect(() => {
@@ -49,6 +52,18 @@ export default function BookAdminDetail() {
     };
     getBook(id);
   }, [id]);
+
+  const changeBookData = async (id, data) =>
+    await MyAxios.put(`/admin/book/${id}`, data, {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    }).then((response) => {
+      console.log(response);
+      if (response.data.message) {
+        alert(response.data.message);
+      }
+    });
 
   return (
     <>
