@@ -31,7 +31,6 @@ export default function BookAdminDetail() {
     },
   });
   const onSubmit = (data) => {
-    console.log(data);
     changeBookData(id, data);
   };
   console.log(errors);
@@ -51,7 +50,7 @@ export default function BookAdminDetail() {
       });
     };
     getBook(id);
-  }, [id]);
+  }, [id, reset]);
 
   const changeBookData = async (id, data) =>
     await MyAxios.put(`/admin/book/${id}`, data, {
@@ -59,7 +58,6 @@ export default function BookAdminDetail() {
         "x-access-token": localStorage.getItem("token"),
       },
     }).then((response) => {
-      console.log(response);
       if (response.data.message) {
         alert(response.data.message);
       }

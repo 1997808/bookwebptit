@@ -21,7 +21,6 @@ export default function UserData() {
     },
   });
   const onSubmit = (data) => {
-    console.log(data);
     changeUserData(userID, data);
   };
 
@@ -32,7 +31,6 @@ export default function UserData() {
           "x-access-token": localStorage.getItem("token"),
         },
       }).then((response) => {
-        console.log(response.data);
         if (response.data.message) {
           alert(response.data.message);
         } else {

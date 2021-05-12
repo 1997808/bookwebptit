@@ -16,7 +16,6 @@ export default function CategoryAdd() {
           "x-access-token": localStorage.getItem("token"),
         },
       }).then((response) => {
-        console.log(response.data);
         if (response.data.err) {
           alert(response.data.err);
         } else {
@@ -39,7 +38,6 @@ export default function CategoryAdd() {
         },
       }
     ).then((response) => {
-      console.log(response);
       if (response.data.message) {
         alert(response.data.message);
       }

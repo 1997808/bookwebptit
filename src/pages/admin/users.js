@@ -12,7 +12,6 @@ export default function Users() {
           "x-access-token": localStorage.getItem("token"),
         },
       }).then((response) => {
-        console.log(response.data);
         if (response.data.err) {
           alert(response.data.err);
         } else {
