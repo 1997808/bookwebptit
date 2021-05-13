@@ -50,3 +50,10 @@ export const fetchBook = (data) => {
     data,
   };
 };
+
+export const fetchBookForCart = (data) => {
+  return {
+    type: "FETCH_BOOK_FOR_CART",
+    data,
+  };
+};

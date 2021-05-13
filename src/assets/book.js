@@ -1,6 +1,6 @@
 export const bookData = [
   {
-    id: "015808907369962",
+    id: "1",
     image: "/assets/bookImage/thoxam.jpg",
     name: "Thợ Xăm ở Auschwitz",
     author: "Heather Morris",
@@ -11,11 +11,12 @@ export const bookData = [
     size: "14 x 20.5",
     price: "148.000 VNĐ",
     sale: "false",
-    description: "Thợ xăm ở Auschwitz là một tài liệu khác thường, được công bố hơn bảy mươi năm sau những sự kiện nó thuật lại, và nó nhắc nhở chúng ta rằng có rất nhiều câu chuyện sẽ mãi mãi không bao giờ được kể. Nó cũng nhắc chúng ta nhớ rằng trong số nạn nhân lớn đến không tưởng tượng nổi của Holocaust, mỗi người đều là một cá nhân với một câu chuyện độc nhất vô nhị… Và câu chuyện này là một câu chuyện khác thường, thậm chí là so với những câu chuyện về Holocaust nói chung - bởi nó cảm động, thẳng thắn và nâng cánh cho tâm hồn, và dĩ nhiên nó là một cánh cửa sổ để nhìn vào sự kiện khủng khiếp bậc nhất trong lịch sử loài người. Heather Morris kể câu chuyện của Lale bằng lòng tự trọng và sự kiềm chế, không bao giờ để ý kiến riêng của mình xâm phạm vào, hay để cho câu chuyện tình yêu lấn át cái bối cảnh lớn hơn của sự dịch chuyển, sự tổn thương tâm lý và sự sống sót. Đây là câu chuyện về những thái cực trong hành vi của con người tồn tại song song với nhau: sự ác độc có tính toán bên cạnh những hành động vị tha và thôi thúc của tình yêu. Tôi khó mà hình dung được có ai đó không bị lôi cuốn, bị thách thức và cảm động khi đọc cuốn sách này. Tôi sẽ không chút ngại ngần mà giới thiệu cuốn sách này cho bất kỳ ai, dù cho họ đã từng đọc hàng trăm câu chuyện về Holocaust hay chưa từng đọc câu chuyện nào.",
+    description:
+      "Thợ xăm ở Auschwitz là một tài liệu khác thường, được công bố hơn bảy mươi năm sau những sự kiện nó thuật lại, và nó nhắc nhở chúng ta rằng có rất nhiều câu chuyện sẽ mãi mãi không bao giờ được kể. Nó cũng nhắc chúng ta nhớ rằng trong số nạn nhân lớn đến không tưởng tượng nổi của Holocaust, mỗi người đều là một cá nhân với một câu chuyện độc nhất vô nhị… Và câu chuyện này là một câu chuyện khác thường, thậm chí là so với những câu chuyện về Holocaust nói chung - bởi nó cảm động, thẳng thắn và nâng cánh cho tâm hồn, và dĩ nhiên nó là một cánh cửa sổ để nhìn vào sự kiện khủng khiếp bậc nhất trong lịch sử loài người. Heather Morris kể câu chuyện của Lale bằng lòng tự trọng và sự kiềm chế, không bao giờ để ý kiến riêng của mình xâm phạm vào, hay để cho câu chuyện tình yêu lấn át cái bối cảnh lớn hơn của sự dịch chuyển, sự tổn thương tâm lý và sự sống sót. Đây là câu chuyện về những thái cực trong hành vi của con người tồn tại song song với nhau: sự ác độc có tính toán bên cạnh những hành động vị tha và thôi thúc của tình yêu. Tôi khó mà hình dung được có ai đó không bị lôi cuốn, bị thách thức và cảm động khi đọc cuốn sách này. Tôi sẽ không chút ngại ngần mà giới thiệu cuốn sách này cho bất kỳ ai, dù cho họ đã từng đọc hàng trăm câu chuyện về Holocaust hay chưa từng đọc câu chuyện nào.",
   },
 
   {
-    id: "025808907369962",
+    id: "2",
     image: "/assets/bookImage/haisophan.jpg",
     name: " Hai Số Phận (Tái Bản)",
     author: " Jeffrey Archer",
@@ -26,11 +27,12 @@ export const bookData = [
     size: "13.5 x 20.5",
     price: "155.000 VNĐ",
     sale: "false",
-    description: "Hai đứa Kane và Abel sinh ra cùng một ngày, một giờ, ở hai xứ sở hoàn toàn xa lạ. Người giàu sang, kẻ khốn khó nhưng họ giống nhau đến kỳ lạ, đều có tham vọng và nghị lực phi thường. Dù ở khu ổ chuột hay căn phòng hoa lệ, dù học nhờ hay có gia sư riêng, họ luôn chứng tỏ được sự thông minh và óc quan sát nhạy bén của mình. Do sự xô đẩy của số phận, hai người xa lạ đã gặp nhau nhưng không  phải để lam bạn mà là kẻ thù. Để rồi họ lại luôn luôn vô tình hoặc cố ý đã cứu sống và tương trợ cho nhau."
+    description:
+      "Hai đứa Kane và Abel sinh ra cùng một ngày, một giờ, ở hai xứ sở hoàn toàn xa lạ. Người giàu sang, kẻ khốn khó nhưng họ giống nhau đến kỳ lạ, đều có tham vọng và nghị lực phi thường. Dù ở khu ổ chuột hay căn phòng hoa lệ, dù học nhờ hay có gia sư riêng, họ luôn chứng tỏ được sự thông minh và óc quan sát nhạy bén của mình. Do sự xô đẩy của số phận, hai người xa lạ đã gặp nhau nhưng không  phải để lam bạn mà là kẻ thù. Để rồi họ lại luôn luôn vô tình hoặc cố ý đã cứu sống và tương trợ cho nhau.",
   },
 
   {
-    id: "035808907369962",
+    id: "3",
     image: "/assets/bookImage/laudaibay.jpg",
     name: "Lâu Đài Bay Của Pháp Sư Howl (Tái Bản 2020)",
     author: "Diana Wynne Jones",
@@ -41,11 +43,12 @@ export const bookData = [
     size: "13 x 20.5",
     price: "106.000 VNĐ",
     sale: "false",
-    description: "Cô gái Sophie Hatter đang sống và làm việc yên ổn trong cửa hiệu bán mũ của bố mẹ ở Ingary, xứ sở của những đôi ủng bảy lý và áo tàng hình thì bỗng một ngày, mụ phù thuỷ xứ Waste xuất hiện biến cô thành bà già xấu xí. Quyết tâm giải cứu bản thân mình, Sophie đi tới lâu đài bay tìm kiếm sự giúp đỡ của Pháp sư Howl - kẻ vốn bị đồn là khoái “ăn tươi nuốt sống” trái tim của những cô gái trẻ. <br/> …Sophie ngậm ngón tay bị bỏng nhẹ và lấy tay kia nhặt những lát thịt ba chỉ xông khói rơi trên váy, mắt chằm chằm nhìn Calcifer.Lão đang quật từ bên này sang bên kia lò sưởi.Những bộ mặt xanh lơ của lão gần như trắng bệch.Trong khoảnh khắc, lão có vô số những con mắt da cam, rồi khoảnh khắc sau đó đã có hàng dãy những con mắt bạc sáng như sao.Cô chưa bao giờ hình dung ra cái gì giống như thế. <br/> Có cái gì đó quét qua trên đầu với một phát nổ và tiếng đùng làm rung chuyển mọi thứ trong phòng.Một cái gì đó thứ hai theo sau, với tiếng rống dài chói tai.Calcifer rung lên gần như xanh đen, và da Sophie xèo xèo vì tàn lửa từ phép thần thông đó… "
+    description:
+      "Cô gái Sophie Hatter đang sống và làm việc yên ổn trong cửa hiệu bán mũ của bố mẹ ở Ingary, xứ sở của những đôi ủng bảy lý và áo tàng hình thì bỗng một ngày, mụ phù thuỷ xứ Waste xuất hiện biến cô thành bà già xấu xí. Quyết tâm giải cứu bản thân mình, Sophie đi tới lâu đài bay tìm kiếm sự giúp đỡ của Pháp sư Howl - kẻ vốn bị đồn là khoái “ăn tươi nuốt sống” trái tim của những cô gái trẻ. <br/> …Sophie ngậm ngón tay bị bỏng nhẹ và lấy tay kia nhặt những lát thịt ba chỉ xông khói rơi trên váy, mắt chằm chằm nhìn Calcifer.Lão đang quật từ bên này sang bên kia lò sưởi.Những bộ mặt xanh lơ của lão gần như trắng bệch.Trong khoảnh khắc, lão có vô số những con mắt da cam, rồi khoảnh khắc sau đó đã có hàng dãy những con mắt bạc sáng như sao.Cô chưa bao giờ hình dung ra cái gì giống như thế. <br/> Có cái gì đó quét qua trên đầu với một phát nổ và tiếng đùng làm rung chuyển mọi thứ trong phòng.Một cái gì đó thứ hai theo sau, với tiếng rống dài chói tai.Calcifer rung lên gần như xanh đen, và da Sophie xèo xèo vì tàn lửa từ phép thần thông đó… ",
   },
 
   {
-    id: "045808907369962",
+    id: "4",
     image: "/assets/bookImage/5centimet.jpg",
     name: "5 Centimet Trên Giây",
     author: "Shinkai Makoto",
@@ -56,11 +59,12 @@ export const bookData = [
     size: "13 x 18",
     price: "50.000 VNĐ",
     sale: "true",
-    description: "5cm/s không chỉ là vận tốc của những cánh anh đào rơi, mà còn là vận tốc khi chúng ta lặng lẽ bước qua đời nhau, đánh mất bao cảm xúc thiết tha nhất của tình yêu. <br/> Bằng giọng văn tinh tế, truyền cảm, 5 centimet trên giây mang đến những khắc họa mới về tâm hồn và khả năng tồn tại của cảm xúc, bắt đầu từ tình yêu trong sáng, ngọt ngào của một cô bé và cậu bé.Ba giai đoạn, ba mảnh ghép, ba ngôi kể chuyện khác nhau nhưng đều xoay quanh nhân vật nam chính, người luôn bị ám ảnh bởi kí ức và những điều đã qua… <br/>Khác với những câu chuyện cuốn bạn chạy một mạch, truyện này khó mà đọc nhanh.Ngón tay bạn hẳn sẽ ngừng lại cả trăm lần trên mỗi trang sách.Chỉ vì một cử động rất khẽ, một câu thoại, hay một xúc cảm bất chợt có thể sẽ đánh thức những điều tưởng chừng đã ngủ quên trong tiềm thức, như ngọn đèn vừa được bật sáng trong tâm trí bạn.Và rồi có lúc nó vượt quá giới hạn chịu đựng, bạn quyết định gấp cuốn sách lại chỉ để tận hưởng chút ánh sáng từ ngọn đèn, hay đơn giản là để vết thương trong lòng mình có thời gian tự tìm xoa dịu.",
+    description:
+      "5cm/s không chỉ là vận tốc của những cánh anh đào rơi, mà còn là vận tốc khi chúng ta lặng lẽ bước qua đời nhau, đánh mất bao cảm xúc thiết tha nhất của tình yêu. <br/> Bằng giọng văn tinh tế, truyền cảm, 5 centimet trên giây mang đến những khắc họa mới về tâm hồn và khả năng tồn tại của cảm xúc, bắt đầu từ tình yêu trong sáng, ngọt ngào của một cô bé và cậu bé.Ba giai đoạn, ba mảnh ghép, ba ngôi kể chuyện khác nhau nhưng đều xoay quanh nhân vật nam chính, người luôn bị ám ảnh bởi kí ức và những điều đã qua… <br/>Khác với những câu chuyện cuốn bạn chạy một mạch, truyện này khó mà đọc nhanh.Ngón tay bạn hẳn sẽ ngừng lại cả trăm lần trên mỗi trang sách.Chỉ vì một cử động rất khẽ, một câu thoại, hay một xúc cảm bất chợt có thể sẽ đánh thức những điều tưởng chừng đã ngủ quên trong tiềm thức, như ngọn đèn vừa được bật sáng trong tâm trí bạn.Và rồi có lúc nó vượt quá giới hạn chịu đựng, bạn quyết định gấp cuốn sách lại chỉ để tận hưởng chút ánh sáng từ ngọn đèn, hay đơn giản là để vết thương trong lòng mình có thời gian tự tìm xoa dịu.",
   },
 
   {
-    id: "055808907369962",
+    id: "5",
     image: "/assets/bookImage/minhbuon.jpg",
     name: "MÌNH BUỒN ĐỦ RỒI. MÌNH HẠNH PHÚC THÔI ",
     author: "Phạm Cao Trí ",
@@ -71,11 +75,12 @@ export const bookData = [
     size: "13 x 20.5",
     price: "89.000 VNĐ",
     sale: "true",
-    description: "Sau tất cả những hờn giận năm ấy, chúng ta dù muốn dù không vẫn phải sống tiếp.Không ai vì thiếu đi một người mà không sống nỗi.Không ai ôm ấp mãi một cuộc tình mà buồn đến trăm kiếp nghìn năm.Thôi thì “Mình buồn đủ rồi.Mình hạnh phúc thôi”. Đây là cuốn tản văn vô cùng hấp dẫn đánh dấu sự trở lại của Trí sau một thời gian dài.Trí vẫn sẽ đưa các bạn đến với những cung bậc của yêu thương, hờn giận nhưng nó không hề mang cảm xúc tiêu cực mà là những trang văn nhẹ nhàng, sâu lắng và trưởng thành hơn.Ai cũng phải lớn, phải trưởng thành, phải chấp nhận mất mát là một phần của cuộc sống. Một số trích dẫn rất ý nghĩa và sâu sắc trong “Mình buồn đủ rồi.Mình hạnh phúc thôi” của Trí:“Đến một lúc nào đó điều chúng ta sợ nhất trong cuộc đời này không còn là sự cô độc nữa.Bởi chúng ta dần quen với việc đi về một mình, tự vỗ về nỗi buồn, tự ủi an niềm đau, tự bước qua trắc trở mà không cần một bàn tay, một bờ vai nào chở che.”“Đừng nản lòng nếu chưa gặp được người ta đợi trông.Thế gian này rất rộng lớn, mỗi ngày, mỗi tháng, mỗi năm, chúng ta sẽ gặp rất nhiều người.Và hãy tin rằng, một người hoàn toàn xứng đáng với bạn đang chờ bạn ở đâu đó trên chuyến xe cuộc đời.Người ấy sẽ bù đắp bao nhiêu ngày cô đơn đã qua của bạn!” <br/> Cho người khác một cơ hội cũng là cho chính bản thân mình một cơ hội. Nếu thấy ai đó đủ thật tâm với mình thì ít nhất nên mở lòng đón nhận chân tình. Chẳng thể nào vì một vài cuộc tình trước đây mà khiến bản thân trở nên lặng lẽ. Chúng ta xứng đáng được hạnh phúc!” Mong tất cả các bạn, sau khi cầm trên tay quyển sách này, hãy đọc nó vào một ngày xinh đẹp nhất để thấy rằng chúng ta đáng được yêu thương, đáng sống những ngày an nhiên cõi lòng!",
+    description:
+      "Sau tất cả những hờn giận năm ấy, chúng ta dù muốn dù không vẫn phải sống tiếp.Không ai vì thiếu đi một người mà không sống nỗi.Không ai ôm ấp mãi một cuộc tình mà buồn đến trăm kiếp nghìn năm.Thôi thì “Mình buồn đủ rồi.Mình hạnh phúc thôi”. Đây là cuốn tản văn vô cùng hấp dẫn đánh dấu sự trở lại của Trí sau một thời gian dài.Trí vẫn sẽ đưa các bạn đến với những cung bậc của yêu thương, hờn giận nhưng nó không hề mang cảm xúc tiêu cực mà là những trang văn nhẹ nhàng, sâu lắng và trưởng thành hơn.Ai cũng phải lớn, phải trưởng thành, phải chấp nhận mất mát là một phần của cuộc sống. Một số trích dẫn rất ý nghĩa và sâu sắc trong “Mình buồn đủ rồi.Mình hạnh phúc thôi” của Trí:“Đến một lúc nào đó điều chúng ta sợ nhất trong cuộc đời này không còn là sự cô độc nữa.Bởi chúng ta dần quen với việc đi về một mình, tự vỗ về nỗi buồn, tự ủi an niềm đau, tự bước qua trắc trở mà không cần một bàn tay, một bờ vai nào chở che.”“Đừng nản lòng nếu chưa gặp được người ta đợi trông.Thế gian này rất rộng lớn, mỗi ngày, mỗi tháng, mỗi năm, chúng ta sẽ gặp rất nhiều người.Và hãy tin rằng, một người hoàn toàn xứng đáng với bạn đang chờ bạn ở đâu đó trên chuyến xe cuộc đời.Người ấy sẽ bù đắp bao nhiêu ngày cô đơn đã qua của bạn!” <br/> Cho người khác một cơ hội cũng là cho chính bản thân mình một cơ hội. Nếu thấy ai đó đủ thật tâm với mình thì ít nhất nên mở lòng đón nhận chân tình. Chẳng thể nào vì một vài cuộc tình trước đây mà khiến bản thân trở nên lặng lẽ. Chúng ta xứng đáng được hạnh phúc!” Mong tất cả các bạn, sau khi cầm trên tay quyển sách này, hãy đọc nó vào một ngày xinh đẹp nhất để thấy rằng chúng ta đáng được yêu thương, đáng sống những ngày an nhiên cõi lòng!",
   },
 
   {
-    id: "065808907369962",
+    id: "6",
     image: "/assets/bookImage/kairotei.jpg",
     name: "Vụ Án Mạng Ở Lữ Quán Kairotei ",
     author: "Higashino Keigo",
@@ -86,11 +91,12 @@ export const bookData = [
     size: "14 x 20.5",
     price: "123.000 VNĐ",
     sale: "false",
-    description: "Một tác phẩm đậm chất trinh thám cổ điển vua trinh thám Nhật Bản Keigo Higashino. Bản di chúc về khối tài sản kếch xù của ông Ichigahara Takaaki sẽ được công bố vào đúng lễ 49 ngày của ông tại lữ quán Kairotei, nơi sinh thời ông vô cùng yêu mến. Nhưng một lá thư hé lộ sự thật bị chôn vùi dưới lớp tro tàn của vụ hỏa hoạn ở lữ quán này nửa năm trước, xuất hiện đúng buổi tối trước ngày công bố di chúc đã khiến mọi chuyện trở nên rối tung. Cũng trong đêm đó, một người đã bị sát hại. Ngọn lửa ngờ vực bắt đầu âm ỉ cháy lan, một thảm kịch khác đã được soạn sẵn và chờ hồi kết để hạ mà. <br/> Higashino Keigo là tiểu thuyết gia trinh thám hàng đầu Nhật Bản với nhiều tác phẩm hàng triệu bản bán ra trong và ngoài nước, gặt hái vô vàn giải thưởng.Ông từng là Chủ tịch thứ 13 của Hội nhà văn Trinh thám Nhật Bản từ năm 2009 tới năm 2013. Mỗi tác phẩm của ông đều có phong cách khác nhau, nhưng nhìn chung đều có diễn biến bất ngờ, khắc họa tâm lý nhân vật sâu sắc, làm nên nét riêng biệt trong chất văn của Higashino Keigo.",
+    description:
+      "Một tác phẩm đậm chất trinh thám cổ điển vua trinh thám Nhật Bản Keigo Higashino. Bản di chúc về khối tài sản kếch xù của ông Ichigahara Takaaki sẽ được công bố vào đúng lễ 49 ngày của ông tại lữ quán Kairotei, nơi sinh thời ông vô cùng yêu mến. Nhưng một lá thư hé lộ sự thật bị chôn vùi dưới lớp tro tàn của vụ hỏa hoạn ở lữ quán này nửa năm trước, xuất hiện đúng buổi tối trước ngày công bố di chúc đã khiến mọi chuyện trở nên rối tung. Cũng trong đêm đó, một người đã bị sát hại. Ngọn lửa ngờ vực bắt đầu âm ỉ cháy lan, một thảm kịch khác đã được soạn sẵn và chờ hồi kết để hạ mà. <br/> Higashino Keigo là tiểu thuyết gia trinh thám hàng đầu Nhật Bản với nhiều tác phẩm hàng triệu bản bán ra trong và ngoài nước, gặt hái vô vàn giải thưởng.Ông từng là Chủ tịch thứ 13 của Hội nhà văn Trinh thám Nhật Bản từ năm 2009 tới năm 2013. Mỗi tác phẩm của ông đều có phong cách khác nhau, nhưng nhìn chung đều có diễn biến bất ngờ, khắc họa tâm lý nhân vật sâu sắc, làm nên nét riêng biệt trong chất văn của Higashino Keigo.",
   },
 
   {
-    id: "075808907369962",
+    id: "7",
     image: "/assets/bookImage/nghicanx.jpg",
     name: "Phía sau nghi can X (Tái bản 2019)",
     author: "Higashino Keigo",
@@ -101,11 +107,12 @@ export const bookData = [
     size: "14 x 20.5",
     price: "109.000 VNĐ",
     sale: "true",
-    description: "Một tác phẩm đậm chất trinh thám cổ điển vua trinh thám Nhật Bản Keigo Higashino. Bản di chúc về khối tài sản kếch xù của ông Ichigahara Takaaki sẽ được công bố vào đúng lễ 49 ngày của ông tại lữ quán Kairotei, nơi sinh thời ông vô cùng yêu mến. Nhưng một lá thư hé lộ sự thật bị chôn vùi dưới lớp tro tàn của vụ hỏa hoạn ở lữ quán này nửa năm trước, xuất hiện đúng buổi tối trước ngày công bố di chúc đã khiến mọi chuyện trở nên rối tung. Cũng trong đêm đó, một người đã bị sát hại. Ngọn lửa ngờ vực bắt đầu âm ỉ cháy lan, một thảm kịch khác đã được soạn sẵn và chờ hồi kết để hạ mà. <br/> Higashino Keigo là tiểu thuyết gia trinh thám hàng đầu Nhật Bản với nhiều tác phẩm hàng triệu bản bán ra trong và ngoài nước, gặt hái vô vàn giải thưởng.Ông từng là Chủ tịch thứ 13 của Hội nhà văn Trinh thám Nhật Bản từ năm 2009 tới năm 2013. Mỗi tác phẩm của ông đều có phong cách khác nhau, nhưng nhìn chung đều có diễn biến bất ngờ, khắc họa tâm lý nhân vật sâu sắc, làm nên nét riêng biệt trong chất văn của Higashino Keigo.",
+    description:
+      "Một tác phẩm đậm chất trinh thám cổ điển vua trinh thám Nhật Bản Keigo Higashino. Bản di chúc về khối tài sản kếch xù của ông Ichigahara Takaaki sẽ được công bố vào đúng lễ 49 ngày của ông tại lữ quán Kairotei, nơi sinh thời ông vô cùng yêu mến. Nhưng một lá thư hé lộ sự thật bị chôn vùi dưới lớp tro tàn của vụ hỏa hoạn ở lữ quán này nửa năm trước, xuất hiện đúng buổi tối trước ngày công bố di chúc đã khiến mọi chuyện trở nên rối tung. Cũng trong đêm đó, một người đã bị sát hại. Ngọn lửa ngờ vực bắt đầu âm ỉ cháy lan, một thảm kịch khác đã được soạn sẵn và chờ hồi kết để hạ mà. <br/> Higashino Keigo là tiểu thuyết gia trinh thám hàng đầu Nhật Bản với nhiều tác phẩm hàng triệu bản bán ra trong và ngoài nước, gặt hái vô vàn giải thưởng.Ông từng là Chủ tịch thứ 13 của Hội nhà văn Trinh thám Nhật Bản từ năm 2009 tới năm 2013. Mỗi tác phẩm của ông đều có phong cách khác nhau, nhưng nhìn chung đều có diễn biến bất ngờ, khắc họa tâm lý nhân vật sâu sắc, làm nên nét riêng biệt trong chất văn của Higashino Keigo.",
   },
 
   {
-    id: "085808907369962",
+    id: "8",
     image: "/assets/bookImage/muoimotchu.jpg",
     name: "Án mạng mười một chữ",
     author: "Higashino Keigo",
@@ -116,11 +123,12 @@ export const bookData = [
     size: "14 x 20.5",
     price: "110.000 VNĐ",
     sale: "false",
-    description: "Một tác phẩm đậm chất trinh thám cổ điển vua trinh thám Nhật Bản Keigo Higashino. Bản di chúc về khối tài sản kếch xù của ông Ichigahara Takaaki sẽ được công bố vào đúng lễ 49 ngày của ông tại lữ quán Kairotei, nơi sinh thời ông vô cùng yêu mến. Nhưng một lá thư hé lộ sự thật bị chôn vùi dưới lớp tro tàn của vụ hỏa hoạn ở lữ quán này nửa năm trước, xuất hiện đúng buổi tối trước ngày công bố di chúc đã khiến mọi chuyện trở nên rối tung. Cũng trong đêm đó, một người đã bị sát hại. Ngọn lửa ngờ vực bắt đầu âm ỉ cháy lan, một thảm kịch khác đã được soạn sẵn và chờ hồi kết để hạ mà. <br/> Higashino Keigo là tiểu thuyết gia trinh thám hàng đầu Nhật Bản với nhiều tác phẩm hàng triệu bản bán ra trong và ngoài nước, gặt hái vô vàn giải thưởng.Ông từng là Chủ tịch thứ 13 của Hội nhà văn Trinh thám Nhật Bản từ năm 2009 tới năm 2013. Mỗi tác phẩm của ông đều có phong cách khác nhau, nhưng nhìn chung đều có diễn biến bất ngờ, khắc họa tâm lý nhân vật sâu sắc, làm nên nét riêng biệt trong chất văn của Higashino Keigo.",
+    description:
+      "Một tác phẩm đậm chất trinh thám cổ điển vua trinh thám Nhật Bản Keigo Higashino. Bản di chúc về khối tài sản kếch xù của ông Ichigahara Takaaki sẽ được công bố vào đúng lễ 49 ngày của ông tại lữ quán Kairotei, nơi sinh thời ông vô cùng yêu mến. Nhưng một lá thư hé lộ sự thật bị chôn vùi dưới lớp tro tàn của vụ hỏa hoạn ở lữ quán này nửa năm trước, xuất hiện đúng buổi tối trước ngày công bố di chúc đã khiến mọi chuyện trở nên rối tung. Cũng trong đêm đó, một người đã bị sát hại. Ngọn lửa ngờ vực bắt đầu âm ỉ cháy lan, một thảm kịch khác đã được soạn sẵn và chờ hồi kết để hạ mà. <br/> Higashino Keigo là tiểu thuyết gia trinh thám hàng đầu Nhật Bản với nhiều tác phẩm hàng triệu bản bán ra trong và ngoài nước, gặt hái vô vàn giải thưởng.Ông từng là Chủ tịch thứ 13 của Hội nhà văn Trinh thám Nhật Bản từ năm 2009 tới năm 2013. Mỗi tác phẩm của ông đều có phong cách khác nhau, nhưng nhìn chung đều có diễn biến bất ngờ, khắc họa tâm lý nhân vật sâu sắc, làm nên nét riêng biệt trong chất văn của Higashino Keigo.",
   },
 
   {
-    id: "095808907369962",
+    id: "9",
     image: "/assets/bookImage/chotoixin.jpg",
     name: "Cho tôi xin một vé đi tuổi thơ",
     author: "Nguyễn Nhật Ánh",
@@ -131,11 +139,12 @@ export const bookData = [
     size: "13 x 20",
     price: "150.000 VNĐ",
     sale: "false",
-    description: "Trong Cho tôi xin một vé đi tuổi thơ, nhà văn Nguyễn Nhật Ánh mời người đọc lên chuyến tàu quay ngược trở lại thăm tuổi thơ và tình bạn dễ thương của 4 bạn nhỏ. Những trò chơi dễ thương thời bé, tính cách thật thà, thẳng thắn một cách thông minh và dại dột, những ước mơ tự do trong lòng… khiến cuốn sách có thể làm các bậc phụ huynh lo lắng rồi thở phào. Không chỉ thích hợp với người đọc trẻ, cuốn sách còn có thể hấp dẫn và thực sự có ích cho người lớn trong quan hệ với con mình.",
+    description:
+      "Trong Cho tôi xin một vé đi tuổi thơ, nhà văn Nguyễn Nhật Ánh mời người đọc lên chuyến tàu quay ngược trở lại thăm tuổi thơ và tình bạn dễ thương của 4 bạn nhỏ. Những trò chơi dễ thương thời bé, tính cách thật thà, thẳng thắn một cách thông minh và dại dột, những ước mơ tự do trong lòng… khiến cuốn sách có thể làm các bậc phụ huynh lo lắng rồi thở phào. Không chỉ thích hợp với người đọc trẻ, cuốn sách còn có thể hấp dẫn và thực sự có ích cho người lớn trong quan hệ với con mình.",
   },
 
   {
-    id: "105808907369962",
+    id: "10",
     image: "/assets/bookImage/khonggiadinh.webp",
     name: "Không gia đình",
     author: "Hector Malot",
@@ -146,11 +155,12 @@ export const bookData = [
     size: "14.5 x 20.5",
     price: "119.000 VNĐ",
     sale: "false",
-    description: "Không Gia Đình là một chuyến phiêu lưu mà Rêmi là nhân vật chính. Em nghèo khổ, em cô độc, em không có người thân. Cuộc đời Remi gắn liền với gánh xiếc rong, với những thử thách mà em gặp phải trên đường đời trải rộng khắp nước Pháp tươi đẹp. Remi lớn lên trong đau khổ, lang thang mọi nơi, bị tù đày... nhưng dù trong hoàn cảnh nào, em vẫn đứng thẳng lưng, ngẩng cao đầu, giữ phẩm chất làm người - điều em đã học từ cụ Vitali trong cuộc đời lang bạt của mình.",
+    description:
+      "Không Gia Đình là một chuyến phiêu lưu mà Rêmi là nhân vật chính. Em nghèo khổ, em cô độc, em không có người thân. Cuộc đời Remi gắn liền với gánh xiếc rong, với những thử thách mà em gặp phải trên đường đời trải rộng khắp nước Pháp tươi đẹp. Remi lớn lên trong đau khổ, lang thang mọi nơi, bị tù đày... nhưng dù trong hoàn cảnh nào, em vẫn đứng thẳng lưng, ngẩng cao đầu, giữ phẩm chất làm người - điều em đã học từ cụ Vitali trong cuộc đời lang bạt của mình.",
   },
 
   {
-    id: "115808907369962",
+    id: "11",
     image: "/assets/bookImage/caphetony.jpg",
     name: "Cà phê cùng Tony",
     author: "Tony Buổi Sáng",
@@ -161,11 +171,12 @@ export const bookData = [
     size: "13 x 20",
     price: "90.000 VNĐ",
     sale: "false",
-    description: "Có đôi khi vào những tháng năm bắt đầu vào đời, giữa vô vàn ngả rẽ và lời khuyên, khi rất nhiều dự định mà thiếu đôi phần định hướng, thì CẢM HỨNG là điều quan trọng để bạn trẻ bắt đầu bước chân đầu tiên trên con đường theo đuổi giấc mơ của mình. Cà Phê Cùng Tony là tập hợp những bài viết của tác giả Tony Buổi Sáng. Đúng như tên gọi, mỗi bài nhẹ nhàng như một tách cà phê, mà bạn trẻ có thể nhận ra một chút gì của chính mình hay bạn bè mình trong đó: Từ chuyện lớn như định vị bản thân giữa bạn bè quốc tế, cho đến chuyện nhỏ như chú ý những phép tắc xã giao thông thường. Chúng tôi tin rằng những người trẻ tuổi luôn mang trong mình khát khao vươn lên và tấm lòng hướng thiện, và có nhiều cách để động viên họ biến điều đó thành hành động. Nếu như tập sách nhỏ này có thể khơi gợi trong lòng bạn đọc trẻ một cảm hứng tốt đẹp, như tách cà phê thơm vào đầu ngày nắng mới, thì đó là niềm vui lớn của tác giả Tony Buổi Sáng.",
+    description:
+      "Có đôi khi vào những tháng năm bắt đầu vào đời, giữa vô vàn ngả rẽ và lời khuyên, khi rất nhiều dự định mà thiếu đôi phần định hướng, thì CẢM HỨNG là điều quan trọng để bạn trẻ bắt đầu bước chân đầu tiên trên con đường theo đuổi giấc mơ của mình. Cà Phê Cùng Tony là tập hợp những bài viết của tác giả Tony Buổi Sáng. Đúng như tên gọi, mỗi bài nhẹ nhàng như một tách cà phê, mà bạn trẻ có thể nhận ra một chút gì của chính mình hay bạn bè mình trong đó: Từ chuyện lớn như định vị bản thân giữa bạn bè quốc tế, cho đến chuyện nhỏ như chú ý những phép tắc xã giao thông thường. Chúng tôi tin rằng những người trẻ tuổi luôn mang trong mình khát khao vươn lên và tấm lòng hướng thiện, và có nhiều cách để động viên họ biến điều đó thành hành động. Nếu như tập sách nhỏ này có thể khơi gợi trong lòng bạn đọc trẻ một cảm hứng tốt đẹp, như tách cà phê thơm vào đầu ngày nắng mới, thì đó là niềm vui lớn của tác giả Tony Buổi Sáng.",
   },
 
   {
-    id: "125808907369962",
+    id: "12",
     image: "/assets/bookImage/chodilacon.png",
     name: "Cho đi là còn mãi",
     author: "Azim Jamal & Harvey McKinnon",
@@ -176,11 +187,12 @@ export const bookData = [
     size: "13 x 20.5",
     price: "64.000 VNĐ",
     sale: "true",
-    description: "Cuộc sống là quá trình trao tặng và đón nhận không ngừng, mỗi người chúng ta là một mắt xích quan trọng trong vòng liên kết ấy. Vì vậy, đừng do dự khi mở rộng lòng mình với mọi người. Rất nhiều người, nhiều nơi trên thế giới đang chờ đợi ở bạn một sự hảo tâm, một vòng tay ấm áp… Đôi khi, chỉ một ánh mắt trìu mến, một nụ cười thân thiện, hay một câu nói chân tình cũng đủ làm viên mãn một trái tim! Hãy cho đi để thấy rằng đời sống thật phong phú. Xuất phát từ chính những trải nghiệm thực tế, đồng thời căn cứ vào kết quả của một số công trình nghiên cứu, hai tác giả đã gợi mở nhiều ý tưởng sâu sắc đáng để người đọc suy ngẫm. Ở đó chúng ta không chỉ thấy được sức mạnh của sự chia sẻ mà còn học được cách chia sẻ. Sự chia sẻ giúp chúng ta tìm được ý nghĩa đích thực của cuộc sống, xóa bỏ trong ta những lo âu, sợ hãi và cảm giác cô đơn, lạc lõng giữa dòng đời,.. Hơn thế nữa, ta nghiệm ra rằng: cho và nhận đều mang đến hạnh phúc. Cho không có nghĩa là mất đi, mà đó là lúc chúng ta nhận lại được rất nhiều - dưới muôn vàn hình thức khác nhau. ",
+    description:
+      "Cuộc sống là quá trình trao tặng và đón nhận không ngừng, mỗi người chúng ta là một mắt xích quan trọng trong vòng liên kết ấy. Vì vậy, đừng do dự khi mở rộng lòng mình với mọi người. Rất nhiều người, nhiều nơi trên thế giới đang chờ đợi ở bạn một sự hảo tâm, một vòng tay ấm áp… Đôi khi, chỉ một ánh mắt trìu mến, một nụ cười thân thiện, hay một câu nói chân tình cũng đủ làm viên mãn một trái tim! Hãy cho đi để thấy rằng đời sống thật phong phú. Xuất phát từ chính những trải nghiệm thực tế, đồng thời căn cứ vào kết quả của một số công trình nghiên cứu, hai tác giả đã gợi mở nhiều ý tưởng sâu sắc đáng để người đọc suy ngẫm. Ở đó chúng ta không chỉ thấy được sức mạnh của sự chia sẻ mà còn học được cách chia sẻ. Sự chia sẻ giúp chúng ta tìm được ý nghĩa đích thực của cuộc sống, xóa bỏ trong ta những lo âu, sợ hãi và cảm giác cô đơn, lạc lõng giữa dòng đời,.. Hơn thế nữa, ta nghiệm ra rằng: cho và nhận đều mang đến hạnh phúc. Cho không có nghĩa là mất đi, mà đó là lúc chúng ta nhận lại được rất nhiều - dưới muôn vàn hình thức khác nhau. ",
   },
 
   {
-    id: "135808907369962",
+    id: "13",
     image: "/assets/bookImage/toive.jpg",
     name: "Tôi vẽ - Phương pháp tự học vẽ truyện tranh",
     author: "Nhiều tác giả",
@@ -191,11 +203,12 @@ export const bookData = [
     size: "16 x 24",
     price: "100.000 VNĐ",
     sale: "true",
-    description: "'Tôi Vẽ' với 300 trang sách bao gồm những kỹ năng cơ bản cần có của một họa sĩ truyện tranh, từ tạo hình nhân vật, thiết kế bối cảnh, biểu cảm, các kỹ thuật diễn họa cho đến luật phối cảnh. Đây là một cuốn cẩm nang tuyệt vời dành cho các bạn đang bắt đầu học vẽ truyện tranh. Những kiến thức này có thể không giúp các bạn vẽ đẹp ngay lập tức nhưng sẽ là nền tảng vững chắc giúp bạn hình thành các tiêu chuẩn chuyên nghiệp trong nghề và không mất thời gian tự mò mẫm. Phần minh họa cho các bài học cũng rất hấp dẫn và sáng tạo. Các tác giả đã sử dụng chính nhân vật và trang truyện của mình để làm rõ sự liên quan giữa lý thuyết và thực tế, tính ứng dụng rõ ràng của các kỹ thuật và quy trình sáng tác.",
+    description:
+      "'Tôi Vẽ' với 300 trang sách bao gồm những kỹ năng cơ bản cần có của một họa sĩ truyện tranh, từ tạo hình nhân vật, thiết kế bối cảnh, biểu cảm, các kỹ thuật diễn họa cho đến luật phối cảnh. Đây là một cuốn cẩm nang tuyệt vời dành cho các bạn đang bắt đầu học vẽ truyện tranh. Những kiến thức này có thể không giúp các bạn vẽ đẹp ngay lập tức nhưng sẽ là nền tảng vững chắc giúp bạn hình thành các tiêu chuẩn chuyên nghiệp trong nghề và không mất thời gian tự mò mẫm. Phần minh họa cho các bài học cũng rất hấp dẫn và sáng tạo. Các tác giả đã sử dụng chính nhân vật và trang truyện của mình để làm rõ sự liên quan giữa lý thuyết và thực tế, tính ứng dụng rõ ràng của các kỹ thuật và quy trình sáng tác.",
   },
 
   {
-    id: "145808907369962",
+    id: "14",
     image: "/assets/bookImage/truyenkieu.jpg",
     name: "Truyện Kiều",
     author: "Nguyễn Du",
@@ -206,11 +219,12 @@ export const bookData = [
     size: "13.5 x 20.5",
     price: "38.000 VNĐ",
     sale: "true",
-    description: "Nói tới văn học cổ điển Việt Nam, trước hết chúng ta phải nhắc đến đại thi hào Nguyễn Du và kiệt tác Truyện Kiều của ông. Viết Truyện Kiều, Nguyễn Du chỉ khiêm nhường coi đó là những 'lời quê góp nhặt dông dài'. Nhưng, thực tế đã cho thấy, bất chấp quy luật và sự sàng lọc nghiệt ngã của thời gian, Truyện Kiều đã khẳng định sức sống bất tử của một tác phẩm bất hủ. Tác phẩm Truyện Kiều, nguyên tên là Đoạn trường tân thanh, từ khi ra đời đến nay, khoảng 200 năm, trong lịch sử Văn học Việt Nam, chưa có tác phẩm nào được các nhà khảo cứu, phê bình, xuất bản quan tâm đến nó, từ nội dung, hình thức, lẫn văn bản và thời điểm sáng tác đặc biệt đến như vậy ",
+    description:
+      "Nói tới văn học cổ điển Việt Nam, trước hết chúng ta phải nhắc đến đại thi hào Nguyễn Du và kiệt tác Truyện Kiều của ông. Viết Truyện Kiều, Nguyễn Du chỉ khiêm nhường coi đó là những 'lời quê góp nhặt dông dài'. Nhưng, thực tế đã cho thấy, bất chấp quy luật và sự sàng lọc nghiệt ngã của thời gian, Truyện Kiều đã khẳng định sức sống bất tử của một tác phẩm bất hủ. Tác phẩm Truyện Kiều, nguyên tên là Đoạn trường tân thanh, từ khi ra đời đến nay, khoảng 200 năm, trong lịch sử Văn học Việt Nam, chưa có tác phẩm nào được các nhà khảo cứu, phê bình, xuất bản quan tâm đến nó, từ nội dung, hình thức, lẫn văn bản và thời điểm sáng tác đặc biệt đến như vậy ",
   },
 
   {
-    id: "155808907369962",
+    id: "15",
     image: "/assets/bookImage/dacnhantam.jpg",
     name: "Đắc nhân tâm",
     author: "Dale Carnegie",
@@ -221,11 +235,12 @@ export const bookData = [
     size: "14.5 x 20.5",
     price: "76.000 VNĐ",
     sale: "false",
-    description: "Nói một cách tổng quát thì Đắc Nhân Tâm chia sẻ về nghệ thuật thu phục lòng người, cách làm những người xung quanh yêu quý mình hơn. Cuốn sách dành cho tất cả mọi người, không phân biệt lứa tuổi vì đâu phải ai cũng hoàn hảo, cần có sự rèn luyện về tư duy cũng như tính cách mới được. Khi đọc Đắc Nhân Tâm bạn sẽ thấy hiểu rõ bản thân, những suy nghĩ và mong muốn của chính mình cũng như biết cách quan tâm đến những người xung quanh, khai thác thế mạnh tiềm ẩn của mọi người và giúp họ phát triển hơn cũng như mối quan hệ của bạn với họ được vững chắc hơn. Xuyên suốt cuốn sách tưởng chừng 'dày cộp' mà không ngán này là những bài học thực tế lắng đọng cho bạn đúc kết kinh nghiệm quý báu. Qua những bài học này, bạn học được nhiều thứ như cách cư xử, thái độ cũng như cải thiện kỹ năng giao tiếp. Đôi khi, đọc một lần không thể nắm được hết những giá trị mà cuốn sách mang lại, vì vậy bạn có thể đọc đi đọc lại, nghiền ngẫm để hiểu được những ý nghĩa sâu xa cũng như quy tắc vàng mà chỉ có Đắc Nhân Tâm mới đem lại cho bạn. ",
+    description:
+      "Nói một cách tổng quát thì Đắc Nhân Tâm chia sẻ về nghệ thuật thu phục lòng người, cách làm những người xung quanh yêu quý mình hơn. Cuốn sách dành cho tất cả mọi người, không phân biệt lứa tuổi vì đâu phải ai cũng hoàn hảo, cần có sự rèn luyện về tư duy cũng như tính cách mới được. Khi đọc Đắc Nhân Tâm bạn sẽ thấy hiểu rõ bản thân, những suy nghĩ và mong muốn của chính mình cũng như biết cách quan tâm đến những người xung quanh, khai thác thế mạnh tiềm ẩn của mọi người và giúp họ phát triển hơn cũng như mối quan hệ của bạn với họ được vững chắc hơn. Xuyên suốt cuốn sách tưởng chừng 'dày cộp' mà không ngán này là những bài học thực tế lắng đọng cho bạn đúc kết kinh nghiệm quý báu. Qua những bài học này, bạn học được nhiều thứ như cách cư xử, thái độ cũng như cải thiện kỹ năng giao tiếp. Đôi khi, đọc một lần không thể nắm được hết những giá trị mà cuốn sách mang lại, vì vậy bạn có thể đọc đi đọc lại, nghiền ngẫm để hiểu được những ý nghĩa sâu xa cũng như quy tắc vàng mà chỉ có Đắc Nhân Tâm mới đem lại cho bạn. ",
   },
 
   {
-    id: "165808907369962",
+    id: "16",
     image: "/assets/bookImage/changvang.jpg",
     name: "Chạng vạng",
     author: "Stephenie Meyer",
@@ -236,6 +251,7 @@ export const bookData = [
     size: "14 x 20",
     price: "160.000 VNĐ",
     sale: "false",
-    description: "Sách viết về mối tình của một cô gái trẻ với ma cà rồng, trong bối cảnh nước Mỹ hiện đại. Từ đó, những ngọt ngào và cay đắng thậm chí cả cái chết đã liên tục đe dọa cô gái, để dẫn cô gái đến một lựa chọn can đảm… Chạng vạng thuộc loại truyện kinh dị nhưng viết cảm động, sâu sắc, đầy tính nhân văn. Bản dịch được trau chuốt khá kỹ. Sách dành cho đối tượng bạn đọc rộng rãi, đặc biệt là bạn đọc trẻ. ",
+    description:
+      "Sách viết về mối tình của một cô gái trẻ với ma cà rồng, trong bối cảnh nước Mỹ hiện đại. Từ đó, những ngọt ngào và cay đắng thậm chí cả cái chết đã liên tục đe dọa cô gái, để dẫn cô gái đến một lựa chọn can đảm… Chạng vạng thuộc loại truyện kinh dị nhưng viết cảm động, sâu sắc, đầy tính nhân văn. Bản dịch được trau chuốt khá kỹ. Sách dành cho đối tượng bạn đọc rộng rãi, đặc biệt là bạn đọc trẻ. ",
   },
-]
+];

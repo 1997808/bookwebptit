@@ -1,13 +1,14 @@
-import { bookData } from "../assets/book";
-
 const initialState = {
   cart: [],
+  bookData: [],
 };
 
 export default function cart(state = initialState, action) {
   switch (action.type) {
     case "ADD_ITEM":
-      const bookChosen = bookData.filter((items) => items.id === action.id)[0];
+      const bookChosen = state.bookData.filter(
+        (items) => items.id === action.id
+      )[0];
       var exist = state.cart.find((x) => x.id === action.id);
       return {
         ...state,
@@ -31,8 +32,16 @@ export default function cart(state = initialState, action) {
 
     case "REMOVE_ITEM":
       return {
+        ...state,
         cart: state.cart.filter((x) => x.id !== action.id),
       };
+
+    case "FETCH_BOOK_FOR_CART":
+      return {
+        ...state,
+        bookData: action.data,
+      };
+
     default:
       return state;
   }
