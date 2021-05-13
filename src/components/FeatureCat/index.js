@@ -6,7 +6,7 @@ import tieuthuyet from "../../images/image11.png";
 
 const Category = ({ color, cat_icon, cat_name }) => {
   return (
-    <Link to="/categories">
+    <Link to="/book">
       <div className={`${color} p-10`}>
         <img src={cat_icon} alt="icon" />
         <p className="text-lg pt-2 font-medium truncate-1-lines">{cat_name}</p>
@@ -21,7 +21,7 @@ export default function FeatureCat() {
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
         <p className="text-3xl">Danh mục nổi bật</p>
-        <Link to="/categories">
+        <Link to="/book">
           <p>Xem thêm</p>
         </Link>
       </div>

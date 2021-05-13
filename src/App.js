@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MyAxios } from "./util/api";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Page404 from "./pages/404";
 import BookDetail from "./pages/bookDetail";
 import Cart from "./pages/cart";
-import Categories from "./pages/categories";
+import AllBook from "./pages/allBook";
 import Index from "./pages/index";
 import UserData from "./pages/userData";
 import Login from "./pages/login";
@@ -18,12 +18,13 @@ import ClientLayout from "./pages/layout/client";
 import UserRoute from "./util/userRoute";
 import NonRoute from "./util/nonRoute";
 
-import { adminAuth, userAuth, logout, setUserID } from "./actions";
+import { adminAuth, userAuth, logout, setUserID, fetchBook } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function App() {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth);
+  const [allBook, setAllBook] = useState([]);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -40,6 +41,21 @@ export default function App() {
     };
     checkLoggedIn();
   }, [dispatch]);
+
+  useEffect(() => {
+    const allBookData = async () => {
+      await MyAxios.get("/book").then((response) => {
+        console.log(response);
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          setAllBook(response.data.result);
+          dispatch(fetchBook(response.data.result));
+        }
+      });
+    };
+    allBookData();
+  }, []);
 
   return (
     <Router>
@@ -67,12 +83,14 @@ export default function App() {
               <Route path="/cart">
                 <Cart />
               </Route>
-              <Route path="/book-detail/:id">
+              <Route path="/book/:id">
                 <BookDetail />
               </Route>
-              <Route path="/categories">
-                <Categories />
+              {/* will be fixed */}
+              <Route path="/book">
+                <AllBook allBook={allBook} />
               </Route>
+              {/* will be fixed */}
               <Route exact path="/">
                 <Index />
               </Route>

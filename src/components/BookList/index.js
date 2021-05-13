@@ -1,12 +1,15 @@
+import React from "react";
 import Book from "../book";
-import { bookData } from "../../assets/book";
+import { useSelector } from "react-redux";
 
 export default function BookList() {
+  const bookData = useSelector((state) => state.book.book);
+
   return (
     <div className="w-full">
       <div className="flex justify-between items-center">
         <p className="text-base">Hiển thị 1-12 trong 126 kết quả</p>
-        <p>Kỹ năng sống</p>
+        {/* <p>Kỹ năng sống</p> */}
       </div>
       <div className="grid grid-cols-2 xl:grid-cols-4 pt-8">
         {bookData &&
@@ -19,7 +22,7 @@ export default function BookList() {
                 name={items.name}
                 author={items.author}
                 price={items.price}
-                sale={items.sale}
+                discount={items.discount}
               />
             );
           })}

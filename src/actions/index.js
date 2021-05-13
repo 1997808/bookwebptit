@@ -43,3 +43,10 @@ export const logout = () => {
     type: "LOG_OUT",
   };
 };
+
+export const fetchBook = (data) => {
+  return {
+    type: "FETCH_BOOK",
+    data,
+  };
+};

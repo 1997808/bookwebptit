@@ -1,9 +1,8 @@
-import React from "react"
+import React from "react";
+import BookList from "../components/BookList";
+import CatFilter from "../components/CatFilter";
 
-import BookList from "../components/BookList"
-import CatFilter from "../components/CatFilter"
-
-export default function Categories() {
+export default function AllBook() {
   return (
     <div className="w-full">
       <div className="container mx-auto grid grid-cols-4 gap-8 pt-10 pb-8">
@@ -15,5 +14,5 @@ export default function Categories() {
         </div>
       </div>
     </div>
-  )
+  );
 }

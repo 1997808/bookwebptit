@@ -26,15 +26,15 @@ export default function Header() {
         <Link to="/">
           <p className="pl-10">Trang chủ</p>
         </Link>
-        <Link to="/categories">
+        <Link to="/book">
+          <p className="pl-10">Sản phẩm</p>
+        </Link>
+        <Link to="/book">
           <p className="pl-10">Danh mục</p>
         </Link>
         <Link to="/contact">
           <p className="pl-10">Liên hệ</p>
         </Link>
-        {/* <Link to="/help">
-          <p className="pl-10">Hỗ trợ</p>
-        </Link> */}
       </div>
       <div className="right-side flex items-center">
         {/* <div className="w-64 bg-gray-200 p-2 flex items-center">

@@ -7,7 +7,7 @@ export default function BestSelling() {
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
         <p className="text-3xl">Sách bán chạy</p>
-        <Link to="/categories">
+        <Link to="/book">
           <p>Xem thêm</p>
         </Link>
       </div>
