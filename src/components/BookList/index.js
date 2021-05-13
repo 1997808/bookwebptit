@@ -1,10 +1,7 @@
 import React from "react";
 import Book from "../book";
-import { useSelector } from "react-redux";
 
-export default function BookList() {
-  const bookData = useSelector((state) => state.book.book);
-
+export default function BookList({ bookData }) {
   return (
     <div className="w-full">
       <div className="flex justify-between items-center">

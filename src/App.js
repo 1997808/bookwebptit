@@ -55,7 +55,7 @@ export default function App() {
       });
     };
     allBookData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
