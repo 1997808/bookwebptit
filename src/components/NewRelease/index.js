@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import Book from "../book";
 import newBookBanner from "../../images/newBook.webp";
-import { bookData } from "../../assets/book";
 
-export default function NewRelease() {
+export default function NewRelease({ newBookData }) {
   return (
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
@@ -19,8 +18,8 @@ export default function NewRelease() {
           className="w-2/5 flex-grow object-cover"
         />
         <div className="w-3/5 grid grid-cols-2 xl:grid-cols-3">
-          {bookData &&
-            bookData.slice(10, 16).map((items) => {
+          {newBookData &&
+            newBookData.map((items) => {
               return (
                 <Book
                   key={items.id}
@@ -29,7 +28,7 @@ export default function NewRelease() {
                   name={items.name}
                   author={items.author}
                   price={items.price}
-                  sale={items.sale}
+                  discount={items.discount}
                 />
               );
             })}

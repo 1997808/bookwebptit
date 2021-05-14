@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions/index";
-// import { vndFormatter } from "../util/cartSum";
+import { vndFormatter } from "../util/cartSum";
 
 export default function Book({ id, photo, name, author, price, discount }) {
   const [isShown, setIsShown] = useState(false);
@@ -34,7 +34,7 @@ export default function Book({ id, photo, name, author, price, discount }) {
           )}
           <p className="text-base truncate-2-lines h-14">{name}</p>
           <p className="text-xs text-gray-400 truncate-1-lines">{author}</p>
-          <p className="text-lg font-medium">{price}</p>
+          <p className="text-lg font-medium">{vndFormatter.format(price)}</p>
         </div>
       </Link>
 

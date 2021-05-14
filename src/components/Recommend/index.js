@@ -1,14 +1,13 @@
 import Book from "../book";
-import { bookData } from "../../assets/book";
 
-export default function Recommend() {
-  const number = Math.floor(Math.random() * 13);
+export default function Recommend({ allBookData }) {
+  const number = Math.floor(Math.random() * 3);
   return (
     <div className="container mx-auto w-full pt-20">
       <p className="text-3xl">Có thế bạn sẽ thích</p>
       <div className="grid grid-cols-3 xl:grid-cols-5 pt-8">
-        {bookData &&
-          bookData.slice(number, number + 5).map((items) => {
+        {allBookData &&
+          allBookData.slice(number, number + 5).map((items) => {
             return (
               <Book
                 key={items.id}
@@ -17,7 +16,7 @@ export default function Recommend() {
                 name={items.name}
                 author={items.author}
                 price={items.price}
-                sale={items.sale}
+                discount={items.discount}
               />
             );
           })}

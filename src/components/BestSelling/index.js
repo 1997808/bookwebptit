@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import Book from "../book";
-import { bookData } from "../../assets/book";
 
-export default function BestSelling() {
+export default function BestSelling({ allBookData }) {
   return (
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
@@ -12,8 +11,8 @@ export default function BestSelling() {
         </Link>
       </div>
       <div className="grid grid-cols-3 xl:grid-cols-5 pt-8">
-        {bookData &&
-          bookData.slice(0, 15).map((items) => {
+        {allBookData &&
+          allBookData.slice(2, 7).map((items) => {
             return (
               <Book
                 key={items.id}
@@ -22,7 +21,7 @@ export default function BestSelling() {
                 name={items.name}
                 author={items.author}
                 price={items.price}
-                sale={items.sale}
+                discount={items.discount}
               />
             );
           })}
