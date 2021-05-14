@@ -2,13 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { Link } from "react-router-dom";
+import { CartSum, vndFormatter } from "../../util/cartSum";
 
 const BookItem = ({ name, qty, price }) => {
   return (
     <div className="text-sm pt-5 flex justify-between">
       <p className="w-6/12 truncate-3-lines">{name}</p>
       <p className="w-2/12 text-center">x {qty}</p>
-      <p className="w-4/12 text-right">{price}</p>
+      <p className="w-4/12 text-right">{vndFormatter.format(price)}</p>
     </div>
   );
 };
@@ -17,6 +18,7 @@ export default function PaymentForm({ data }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD } = mycss;
+  let total = vndFormatter.format(CartSum(data));
 
   return (
     <>
@@ -87,6 +89,7 @@ export default function PaymentForm({ data }) {
               {data.map((items) => {
                 return (
                   <BookItem
+                    key={items.id}
                     name={items.name}
                     qty={items.qty}
                     price={items.price}
@@ -98,7 +101,7 @@ export default function PaymentForm({ data }) {
               <p className="font-medium">Đơn hàng</p>
               <div className="text-sm pt-5 flex justify-between">
                 <p>Tổng phụ</p>
-                <p>185.500 VNĐ</p>
+                <p>{total}</p>
               </div>
 
               <div className="text-sm pt-5 flex justify-between">
@@ -152,7 +155,7 @@ export default function PaymentForm({ data }) {
             </div>
             <div className="border border-solid p-8">
               <p className="font-medium">Tổng cộng</p>
-              <p className="text-lg pt-5">185.500 VNĐ</p>
+              <p className="text-lg pt-5">{total}</p>
             </div>
 
             <div

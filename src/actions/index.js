@@ -51,6 +51,13 @@ export const fetchBook = (data) => {
   };
 };
 
+export const fetchNewBook = (data) => {
+  return {
+    type: "FETCH_NEW_BOOK",
+    data,
+  };
+};
+
 export const fetchBookForCart = (data) => {
   return {
     type: "FETCH_BOOK_FOR_CART",

@@ -25,6 +25,7 @@ import {
   setUserID,
   fetchBook,
   fetchBookForCart,
+  fetchNewBook,
 } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -51,7 +52,6 @@ export default function App() {
   useEffect(() => {
     const allBookData = async () => {
       await MyAxios.get("/book").then((response) => {
-        console.log(response);
         if (response.data.err) {
           alert(response.data.err);
         } else {
@@ -61,6 +61,20 @@ export default function App() {
       });
     };
     allBookData();
+  }, [dispatch]);
+
+  useEffect(() => {
+    const newBook = async () => {
+      await MyAxios.get(`/newbook/${6}`).then((response) => {
+        console.log(response);
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          dispatch(fetchNewBook(response.data.result));
+        }
+      });
+    };
+    newBook();
   }, [dispatch]);
 
   return (

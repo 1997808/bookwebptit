@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions/index";
+// import { vndFormatter } from "../util/cartSum";
 
 export default function Book({ id, photo, name, author, price, discount }) {
   const [isShown, setIsShown] = useState(false);

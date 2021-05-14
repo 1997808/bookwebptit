@@ -29,9 +29,9 @@ export default function Header() {
         <Link to="/book">
           <p className="pl-10">Sản phẩm</p>
         </Link>
-        <Link to="/book">
+        {/* <Link to="/book">
           <p className="pl-10">Danh mục</p>
-        </Link>
+        </Link> */}
         <Link to="/contact">
           <p className="pl-10">Liên hệ</p>
         </Link>

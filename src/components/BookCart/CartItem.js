@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addItem, reduceItem, removeItem } from "../../actions/index";
+import { vndFormatter } from "../../util/cartSum";
 
 export default function CartItem({ id, photo, name, author, price, qty }) {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ export default function CartItem({ id, photo, name, author, price, qty }) {
         <img
           src={`${process.env.PUBLIC_URL}${photo}`}
           alt="book"
-          className="w-auto h-32"
+          className="w-auto h-32 object-scale-down"
         />
       </div>
       <div className="col-span-2 flex flex-col justify-center pr-4">
@@ -17,7 +18,7 @@ export default function CartItem({ id, photo, name, author, price, qty }) {
         <p className="text-sm text-gray-400 mt-2">{author}</p>
       </div>
       <div className="col-span-1 flex flex-col justify-center">
-        <p>{price}</p>
+        <p>{vndFormatter.format(price)}</p>
       </div>
       <div className="col-span-1 flex items-center">
         <button

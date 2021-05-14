@@ -2,20 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
+import { CartSum, vndFormatter } from "../../util/cartSum";
 
 export default function CartTotal({ data }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD } = mycss;
 
-  let total = 0;
-  if (data.length === 0) {
-    total = 0;
-  } else {
-    data.map((items) => {
-      total += items.price * items.qty;
-    });
-  }
+  let total = vndFormatter.format(CartSum(data));
 
   return (
     <React.Fragment>

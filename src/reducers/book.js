@@ -1,5 +1,6 @@
 const initialState = {
   book: [],
+  newBook: [],
 };
 
 export default function book(state = initialState, action) {
@@ -8,6 +9,12 @@ export default function book(state = initialState, action) {
       return {
         ...state,
         book: action.data,
+      };
+
+    case "FETCH_NEW_BOOK":
+      return {
+        ...state,
+        newBook: action.data,
       };
 
     default:
