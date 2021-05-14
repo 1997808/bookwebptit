@@ -2,9 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-export default function SearchBarBook() {
+export default function SearchBarBook({ onSubmit }) {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
 
   return (
     <form

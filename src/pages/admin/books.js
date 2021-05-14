@@ -21,10 +21,26 @@ export default function Books() {
     };
     getAllBook();
   }, []);
+
+  const onSubmit = async (data) => {
+    if (data.itemID) {
+      const searchBook = await MyAxios.get(
+        `admin/searchbook/${data.itemID}`
+      ).then((response) => {
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          setBook(response.data.result);
+        }
+      });
+      return searchBook;
+    }
+  };
+
   return (
     <>
       <h2 className="text-3xl font-medium pt-12">Kho hàng</h2>
-      <SearchBarBook />
+      <SearchBarBook onSubmit={onSubmit} />
       <ProductTable book={book} />
     </>
   );
