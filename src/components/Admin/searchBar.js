@@ -1,10 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export default function SearchBar() {
+export default function SearchBar({ onSubmit }) {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -12,8 +10,8 @@ export default function SearchBar() {
     >
       <input
         className="col-span-3 w-full h-12 bg-gray-200 p-2 px-4 flex items-center focus:outline-none"
-        placeholder="Nhập ID"
-        {...register("itemID")}
+        placeholder="Nhập sdt"
+        {...register("searchData")}
       />
       <button
         className="col-span-1 w-40 h-12 flex justify-center items-center bg-black text-white"

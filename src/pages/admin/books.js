@@ -27,13 +27,28 @@ export default function Books() {
       const searchBook = await MyAxios.get(
         `admin/searchbook/${data.itemID}`
       ).then((response) => {
+        console.log(response);
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          if (response.data.message) {
+            alert(response.data.message);
+          } else setBook(response.data.result);
+        }
+      });
+      return searchBook;
+    } else {
+      await MyAxios.get("/admin/book", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
         if (response.data.err) {
           alert(response.data.err);
         } else {
           setBook(response.data.result);
         }
       });
-      return searchBook;
     }
   };
 
