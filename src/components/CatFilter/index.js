@@ -1,12 +1,36 @@
-import React from "react"
+import React from "react";
 
-export default function CatFilter() {
+export default function CatFilter({ category, updateBookList, resetBookList }) {
   return (
     <div className="w-full">
       <div className="border border-solid p-8">
-        <p className="text-2xl font-medium pb-0.5">Danh mục</p>
+        <p
+          onClick={() => resetBookList()}
+          className="text-xl font-medium pb-0.5"
+        >
+          Danh mục
+        </p>
       </div>
       <div className="border border-solid px-8 py-4">
+        {category &&
+          category.map((items) => {
+            return (
+              <p
+                key={items.categoryID}
+                onClick={() => updateBookList(items.categoryID)}
+                className="text-sm py-4"
+              >
+                {items.name}
+              </p>
+            );
+          })}
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <div className="border border-solid px-8 py-4">
         <p className="font-medium">Văn học</p>
         <p className="text-sm pt-5">Văn học Việt Nam</p>
         <p className="text-sm pt-5">Văn học nước ngoài</p>
@@ -32,7 +56,5 @@ export default function CatFilter() {
         <p className="text-sm pt-5">Trinh thám</p>
         <p className="text-sm pt-5">Giả tưởng</p>
         <p className="text-sm pt-5">Kinh dị</p>
-      </div>
-    </div >
-  )
+      </div> */
 }

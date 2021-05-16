@@ -24,8 +24,10 @@ import {
   logout,
   setUserID,
   fetchBook,
+  fetchBookList,
   fetchBookForCart,
   fetchNewBook,
+  fetchCategory,
 } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -56,6 +58,7 @@ export default function App() {
           alert(response.data.err);
         } else {
           dispatch(fetchBook(response.data.result));
+          dispatch(fetchBookList(response.data.result));
           dispatch(fetchBookForCart(response.data.result));
         }
       });
@@ -66,7 +69,6 @@ export default function App() {
   useEffect(() => {
     const newBook = async () => {
       await MyAxios.get(`/newbook/${6}`).then((response) => {
-        console.log(response);
         if (response.data.err) {
           alert(response.data.err);
         } else {
@@ -75,6 +77,19 @@ export default function App() {
       });
     };
     newBook();
+  }, [dispatch]);
+
+  useEffect(() => {
+    const allCategory = async () => {
+      await MyAxios.get(`/category`).then((response) => {
+        if (response.data.err) {
+          alert(response.data.err);
+        } else {
+          dispatch(fetchCategory(response.data.result));
+        }
+      });
+    };
+    allCategory();
   }, [dispatch]);
 
   return (

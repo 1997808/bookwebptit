@@ -6,7 +6,7 @@ export default function Category({ id, name, count }) {
     <tr key={id} className="border-b hover:bg-white">
       <Td>{id}</Td>
       <Td>{name}</Td>
-      <Td>{count}</Td>
+      <Td>{count ? count : 0}</Td>
     </tr>
   );
 }

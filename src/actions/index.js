@@ -51,6 +51,13 @@ export const fetchBook = (data) => {
   };
 };
 
+export const fetchBookList = (data) => {
+  return {
+    type: "FETCH_BOOK_LIST",
+    data,
+  };
+};
+
 export const fetchNewBook = (data) => {
   return {
     type: "FETCH_NEW_BOOK",
@@ -61,6 +68,13 @@ export const fetchNewBook = (data) => {
 export const fetchBookForCart = (data) => {
   return {
     type: "FETCH_BOOK_FOR_CART",
+    data,
+  };
+};
+
+export const fetchCategory = (data) => {
+  return {
+    type: "FETCH_CATEGORY",
     data,
   };
 };
