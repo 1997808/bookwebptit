@@ -29,7 +29,7 @@ export default function AllBook() {
       <div className="container mx-auto grid grid-cols-4 gap-8 pt-10 pb-8">
         <div className="col-span-1">
           <CatFilter
-            category={allCategory}
+            allCategory={allCategory}
             updateBookList={updateBookList}
             resetBookList={reset}
           />

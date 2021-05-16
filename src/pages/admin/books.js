@@ -27,7 +27,6 @@ export default function Books() {
       const searchBook = await MyAxios.get(
         `admin/searchbook/${data.itemID}`
       ).then((response) => {
-        console.log(response);
         if (response.data.err) {
           alert(response.data.err);
         } else {

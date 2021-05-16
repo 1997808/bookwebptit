@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function CatFilter({ category, updateBookList, resetBookList }) {
+export default function CatFilter({
+  allCategory,
+  updateBookList,
+  resetBookList,
+}) {
   return (
     <div className="w-full">
       <div
@@ -10,12 +14,14 @@ export default function CatFilter({ category, updateBookList, resetBookList }) {
         <p className="text-xl font-medium pb-0.5">Danh mục</p>
       </div>
       <div className="border border-solid px-8 py-4">
-        {category &&
-          category.map((items) => {
+        {allCategory &&
+          allCategory.map((items) => {
             return (
               <p
                 key={items.categoryID}
-                onClick={() => updateBookList(items.categoryID)}
+                onClick={() => {
+                  updateBookList(items.categoryID);
+                }}
                 className="text-sm py-4 cursor-pointer"
               >
                 {items.name}
@@ -25,34 +31,4 @@ export default function CatFilter({ category, updateBookList, resetBookList }) {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="border border-solid px-8 py-4">
-        <p className="font-medium">Văn học</p>
-        <p className="text-sm pt-5">Văn học Việt Nam</p>
-        <p className="text-sm pt-5">Văn học nước ngoài</p>
-        <p className="text-sm pt-5">Văn học thiếu nhi</p>
-        <p className="text-sm pt-5">Văn học hiện đại</p>
-      </div>
-      <div className="border border-solid px-8 py-4">
-        <p className="font-medium">Giáo dục</p>
-        <p className="text-sm pt-5">Sách Lịch sử</p>
-        <p className="text-sm pt-5">Sách Kinh tế</p>
-        <p className="text-sm pt-5">Sách Khoa học - Kỹ thuật</p>
-      </div>
-      <div className="border border-solid px-8 py-4">
-        <p className="font-medium">Kỹ năng sống</p>
-        <p className="text-sm pt-5">Sách dạy nấu ăn</p>
-        <p className="text-sm pt-5">Tự giúp bản thân</p>
-        <p className="text-sm pt-5">Kỹ năng mềm</p>
-      </div>
-      <div className="border border-solid px-8 py-4">
-        <p className="font-medium">Khác</p>
-        <p className="text-sm pt-5">Tiểu thuyết</p>
-        <p className="text-sm pt-5">Ngôn tình</p>
-        <p className="text-sm pt-5">Trinh thám</p>
-        <p className="text-sm pt-5">Giả tưởng</p>
-        <p className="text-sm pt-5">Kinh dị</p>
-      </div> */
 }

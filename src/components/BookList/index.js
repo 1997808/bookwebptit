@@ -5,8 +5,8 @@ export default function BookList({ bookData }) {
   return (
     <div className="w-full">
       <div className="flex justify-between items-center">
-        <p className="text-base">Hiển thị 1-12 trong 126 kết quả</p>
-        {/* <p>Kỹ năng sống</p> */}
+        <p className="text-base">Hiển thị {bookData.length} kết quả</p>
+        {/* <p>{category}</p> */}
       </div>
       <div className="grid grid-cols-2 xl:grid-cols-4 pt-8">
         {bookData &&
