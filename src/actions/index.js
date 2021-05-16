@@ -58,6 +58,12 @@ export const fetchBookList = (data) => {
   };
 };
 
+export const resetBookList = () => {
+  return {
+    type: "RESET_BOOK_LIST",
+  };
+};
+
 export const fetchNewBook = (data) => {
   return {
     type: "FETCH_NEW_BOOK",

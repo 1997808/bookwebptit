@@ -3,13 +3,11 @@ import React from "react";
 export default function CatFilter({ category, updateBookList, resetBookList }) {
   return (
     <div className="w-full">
-      <div className="border border-solid p-8">
-        <p
-          onClick={() => resetBookList()}
-          className="text-xl font-medium pb-0.5"
-        >
-          Danh mục
-        </p>
+      <div
+        onClick={() => resetBookList()}
+        className="border border-solid p-8 cursor-pointer"
+      >
+        <p className="text-xl font-medium pb-0.5">Danh mục</p>
       </div>
       <div className="border border-solid px-8 py-4">
         {category &&
@@ -18,7 +16,7 @@ export default function CatFilter({ category, updateBookList, resetBookList }) {
               <p
                 key={items.categoryID}
                 onClick={() => updateBookList(items.categoryID)}
-                className="text-sm py-4"
+                className="text-sm py-4 cursor-pointer"
               >
                 {items.name}
               </p>

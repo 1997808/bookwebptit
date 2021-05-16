@@ -4,9 +4,11 @@ import Logo from "./logo.svg";
 import user from "../../images/image2.png";
 import cart from "../../images/image3.png";
 // import search from "../../images/image4.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { resetBookList } from "../../actions";
 
 export default function Header() {
+  const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth);
   var loginBtn = "/login";
   if (!isAuth.user && !isAuth.admin) {
@@ -26,7 +28,7 @@ export default function Header() {
         <Link to="/">
           <p className="pl-10">Trang chủ</p>
         </Link>
-        <Link to="/book">
+        <Link to="/book" onClick={() => dispatch(resetBookList())}>
           <p className="pl-10">Sản phẩm</p>
         </Link>
         <Link to="/contact">

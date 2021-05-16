@@ -19,6 +19,12 @@ export default function book(state = initialState, action) {
         bookList: action.data,
       };
 
+    case "RESET_BOOK_LIST":
+      return {
+        ...state,
+        bookList: state.book,
+      };
+
     case "FETCH_NEW_BOOK":
       return {
         ...state,
