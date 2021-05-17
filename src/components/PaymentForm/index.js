@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
+import { MyAxios } from "../../util/api";
 import { Link } from "react-router-dom";
 import { CartSum, vndFormatter } from "../../util/cartSum";
 
@@ -16,9 +17,19 @@ const BookItem = ({ name, qty, price }) => {
 
 export default function PaymentForm({ data }) {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
   const { INPUT_FIELD } = mycss;
   let total = vndFormatter.format(CartSum(data));
+
+  const onSubmit = async (formData) => {
+    const addBook = await MyAxios.post("/order", { formData, data }).then(
+      (response) => {
+        if (response.formData.message) {
+          alert(response.formData.message);
+        }
+      }
+    );
+    return addBook;
+  };
 
   return (
     <>
@@ -73,7 +84,7 @@ export default function PaymentForm({ data }) {
                 type="text"
                 rows={6}
                 placeholder={"note"}
-                {...register("note", { required: true })}
+                {...register("note")}
                 className="w-full focus:outline-none border border-gray-200 p-4"
               />
             </div>
@@ -202,14 +213,14 @@ export default function PaymentForm({ data }) {
             </div>
           </div>
 
-          <Link to="/receipt">
-            <button
-              type="submit"
-              className="h-12 w-full flex justify-center items-center bg-black mt-6"
-            >
-              <p className="text-white">Đặt hàng</p>
-            </button>
-          </Link>
+          {/* <Link to="/receipt"> */}
+          <button
+            type="submit"
+            className="h-12 w-full flex justify-center items-center bg-black mt-6"
+          >
+            <p className="text-white">Đặt hàng</p>
+          </button>
+          {/* </Link> */}
         </form>
       </div>
     </>
