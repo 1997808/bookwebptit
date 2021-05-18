@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { CartSum, vndFormatter } from "../../util/cartSum";
 import { useSelector } from "react-redux";
 
@@ -21,18 +21,26 @@ export default function PaymentForm({ data }) {
   const { INPUT_FIELD } = mycss;
   let total = vndFormatter.format(CartSum(data));
   const isAuth = useSelector((state) => state.auth);
+  let history = useHistory();
 
   const onSubmit = async (formData) => {
-    const addBook = await MyAxios.post("/order", {
+    const addOrder = await MyAxios.post("/order", {
       accountID: isAuth.userID,
       formData,
       data,
     }).then((response) => {
+      console.log(response.data.success);
       if (response.data.message) {
         alert(response.data.message);
       }
+      if (response.data.success) {
+        setTimeout(
+          () => history.push("/receipt", { data: response.data }),
+          1000
+        );
+      }
     });
-    return addBook;
+    return addOrder;
   };
 
   useEffect(() => {
@@ -241,14 +249,12 @@ export default function PaymentForm({ data }) {
             </div>
           </div>
 
-          {/* <Link to="/receipt"> */}
           <button
             type="submit"
             className="h-12 w-full flex justify-center items-center bg-black mt-6"
           >
             <p className="text-white">Đặt hàng</p>
           </button>
-          {/* </Link> */}
         </form>
       </div>
     </>
