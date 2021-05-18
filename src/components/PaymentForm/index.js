@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
 import { Link } from "react-router-dom";
 import { CartSum, vndFormatter } from "../../util/cartSum";
+import { useSelector } from "react-redux";
 
 const BookItem = ({ name, qty, price }) => {
   return (
@@ -16,20 +17,47 @@ const BookItem = ({ name, qty, price }) => {
 };
 
 export default function PaymentForm({ data }) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const { INPUT_FIELD } = mycss;
   let total = vndFormatter.format(CartSum(data));
+  const isAuth = useSelector((state) => state.auth);
 
   const onSubmit = async (formData) => {
-    const addBook = await MyAxios.post("/order", { formData, data }).then(
-      (response) => {
-        if (response.formData.message) {
-          alert(response.formData.message);
-        }
+    const addBook = await MyAxios.post("/order", {
+      accountID: isAuth.userID,
+      formData,
+      data,
+    }).then((response) => {
+      if (response.data.message) {
+        alert(response.data.message);
       }
-    );
+    });
     return addBook;
   };
+
+  useEffect(() => {
+    const getUserData = async (userID) =>
+      await MyAxios.get(`/user/${userID}`, {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        if (response.data.message) {
+          alert(response.data.message);
+        } else {
+          const { name, phone, city, address } = response.data;
+          reset({
+            name: name,
+            phone: phone,
+            city: city,
+            address: address,
+          });
+        }
+      });
+    if (isAuth.user) {
+      getUserData(isAuth.userID);
+    }
+  }, [isAuth, reset]);
 
   return (
     <>
