@@ -12,6 +12,7 @@ import CategoryAdd from "./categoryAdd";
 import AdminLayout from "../../pages/layout/admin";
 import ProtectedRoute from "../../util/protectedRoute";
 import { useSelector } from "react-redux";
+import OrdersAdminDetail from "./ordersAdminDetail";
 
 export default function Admin() {
   const isAuth = useSelector((state) => state.auth);
@@ -49,8 +50,14 @@ export default function Admin() {
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute
+            exact
             path="/admin/orders"
             component={Orders}
+            isAuth={isAuth}
+          ></ProtectedRoute>
+          <ProtectedRoute
+            path="/admin/orders/:id"
+            component={OrdersAdminDetail}
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute

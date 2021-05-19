@@ -29,7 +29,6 @@ export default function PaymentForm({ data }) {
       formData,
       data,
     }).then((response) => {
-      console.log(response.data.success);
       if (response.data.message) {
         alert(response.data.message);
       }

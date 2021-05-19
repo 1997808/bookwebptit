@@ -1,9 +1,18 @@
 import React from "react";
 import { vndFormatter } from "../../util/cartSum";
 
-export default function BookReceipt({ orderData }) {
-  const { orderID, total, date } = orderData;
-  const { formData, data } = orderData.orderData;
+export default function OrdersDetail({ orderData, orderitemData }) {
+  const {
+    orderID,
+    date,
+    total,
+    paymentMethod,
+    name,
+    phone,
+    city,
+    address,
+    note,
+  } = orderData;
   const newTotal = vndFormatter.format(total);
 
   const BookItem = ({ name, qty, price, discount }) => {
@@ -22,9 +31,6 @@ export default function BookReceipt({ orderData }) {
     <React.Fragment>
       <div className="w-full bg-white">
         <div className="border border-solid p-8">
-          <p className="font-medium text-center">
-            Đơn đặt hàng của bạn đã được nhận
-          </p>
           <div className="grid grid-cols-4 gap-10 pt-5">
             <div className="text-sm col-span-1">
               <p>Mã đơn hàng</p>
@@ -43,21 +49,19 @@ export default function BookReceipt({ orderData }) {
 
             <div className="text-sm col-span-1">
               <p>Hình thức thanh toán</p>
-              <p className="font-medium truncate-1-lines">
-                {formData.paymentMethod}
-              </p>
+              <p className="font-medium truncate-1-lines">{paymentMethod}</p>
             </div>
           </div>
         </div>
 
         <div className="border border-solid p-8">
           <p className="font-medium">Sản phẩm</p>
-          {data.map((items) => {
+          {orderitemData.map((items) => {
             return (
               <BookItem
-                key={items.id}
+                key={items.itemID}
                 name={items.name}
-                qty={items.qty}
+                qty={items.quantity}
                 price={items.price}
                 discount={items.discount}
               />
@@ -76,7 +80,7 @@ export default function BookReceipt({ orderData }) {
           </div>
           <div className="text-sm pt-5 flex justify-between">
             <p>Hình thức thanh toán</p>
-            <p>{formData.paymentMethod}</p>
+            <p>{paymentMethod}</p>
           </div>
         </div>
         <div className="border border-solid p-8">
@@ -88,15 +92,15 @@ export default function BookReceipt({ orderData }) {
         <div className="border border-solid p-8 grid grid-cols-2 gap-20">
           <div className="col-span-1">
             <p className="font-medium">Địa chỉ giao hàng</p>
-            <p className="text-sm pt-5">{formData.address}</p>
-            <p className="text-sm pt-5">{formData.city}</p>
-            <p className="text-sm pt-5">{formData.note}</p>
+            <p className="text-sm pt-5">{address}</p>
+            <p className="text-sm pt-5">{city}</p>
+            <p className="text-sm pt-5">{note}</p>
           </div>
 
           <div className="col-span-1">
             <p className="font-medium">Thông tin người nhận</p>
-            <p className="text-sm pt-5">{formData.name}</p>
-            <p className="text-sm pt-5">{formData.phone}</p>
+            <p className="text-sm pt-5">{name}</p>
+            <p className="text-sm pt-5">{phone}</p>
           </div>
         </div>
       </div>

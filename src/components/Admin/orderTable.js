@@ -1,8 +1,7 @@
 import React from "react";
 import Order from "./template/order";
-import { orderData } from "../../assets/order";
 
-export default function OrderTable() {
+export default function OrderTable({ orderData }) {
   return (
     <table className="table-fixed w-full">
       <thead>
@@ -18,8 +17,8 @@ export default function OrderTable() {
         {orderData &&
           orderData.map((items) => (
             <Order
-              key={items.id}
-              id={items.id}
+              key={items.orderID}
+              id={items.orderID}
               name={items.name}
               phone={items.phone}
               total={items.total}
