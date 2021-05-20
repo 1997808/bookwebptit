@@ -7,11 +7,11 @@ export default function Home() {
   return (
     <>
       <Overview />
-      <div className="grid grid-cols-3 gap-8 py-8">
+      <div className="grid grid md:grid-cols-2 xl:grid-cols-3 gap-8 py-8">
         <div className="col-span-2 p-10 bg-white">
           <ChartOverview />
         </div>
-        <div className="col-span-1 p-10 bg-white">
+        <div className="hidden xl:col-span-1 xl:block p-10 bg-white">
           <MostOrder />
         </div>
       </div>
