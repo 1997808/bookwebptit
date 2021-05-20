@@ -4,7 +4,8 @@ import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
 import { useHistory } from "react-router-dom";
 import { CartSum, vndFormatter } from "../../util/cartSum";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { emptyCart } from "../../actions";
 
 const BookItem = ({ name, qty, price }) => {
   return (
@@ -22,6 +23,7 @@ export default function PaymentForm({ data }) {
   let total = vndFormatter.format(CartSum(data));
   const isAuth = useSelector((state) => state.auth);
   let history = useHistory();
+  const dispatch = useDispatch();
 
   const onSubmit = async (formData) => {
     const addOrder = await MyAxios.post("/order", {
@@ -33,6 +35,7 @@ export default function PaymentForm({ data }) {
         alert(response.data.message);
       }
       if (response.data.success) {
+        dispatch(emptyCart());
         setTimeout(
           () => history.push("/receipt", { data: response.data }),
           1000

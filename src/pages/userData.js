@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { MyAxios } from "../util/api";
 import { mycss } from "../util/css";
-import { logout } from "../actions";
+import { logout, emptyCart } from "../actions";
 import { useDispatch } from "react-redux";
 
 export default function UserData() {
@@ -64,6 +64,7 @@ export default function UserData() {
         alert(response.data.message);
       } else {
         dispatch(logout());
+        dispatch(emptyCart());
       }
     });
 
