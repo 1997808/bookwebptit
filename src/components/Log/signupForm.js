@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
 
-export default function Signup() {
+export default function SignupForm() {
   const { register, handleSubmit } = useForm();
   let history = useHistory();
 

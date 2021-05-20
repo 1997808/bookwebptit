@@ -36,6 +36,12 @@ export default function cart(state = initialState, action) {
         cart: state.cart.filter((x) => x.id !== action.id),
       };
 
+    case "EMPTY_CART":
+      return {
+        ...state,
+        cart: [],
+      };
+
     case "FETCH_BOOK_FOR_CART":
       return {
         ...state,

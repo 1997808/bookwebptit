@@ -19,6 +19,13 @@ export const removeItem = (id) => {
   };
 };
 
+export const emptyCart = (id) => {
+  return {
+    type: "EMPTY_CART",
+    id,
+  };
+};
+
 export const userAuth = () => {
   return {
     type: "USER_LOGIN",
