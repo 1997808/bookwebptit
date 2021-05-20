@@ -24,7 +24,7 @@ export default function Users() {
 
   const onSubmit = async (data) => {
     if (data.searchData) {
-      const searchBook = await MyAxios.get(
+      const searchUser = await MyAxios.get(
         `admin/searchuser/${data.searchData}`,
         {
           headers: {
@@ -41,7 +41,7 @@ export default function Users() {
           } else setUserData(response.data.result);
         }
       });
-      return searchBook;
+      return searchUser;
     } else {
       await MyAxios.get("/admin/user", {
         headers: {
