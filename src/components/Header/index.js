@@ -9,10 +9,16 @@ import { fetchBookList, resetBookList } from "../../actions";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  bookname: yup.string().trim(),
+});
 
 export default function Header() {
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
   const { INPUT_FIELD } = mycss;
   let history = useHistory();
 

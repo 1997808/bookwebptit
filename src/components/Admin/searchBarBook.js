@@ -1,9 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  itemID: yup.string().trim(),
+});
 
 export default function SearchBarBook({ onSubmit }) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   return (
     <form
