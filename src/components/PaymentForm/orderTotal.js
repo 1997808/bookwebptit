@@ -140,14 +140,12 @@ export default function OrderTotal() {
           </div>
         </div>
 
-        {/* <Link to="/receipt"> */}
         <button
           type="submit"
           className="h-12 w-full flex justify-center items-center bg-black mt-6"
         >
           <p className="text-white">Đặt hàng</p>
         </button>
-        {/* </Link> */}
       </form>
     </React.Fragment>
   );

@@ -3,6 +3,21 @@ import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import { MyAxios } from "../../util/api";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  name: yup.string().trim().required(),
+  author: yup.string().trim().required(),
+  translator: yup.string().trim(),
+  publisher: yup.string().trim(),
+  category: yup.string().trim(),
+  size: yup.string().trim(),
+  price: yup.number().integer().positive(),
+  discount: yup.number().integer(),
+  stock: yup.number().integer().positive(),
+  description: yup.string().trim(),
+});
 
 export default function BookAdminDetail() {
   let { id } = useParams();
@@ -29,11 +44,8 @@ export default function BookAdminDetail() {
       stock: 0,
       description: "",
     },
+    resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => {
-    changeBookData(id, data);
-  };
-  console.log(errors);
 
   useEffect(() => {
     const getBook = async (id) => {
@@ -52,16 +64,19 @@ export default function BookAdminDetail() {
     getBook(id);
   }, [id, reset]);
 
-  const changeBookData = async (id, data) =>
-    await MyAxios.put(`/admin/book/${id}`, data, {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    }).then((response) => {
-      if (response.data.message) {
-        alert(response.data.message);
-      }
-    });
+  const onSubmit = (data) => {
+    const changeBookData = async (id, data) =>
+      await MyAxios.put(`/admin/book/${id}`, data, {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        if (response.data.message) {
+          alert(response.data.message);
+        }
+      });
+    changeBookData(id, data);
+  };
 
   return (
     <>
@@ -71,84 +86,108 @@ export default function BookAdminDetail() {
           type="text"
           placeholder={"name"}
           {...register("name", { required: true })}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.name ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="text"
           placeholder={"image"}
           {...register("image", { required: true })}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.image ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="text"
           placeholder={"category"}
           {...register("categoryID", { required: true })}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.category ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="text"
           placeholder={"author"}
           {...register("author", { required: true })}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.author ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="text"
           placeholder={"translator"}
           {...register("translator")}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.translator ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="text"
           placeholder={"publisher"}
           {...register("publisher")}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.publisher ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="number"
           placeholder={"pages"}
           {...register("pages")}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.pages ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="text"
           placeholder={"size"}
           {...register("size")}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.size ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="number"
           placeholder={"price"}
           {...register("price", { required: true })}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.price ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="number"
           placeholder={"discount"}
           {...register("discount")}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.discount ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <input
           type="number"
           placeholder={"stock"}
           {...register("stock")}
-          className={`${INPUT_FIELD} mt-5`}
+          className={`${INPUT_FIELD} mt-5 ${
+            errors.stock ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
         <textarea
           type="text"
           placeholder={"description"}
           {...register("description")}
-          className={`${INPUT_FIELD} h-36 mt-5 py-4`}
+          className={`${INPUT_FIELD} h-36 mt-5 py-4 ${
+            errors.description ? "border-red-300" : ""
+          }`}
           readOnly={change}
         />
 

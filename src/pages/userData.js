@@ -5,13 +5,30 @@ import { MyAxios } from "../util/api";
 import { mycss } from "../util/css";
 import { logout, emptyCart } from "../actions";
 import { useDispatch } from "react-redux";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const schema = yup.object().shape({
+  name: yup.string().trim().required(),
+  email: yup.string().trim().email().required(),
+  phone: yup.string().matches(phoneRegExp).min(9).max(10).required(),
+  city: yup.string().trim().required(),
+  address: yup.string().trim().required(),
+});
 
 export default function UserData() {
   const { INPUT_FIELD, BUTTON_WHITE, BUTTON_BLACK } = mycss;
   const [change, setChange] = useState(true);
   let { userID } = useParams();
   const dispatch = useDispatch();
-  const { register, handleSubmit, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     defaultValues: {
       name: "",
       email: "",
@@ -19,8 +36,21 @@ export default function UserData() {
       city: "",
       address: "",
     },
+    resolver: yupResolver(schema),
   });
+
+  console.log(errors);
   const onSubmit = (data) => {
+    const changeUserData = async (userID, data) =>
+      await MyAxios.put(`/user/${userID}`, data, {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        if (response.data.message) {
+          alert(response.data.message);
+        }
+      });
     changeUserData(userID, data);
   };
 
@@ -47,17 +77,6 @@ export default function UserData() {
     getUserData(userID);
   }, [userID, reset]);
 
-  const changeUserData = async (userID, data) =>
-    await MyAxios.put(`/user/${userID}`, data, {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    }).then((response) => {
-      if (response.data.message) {
-        alert(response.data.message);
-      }
-    });
-
   const logoutHandler = async () =>
     await MyAxios.get("/logout").then((response) => {
       if (response.data.message) {
@@ -80,7 +99,9 @@ export default function UserData() {
                 <input
                   type="text"
                   {...register("name", { required: true })}
-                  className={`${INPUT_FIELD}`}
+                  className={`${INPUT_FIELD} ${
+                    errors.name ? "border-red-300" : ""
+                  }`}
                   readOnly={change}
                 />
               </div>
@@ -90,7 +111,9 @@ export default function UserData() {
                 <input
                   type="text"
                   {...register("email", { required: true })}
-                  className={`${INPUT_FIELD}`}
+                  className={`${INPUT_FIELD} ${
+                    errors.email ? "border-red-300" : ""
+                  }`}
                   readOnly={change}
                 />
               </div>
@@ -98,9 +121,11 @@ export default function UserData() {
               <div className="pt-5">
                 <p className="font-medium mb-2">Điện thoại</p>
                 <input
-                  type="number"
+                  type="string"
                   {...register("phone", { required: true })}
-                  className={`${INPUT_FIELD}`}
+                  className={`${INPUT_FIELD} ${
+                    errors.phone ? "border-red-300" : ""
+                  }`}
                   readOnly={change}
                 />
               </div>
@@ -110,7 +135,9 @@ export default function UserData() {
                 <input
                   type="text"
                   {...register("city", { required: true })}
-                  className={`${INPUT_FIELD}`}
+                  className={`${INPUT_FIELD} ${
+                    errors.city ? "border-red-300" : ""
+                  }`}
                   readOnly={change}
                 />
               </div>
@@ -120,13 +147,15 @@ export default function UserData() {
                 <input
                   type="text"
                   {...register("address", { required: true })}
-                  className={`${INPUT_FIELD}`}
+                  className={`${INPUT_FIELD} ${
+                    errors.address ? "border-red-300" : ""
+                  }`}
                   readOnly={change}
                 />
               </div>
 
               <button
-                type={change ? "submit" : "button"}
+                type="button"
                 className={`${BUTTON_WHITE} ${change ? "mb-16" : ""}`}
                 onClick={() => setChange(!change)}
               >

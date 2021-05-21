@@ -3,9 +3,17 @@ import { useForm } from "react-hook-form";
 import { mycss } from "../../util/css";
 import CategoryTable from "../../components/Admin/categoryTable";
 import { MyAxios } from "../../util/api";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  name: yup.string().trim().required(),
+});
 
 export default function CategoryAdd() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    resolver: yupResolver(schema),
+  });
   const { INPUT_FIELD, BUTTON_BLACK } = mycss;
 
   const [categoryData, setCategoryData] = useState([]);

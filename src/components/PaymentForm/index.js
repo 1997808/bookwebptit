@@ -6,6 +6,18 @@ import { useHistory } from "react-router-dom";
 import { CartSum, vndFormatter } from "../../util/cartSum";
 import { useDispatch, useSelector } from "react-redux";
 import { emptyCart } from "../../actions";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const schema = yup.object().shape({
+  name: yup.string().trim().required(),
+  phone: yup.string().matches(phoneRegExp).min(9).max(10).required(),
+  city: yup.string().trim().required(),
+  address: yup.string().trim().required(),
+  note: yup.string().trim(),
+});
 
 const BookItem = ({ name, qty, price }) => {
   return (
@@ -18,7 +30,14 @@ const BookItem = ({ name, qty, price }) => {
 };
 
 export default function PaymentForm({ data }) {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
   const { INPUT_FIELD } = mycss;
   let total = vndFormatter.format(CartSum(data));
   const isAuth = useSelector((state) => state.auth);
@@ -26,23 +45,25 @@ export default function PaymentForm({ data }) {
   const dispatch = useDispatch();
 
   const onSubmit = async (formData) => {
-    const addOrder = await MyAxios.post("/order", {
-      accountID: isAuth.userID,
-      formData,
-      data,
-    }).then((response) => {
-      if (response.data.message) {
-        alert(response.data.message);
-      }
-      if (response.data.success) {
-        dispatch(emptyCart());
-        setTimeout(
-          () => history.push("/receipt", { data: response.data }),
-          1000
-        );
-      }
-    });
-    return addOrder;
+    if (data.length > 0) {
+      const addOrder = await MyAxios.post("/order", {
+        accountID: isAuth.userID,
+        formData,
+        data,
+      }).then((response) => {
+        if (response.data.message) {
+          alert(response.data.message);
+        }
+        if (response.data.success) {
+          dispatch(emptyCart());
+          setTimeout(
+            () => history.push("/receipt", { data: response.data }),
+            1000
+          );
+        }
+      });
+      return addOrder;
+    } else alert("no item selected");
   };
 
   useEffect(() => {
@@ -81,17 +102,21 @@ export default function PaymentForm({ data }) {
                 type="text"
                 placeholder={"name"}
                 {...register("name", { required: true })}
-                className={`${INPUT_FIELD}`}
+                className={`${INPUT_FIELD} ${
+                  errors.name ? "border-red-300" : ""
+                }`}
               />
             </div>
 
             <div className="pt-5">
               <p className="font-medium mb-2">Điện thoại</p>
               <input
-                type="number"
+                type="text"
                 placeholder={"phone"}
                 {...register("phone", { required: true })}
-                className={`${INPUT_FIELD}`}
+                className={`${INPUT_FIELD} ${
+                  errors.phone ? "border-red-300" : ""
+                }`}
               />
             </div>
 
@@ -101,7 +126,9 @@ export default function PaymentForm({ data }) {
                 type="text"
                 placeholder={"city"}
                 {...register("city", { required: true })}
-                className={`${INPUT_FIELD}`}
+                className={`${INPUT_FIELD} ${
+                  errors.city ? "border-red-300" : ""
+                }`}
               />
             </div>
 
@@ -111,7 +138,9 @@ export default function PaymentForm({ data }) {
                 type="text"
                 placeholder={"address"}
                 {...register("address", { required: true })}
-                className={`${INPUT_FIELD}`}
+                className={`${INPUT_FIELD} ${
+                  errors.address ? "border-red-300" : ""
+                }`}
               />
             </div>
 
@@ -123,7 +152,9 @@ export default function PaymentForm({ data }) {
                 rows={6}
                 placeholder={"note"}
                 {...register("note")}
-                className="w-full focus:outline-none border border-gray-200 p-4"
+                className={`w-full focus:outline-none border border-gray-200 p-4 ${
+                  errors.note ? "border-red-300" : ""
+                }`}
               />
             </div>
           </div>
@@ -161,7 +192,7 @@ export default function PaymentForm({ data }) {
 
             <div
               className="border border-solid p-8 flex flex-col"
-              {...register("shipping", { required: true })}
+              {...register("shipping")}
             >
               <p className="font-medium">Vận chuyển</p>
               <label className="text-sm pt-5 flex items-center">
@@ -170,6 +201,7 @@ export default function PaymentForm({ data }) {
                   name="shipping"
                   className="mr-4"
                   value="Giao hàng nhanh"
+                  required
                 />
                 Giao hàng nhanh
               </label>
@@ -217,6 +249,16 @@ export default function PaymentForm({ data }) {
                   type="radio"
                   name="paymentMethod"
                   className="mr-4"
+                  value="Thanh toán khi nhận hàng"
+                  required
+                />
+                Thanh toán khi nhận hàng
+              </label>
+              <label className="text-sm pt-5 flex items-center">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  className="mr-4"
                   value="Chuyển khoản ngân hàng"
                 />
                 Chuyển khoản ngân hàng
@@ -238,15 +280,6 @@ export default function PaymentForm({ data }) {
                   value="Thanh toán bằng thẻ quốc tế"
                 />
                 Thanh toán bằng thẻ quốc tế
-              </label>
-              <label className="text-sm pt-5 flex items-center">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  className="mr-4"
-                  value="Thanh toán khi nhận hàng"
-                />
-                Thanh toán khi nhận hàng
               </label>
             </div>
           </div>
