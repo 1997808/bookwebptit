@@ -28,6 +28,7 @@ import {
   fetchBookForCart,
   fetchNewBook,
   fetchCategory,
+  fetchBookForImport,
 } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -60,6 +61,7 @@ export default function App() {
           dispatch(fetchBook(response.data.result));
           dispatch(fetchBookList(response.data.result));
           dispatch(fetchBookForCart(response.data.result));
+          dispatch(fetchBookForImport(response.data.result));
         }
       });
     };

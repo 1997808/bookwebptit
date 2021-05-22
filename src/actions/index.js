@@ -90,3 +90,32 @@ export const fetchCategory = (data) => {
     data,
   };
 };
+
+export const addItemStock = (id, qty, importPrice) => {
+  return {
+    type: "ADD_ITEM_STOCK",
+    id,
+    qty,
+    importPrice,
+  };
+};
+
+export const removeItemStock = (importID) => {
+  return {
+    type: "REMOVE_ITEM_STOCK",
+    importID,
+  };
+};
+
+export const emptyImport = () => {
+  return {
+    type: "EMPTY_IMPORT",
+  };
+};
+
+export const fetchBookForImport = (data) => {
+  return {
+    type: "FETCH_BOOK_FOR_IMPORT",
+    data,
+  };
+};
