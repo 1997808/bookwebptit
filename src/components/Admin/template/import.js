@@ -3,7 +3,7 @@ import { vndFormatter } from "../../../util/cartSum";
 import { removeItemStock } from "../../../actions";
 import { useDispatch } from "react-redux";
 
-export default function Import({ id, name, qty, importPrice, importID }) {
+export default function Import({ name, qty, importPrice, importID }) {
   const dispatch = useDispatch();
   return (
     <div className="grid grid-cols-5 gap-4 p-8 border-b border-solid border-gray-200">
