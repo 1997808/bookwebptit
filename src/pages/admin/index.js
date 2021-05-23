@@ -10,7 +10,6 @@ import BookAdd from "./bookAdd";
 import CategoryAdd from "./categoryAdd";
 
 import Import from "./import";
-import Export from "./export";
 import StockChange from "./stockChange";
 
 import AdminLayout from "../../pages/layout/admin";
@@ -77,11 +76,6 @@ export default function Admin() {
           <ProtectedRoute
             path="/admin/import"
             component={Import}
-            isAuth={isAuth}
-          ></ProtectedRoute>
-          <ProtectedRoute
-            path="/admin/export"
-            component={Export}
             isAuth={isAuth}
           ></ProtectedRoute>
           <ProtectedRoute

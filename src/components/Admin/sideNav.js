@@ -35,7 +35,6 @@ export default function SideNav() {
         <DashBtn name="Thêm danh mục" link="admin/category" pathNow={pathNow} />
         <DashBtn name="Thêm sản phẩm" link="admin/addbook" pathNow={pathNow} />
         <DashBtn name="Nhập kho" link="admin/import" pathNow={pathNow} />
-        <DashBtn name="Xuất kho" link="admin/export" pathNow={pathNow} />
         <hr className="my-4 md:min-w-full"></hr>
         <DashBtn name="Đơn hàng" link="admin/orders" pathNow={pathNow} />
         <DashBtn name="Khách hàng" link="admin/users" pathNow={pathNow} />
