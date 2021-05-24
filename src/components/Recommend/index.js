@@ -1,7 +1,7 @@
 import Book from "../book";
 
 export default function Recommend({ allBookData }) {
-  const number = Math.floor(Math.random() * 3);
+  const number = Math.floor(Math.random() * 19);
   return (
     <div className="container mx-auto w-full pt-20">
       <p className="text-3xl">Có thế bạn sẽ thích</p>
