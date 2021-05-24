@@ -15,7 +15,7 @@ const schema = yup.object().shape({
   size: yup.string().trim(),
   price: yup.number().integer().positive(),
   discount: yup.number().integer(),
-  stock: yup.number().integer().positive(),
+  stock: yup.number().integer(),
   description: yup.string().trim(),
 });
 
@@ -176,10 +176,8 @@ export default function BookAdminDetail() {
           type="number"
           placeholder={"stock"}
           {...register("stock")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.stock ? "border-red-300" : ""
-          }`}
-          readOnly={change}
+          className={`${INPUT_FIELD} mt-5`}
+          readOnly={true}
         />
         <textarea
           type="text"

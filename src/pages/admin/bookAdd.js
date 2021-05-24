@@ -14,7 +14,7 @@ const schema = yup.object().shape({
   size: yup.string().trim(),
   price: yup.number().integer().positive(),
   discount: yup.number().integer(),
-  stock: yup.number().integer().positive(),
+  // stock: yup.number().integer(),
   description: yup.string().trim(),
 });
 export default function BookAdd() {
@@ -147,14 +147,12 @@ export default function BookAdd() {
             errors.discount ? "border-red-300" : ""
           }`}
         />
-        <input
+        {/* <input
           type="number"
           placeholder={"stock"}
           {...register("stock")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.stock ? "border-red-300" : ""
-          }`}
-        />
+          className={`${INPUT_FIELD} mt-5`}
+        /> */}
         <textarea
           type="text"
           placeholder={"description"}
