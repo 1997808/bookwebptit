@@ -91,6 +91,8 @@ export default function BookAdminDetail() {
       }).then((response) => {
         if (response.data.message) {
           alert(response.data.message);
+        } else {
+          setChange(!change);
         }
       });
     changeBookData(id, data);

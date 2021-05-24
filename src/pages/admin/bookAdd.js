@@ -22,6 +22,7 @@ export default function BookAdd() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({ resolver: yupResolver(schema) });
   const { INPUT_FIELD, BUTTON_BLACK } = mycss;
 
@@ -51,7 +52,21 @@ export default function BookAdd() {
     }).then((response) => {
       if (response.data.message) {
         alert(response.data.message);
-      }
+      } else
+        reset({
+          categoryID: "",
+          image: "",
+          name: "",
+          author: "",
+          translator: "",
+          publisher: "",
+          pages: 0,
+          size: "",
+          price: 0,
+          discount: 0,
+          stock: 0,
+          description: "",
+        });
     });
     return addBook;
   };
