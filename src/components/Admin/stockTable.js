@@ -7,10 +7,11 @@ export default function StockTable({ bookStock }) {
     <table className="table-fixed w-full">
       <thead>
         <tr className="text-left border-b">
-          <th className="w-1/5 py-3 px-4">ID</th>
-          <th className="w-2/5 py-3 px-4">Tên</th>
-          <th className="w-1/5 py-3 px-4">Số lượng</th>
-          <th className="w-1/5 py-3 px-4">Giá</th>
+          <th className="w-1/6 py-3 px-4">ID</th>
+          <th className="w-1/3 py-3 px-4">Tên</th>
+          <th className="w-1/6 py-3 px-4">Số lượng</th>
+          <th className="w-1/6 py-3 px-4">Giá</th>
+          <th className="w-1/6 py-3 px-4">Ngày</th>
         </tr>
       </thead>
       <tbody>
@@ -22,13 +23,15 @@ export default function StockTable({ bookStock }) {
                 items.bookID +
                 items.quantity +
                 items.price +
-                items.stockType
+                items.stockType +
+                items.date
               }
               id={items.bookID}
               name={items.name}
               quantity={items.quantity}
               price={items.price}
               stockType={items.stockType}
+              date={items.date}
             />
           ))}
       </tbody>
