@@ -7,7 +7,7 @@ import DataOverview from "./template/dataOverview";
 import { MyAxios } from "../../util/api";
 import { vndFormatter } from "../..//util/cartSum";
 
-export default function Overview({ number }) {
+export default function Overview() {
   const [userData, setUserData] = useState(0);
   const [orderData, setOrderData] = useState(0);
   const [bookSaleData, setBookSaleData] = useState(0);
