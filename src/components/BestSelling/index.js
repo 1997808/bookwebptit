@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Book from "../book";
 
 export default function BestSelling({ allBookData }) {
+  const number = Math.floor(Math.random() * 19);
   return (
     <div className="container mx-auto w-full pt-20">
       <div className="flex justify-between items-center">
@@ -12,7 +13,7 @@ export default function BestSelling({ allBookData }) {
       </div>
       <div className="grid grid-cols-3 xl:grid-cols-5 pt-8">
         {allBookData &&
-          allBookData.slice(2, 7).map((items) => {
+          allBookData.slice(number, number + 5).map((items) => {
             return (
               <Book
                 key={items.id}

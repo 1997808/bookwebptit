@@ -2,8 +2,11 @@ import React from "react";
 import Overview from "../../components/Admin/overview";
 import ChartOverview from "../../components/Admin/chartOverview";
 import MostOrder from "../../components/Admin/mostOrder";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+  const book = useSelector((state) => state.book.book);
+
   return (
     <>
       <Overview />
@@ -12,7 +15,7 @@ export default function Home() {
           <ChartOverview />
         </div>
         <div className="hidden xl:col-span-1 xl:block p-10 bg-white">
-          <MostOrder />
+          <MostOrder book={book} />
         </div>
       </div>
     </>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../actions/index";
 import { vndFormatter } from "../util/cartSum";
+import LazyLoad from "react-lazyload";
 
 export default function Book({ id, photo, name, author, price, discount }) {
   const [isShown, setIsShown] = useState(false);
@@ -15,11 +16,13 @@ export default function Book({ id, photo, name, author, price, discount }) {
       onMouseLeave={() => setIsShown(false)}
     >
       <Link to={`/book/${id}`}>
-        <img
-          src={`${process.env.PUBLIC_URL}${photo}`}
-          alt="icon"
-          className="h-48 w-full object-scale-down"
-        />
+        <LazyLoad height={200} offset={100}>
+          <img
+            src={`${process.env.PUBLIC_URL}${photo}`}
+            alt="icon"
+            className="h-48 w-full object-scale-down"
+          />
+        </LazyLoad>
       </Link>
       <Link to={`/book/${id}`}>
         <div
