@@ -10,7 +10,7 @@ const schema = yup.object().shape({
   author: yup.string().trim().required(),
   translator: yup.string().trim(),
   publisher: yup.string().trim(),
-  category: yup.string().trim(),
+  categoryID: yup.number().integer().required(),
   size: yup.string().trim(),
   price: yup.number().integer().positive(),
   discount: yup.number().integer(),
@@ -60,107 +60,124 @@ export default function BookAdd() {
     <>
       <h3 className="text-3xl font-medium pt-12 pb-5">Thêm mới sản phẩm</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          placeholder={"name"}
-          {...register("name", { required: true })}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.name ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="text"
-          placeholder={"image"}
-          {...register("image", { required: true })}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.image ? "border-red-300" : ""
-          }`}
-        />
-        <select
-          {...register("categoryID", { required: true })}
-          className={`${INPUT_FIELD} mt-5`}
-          defaultValue=""
-        >
-          <option value="" disabled hidden>
-            {"category"}
-          </option>
+        <div className="pt-6">
+          <p className="font-medium mb-2">Tên</p>
+          <input
+            type="text"
+            {...register("name", { required: true })}
+            className={`${INPUT_FIELD} ${errors.name ? "border-red-300" : ""}`}
+          />
+        </div>
 
-          {categoryData.map((items) => (
-            <option key={items.categoryID} value={items.categoryID}>
-              {items.name}
+        <div className="pt-6">
+          <p className="font-medium mb-2">Ảnh</p>
+          <input
+            type="text"
+            {...register("image", { required: true })}
+            className={`${INPUT_FIELD} ${errors.image ? "border-red-300" : ""}`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Danh Mục</p>
+          <select
+            {...register("categoryID", { required: true })}
+            className={`${INPUT_FIELD}`}
+            defaultValue=""
+          >
+            <option value="" disabled hidden>
+              {""}
             </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          placeholder={"author"}
-          {...register("author", { required: true })}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.author ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="text"
-          placeholder={"translator"}
-          {...register("translator")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.translator ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="text"
-          placeholder={"publisher"}
-          {...register("publisher")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.publisher ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="number"
-          placeholder={"pages"}
-          {...register("pages")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.pages ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="text"
-          placeholder={"size"}
-          {...register("size")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.size ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="number"
-          placeholder={"price"}
-          {...register("price", { required: true })}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.price ? "border-red-300" : ""
-          }`}
-        />
-        <input
-          type="number"
-          placeholder={"discount"}
-          {...register("discount")}
-          className={`${INPUT_FIELD} mt-5 ${
-            errors.discount ? "border-red-300" : ""
-          }`}
-        />
-        {/* <input
-          type="number"
-          placeholder={"stock"}
-          {...register("stock")}
-          className={`${INPUT_FIELD} mt-5`}
-        /> */}
-        <textarea
-          type="text"
-          placeholder={"description"}
-          {...register("description")}
-          className={`${INPUT_FIELD} h-36 mt-5 py-4 ${
-            errors.description ? "border-red-300" : ""
-          }`}
-        />
+
+            {categoryData.map((items) => (
+              <option key={items.categoryID} value={items.categoryID}>
+                {items.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Tác Giả</p>
+          <input
+            type="text"
+            {...register("author", { required: true })}
+            className={`${INPUT_FIELD} ${
+              errors.author ? "border-red-300" : ""
+            }`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Dịch Giả</p>
+          <input
+            type="text"
+            {...register("translator", { required: true })}
+            className={`${INPUT_FIELD} ${
+              errors.translator ? "border-red-300" : ""
+            }`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">NXB</p>
+          <input
+            type="text"
+            {...register("publisher", { required: true })}
+            className={`${INPUT_FIELD} ${
+              errors.publisher ? "border-red-300" : ""
+            }`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Số Trang</p>
+          <input
+            type="number"
+            {...register("pages", { required: true })}
+            className={`${INPUT_FIELD} ${errors.pages ? "border-red-300" : ""}`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Kích Cỡ</p>
+          <input
+            type="text"
+            {...register("size", { required: true })}
+            className={`${INPUT_FIELD} ${errors.size ? "border-red-300" : ""}`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Giá</p>
+          <input
+            type="number"
+            {...register("price", { required: true })}
+            className={`${INPUT_FIELD} ${errors.price ? "border-red-300" : ""}`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Giảm Giá</p>
+          <input
+            type="number"
+            {...register("discount", { required: true })}
+            className={`${INPUT_FIELD} ${
+              errors.discount ? "border-red-300" : ""
+            }`}
+          />
+        </div>
+
+        <div className="pt-6">
+          <p className="font-medium mb-2">Miêu Tả</p>
+          <textarea
+            type="text"
+            {...register("description")}
+            className={`${INPUT_FIELD} h-36 py-4 ${
+              errors.description ? "border-red-300" : ""
+            }`}
+          />
+        </div>
 
         <button type="submit" className={`${BUTTON_BLACK} mt-5 mb-16`}>
           <p className="text-white">Lưu</p>

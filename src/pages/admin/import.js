@@ -38,37 +38,45 @@ export default function Import() {
       <div className="grid grid-cols-2">
         <h3 className="text-3xl font-medium pt-12 pb-5 col-span-2">Nhập kho</h3>
         <form onSubmit={handleSubmit(onSubmit)} className="col-span-1">
-          <select
-            {...register("itemID", { required: true })}
-            className={`${INPUT_FIELD} mt-5`}
-            defaultValue=""
-          >
-            <option value="" disabled hidden>
-              {"name"}
-            </option>
-
-            {allBookData.map((items) => (
-              <option key={items.id} value={items.id}>
-                {items.name}
+          <div className="pt-6">
+            <p className="font-medium mb-2">Tên</p>
+            <select
+              {...register("itemID", { required: true })}
+              className={`${INPUT_FIELD}`}
+              defaultValue=""
+            >
+              <option value="" disabled hidden>
+                {""}
               </option>
-            ))}
-          </select>
-          <input
-            type="number"
-            placeholder={"qty"}
-            {...register("qty")}
-            className={`${INPUT_FIELD} mt-5 ${
-              errors.qty ? "border-red-300" : ""
-            }`}
-          />
-          <input
-            type="number"
-            placeholder={"importPrice"}
-            {...register("importPrice")}
-            className={`${INPUT_FIELD} mt-5 ${
-              errors.importPrice ? "border-red-300" : ""
-            }`}
-          />
+
+              {allBookData.map((items) => (
+                <option key={items.id} value={items.id}>
+                  {items.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="pt-6">
+            <p className="font-medium mb-2">Số lượng</p>
+            <input
+              type="number"
+              {...register("qty")}
+              className={`${INPUT_FIELD} ${errors.qty ? "border-red-300" : ""}`}
+            />
+          </div>
+
+          <div className="pt-6">
+            <p className="font-medium mb-2">Giá nhập kho</p>
+            <input
+              type="number"
+              placeholder={"importPrice"}
+              {...register("importPrice")}
+              className={`${INPUT_FIELD} ${
+                errors.importPrice ? "border-red-300" : ""
+              }`}
+            />
+          </div>
 
           <button type="submit" className={`${BUTTON_BLACK} mt-5 mb-16`}>
             <p className="text-white">Thêm</p>
