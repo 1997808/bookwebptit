@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../actions/index";
+import { vndFormatter } from "../../util/cartSum";
 
 export default function ProductDetail({ data }) {
   const dispatch = useDispatch();
@@ -18,7 +19,9 @@ export default function ProductDetail({ data }) {
         <p className="pt-6">
           Tác giả <span className="text-gray-400 pl-4">{data.author}</span>
         </p>
-        <p className="text-2xl font-medium pt-6">{data.price}</p>
+        <p className="text-2xl font-medium pt-6">
+          {vndFormatter.format(data.price)}
+        </p>
         <p className="pt-6 truncate-4-lines">{data.description}</p>
         <div
           className="h-12 w-48 flex justify-center items-center bg-black mt-6 cursor-pointer"
